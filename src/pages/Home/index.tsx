@@ -1,23 +1,15 @@
 import * as React from "react";
+import Carousel from "../../components/Carousel";
+import { Box, Stack, Typography } from "@mui/material";
 
 export default function Home() {
-  //login
-  const [user, setUser] = React.useState<{
-    id: string | null;
-    name: string;
-  } | null>(null);
-
-  const handleLogin = () => setUser({ id: "1", name: "robin" });
-  const handleLogout = () => setUser(null);
 
   return (
-    <>
-      {user ? (
-        <button onClick={handleLogout}>Sign Out</button>
-      ) : (
-        <button onClick={handleLogin}>Sign In</button>
-      )}
-      <h1>Home</h1>
-    </>
+    <Stack textAlign="center">
+      <Typography variant="h2" sx={{ marginBottom: "20px" }}>
+        Welcome to South Escorts
+      </Typography>
+      <Carousel />
+    </Stack>
   );
 }
