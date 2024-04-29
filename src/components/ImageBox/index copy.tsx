@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Avatar, Box, Fab, Link, Stack } from "@mui/material";
+import React, { useState } from "react";
+import { Avatar, Box, Fab, Stack } from "@mui/material";
 
 import FavoriteIcon from "@mui/icons-material/Favorite";
 
@@ -7,35 +7,16 @@ const ImageBox = ({
   src,
   alt,
   modelAvatar,
-  onFavoriteToggle,
 }: {
   src: string;
   alt: string;
   modelAvatar: string;
-  onFavoriteToggle: () => void;
 }) => {
   const [isFavorite, setIsFavorite] = useState(false);
-
-  useEffect(() => {
-    // Recupera as informações do localStorage ao montar o componente
-    const storedFavorite = localStorage.getItem(alt);
-    if (storedFavorite) {
-      const { isFavorite: storedIsFavorite } = JSON.parse(storedFavorite);
-      setIsFavorite(storedIsFavorite);
-    }
-  }, [alt]); // Executa apenas quando alt muda
 
   const toggleFavorite = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
     setIsFavorite((prevIsFavorite) => !prevIsFavorite);
-    onFavoriteToggle();
-
-    localStorage.setItem(
-      alt,
-      JSON.stringify({
-        isFavorite: !isFavorite,
-      })
-    );
   };
 
   const preventClickPropagation = (
@@ -52,17 +33,15 @@ const ImageBox = ({
       overflow="hidden"
       zIndex={600}
     >
-      <Link href={`/models/${alt.toLowerCase()}`}>
-        <img
-          src={src}
-          alt={alt}
-          style={{
-            width: "100%",
-            height: "auto",
-            objectFit: "contain",
-          }}
-        />
-      </Link>
+      <img
+        src={src}
+        alt={alt}
+        style={{
+          width: "100%",
+          height: "auto",
+          objectFit: "contain",
+        }}
+      />
       <Stack
         bgcolor={"rgba(0, 0, 0, 0.5)"}
         width="100%"

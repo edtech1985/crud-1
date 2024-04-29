@@ -48,8 +48,8 @@ export default function Header() {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        South Escorts
+      <Typography variant="logo" sx={{ my: 2 }}>
+        South Escorts Mobile
       </Typography>
       <Divider />
       <List>{renderNavItems()}</List>
@@ -71,7 +71,7 @@ export default function Header() {
             <MenuIcon />
           </IconButton>
           <Typography
-            variant="h6"
+            variant="logo"
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
@@ -83,7 +83,7 @@ export default function Header() {
                 key={item.label}
                 component={Link}
                 to={item.path}
-                sx={{ color: "#fff" }}
+                sx={{ color: "primary.light" }}
               >
                 {item.label}
               </Button>

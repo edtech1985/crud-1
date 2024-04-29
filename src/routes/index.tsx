@@ -10,10 +10,10 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Contact from "../pages/Contact";
 import Models from "../pages/Models";
-import ModelDetails from "../pages/Models/ModelDetails";
 import { Stack } from "@mui/material";
 import ModelProfile from "../pages/Models/ModelProfile";
 import Advertise from "../pages/Advertise";
+import Favorites from "../pages/Favorites";
 
 export default function AppRouter() {
   return (
@@ -30,6 +30,7 @@ export default function AppRouter() {
             <Route path="/advertise" element={<Advertise />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/favorites" element={<Favorites />} />
             <Route
               path="/admin"
               element={

@@ -1,10 +1,25 @@
 import React from "react";
-import { Box, Typography, Grid, Avatar, IconButton } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Grid,
+  Avatar,
+  IconButton,
+  Stack,
+} from "@mui/material";
 import { useParams } from "react-router-dom";
-import { CheckCircleOutline, HighlightOff } from "@mui/icons-material";
+import {
+  CheckCircleOutline,
+  HighlightOff,
+  Telegram,
+  X,
+} from "@mui/icons-material";
 import modelsData from "../models-details.json";
 import BackButton from "../../../components/buttons/backButton";
-import ImageBox from "../../../components/ImageBox";
+import WhatsApp from "@mui/icons-material/WhatsApp";
+import Instagram from "@mui/icons-material/Instagram";
+import Facebook from "@mui/icons-material/Facebook";
+import ImageModelProfile from "../../../components/ImageModelProfile";
 
 interface ModelProfileProps {
   name: string;
@@ -43,7 +58,6 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
     hourlyRate,
     paymentMethods,
     workHours,
-    socialMedia,
   } = massagist;
 
   return (
@@ -60,13 +74,13 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
           </Box>
         </Grid>
         <Grid item xs={12} mx={10}>
-          <Typography variant="h4" component="h1" gutterBottom>
+          <Typography variant="h4" component="h2" gutterBottom>
             {name}
           </Typography>
           <Typography variant="body1" paragraph>
             {description}
           </Typography>
-          <Grid id="model-photos" item xs={12} bgcolor="yellow">
+          <Grid id="model-photos" item xs={12}>
             <Grid container justifyContent="center" spacing={2}>
               {[photo1, photo2, photo3, photo4, photo5, photo6].map(
                 (photo, index) => (
@@ -77,7 +91,7 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
                       justifyContent="center"
                       alignItems="center"
                     >
-                      <ImageBox
+                      <ImageModelProfile
                         src={photo}
                         alt={`Massagista ${name}`}
                         aria-label={`Massagista ${name}`}
@@ -94,11 +108,10 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
             container
             spacing={2}
             justifyContent="center"
-            
             mt={4}
           >
             <Grid item xs={12} sm={6}>
-              <Typography variant="h6">Informações</Typography>
+              <Typography variant="edtech">Informações 1</Typography>
               <Box>
                 <table>
                   <tbody>
@@ -165,14 +178,32 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
             <Grid item xs={12} sm={6}>
               <Typography variant="h6">Redes Sociais</Typography>
               <Box>
-                <Avatar src={socialMedia.whatsapp} />
-                <Avatar src={socialMedia.onlyfans} />
-                <Avatar src={socialMedia.privacy} />
-                <Avatar src={socialMedia.instagram} />
-                <Avatar src={socialMedia.twitter} />
-                <Avatar src={socialMedia.facebook} />
-                <Avatar src={socialMedia.tiktok} />
-                <Avatar src={socialMedia.telegram} />
+                <Stack direction="column" alignItems="center" spacing={1}>
+                  <Avatar sx={{ bgcolor: "transparent", color: "green" }}>
+                    <WhatsApp />
+                  </Avatar>
+                  <Avatar src="/img/only.png" sx={{ width: 36, height: 36 }} />
+                  <Avatar
+                    src="/img/privacy.png"
+                    sx={{ width: 28, height: 28 }}
+                  />
+                  <Avatar sx={{ bgcolor: "transparent", color: "#c93a52" }}>
+                    <Instagram />
+                  </Avatar>
+                  <Avatar sx={{ bgcolor: "transparent", color: "#fff" }}>
+                    <X />
+                  </Avatar>
+                  <Avatar sx={{ bgcolor: "transparent", color: "blue" }}>
+                    <Facebook />
+                  </Avatar>
+                  <Avatar
+                    src="/img/tiktok.png"
+                    sx={{ width: 34, height: 34 }}
+                  />
+                  <Avatar sx={{ bgcolor: "transparent", color: "#0b84ca" }}>
+                    <Telegram />
+                  </Avatar>
+                </Stack>
               </Box>
             </Grid>
           </Grid>

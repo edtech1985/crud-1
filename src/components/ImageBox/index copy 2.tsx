@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Avatar, Box, Fab, Link, Stack } from "@mui/material";
 
 import FavoriteIcon from "@mui/icons-material/Favorite";
@@ -16,26 +16,10 @@ const ImageBox = ({
 }) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
-  useEffect(() => {
-    // Recupera as informações do localStorage ao montar o componente
-    const storedFavorite = localStorage.getItem(alt);
-    if (storedFavorite) {
-      const { isFavorite: storedIsFavorite } = JSON.parse(storedFavorite);
-      setIsFavorite(storedIsFavorite);
-    }
-  }, [alt]); // Executa apenas quando alt muda
-
   const toggleFavorite = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
     setIsFavorite((prevIsFavorite) => !prevIsFavorite);
     onFavoriteToggle();
-
-    localStorage.setItem(
-      alt,
-      JSON.stringify({
-        isFavorite: !isFavorite,
-      })
-    );
   };
 
   const preventClickPropagation = (
