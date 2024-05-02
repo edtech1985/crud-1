@@ -6,8 +6,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import DeleteRoundedIcon from "@mui/icons-material/DeleteRounded";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import EditNoteTwoToneIcon from "@mui/icons-material/EditNoteTwoTone";
 import axios from "axios";
 import { toast } from "react-toastify";
 
@@ -38,12 +37,8 @@ export default function GridTable(props: {
     setOnEdit(null);
   };
 
-  const handleEdit = (user: any) => {
-    setOnEdit(user);
-  };
-
   return (
-    <TableContainer component={Paper} sx={{ mt: 10 }}>
+    <TableContainer component={Paper} sx={{ mt: 5 }}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -63,13 +58,11 @@ export default function GridTable(props: {
               <TableCell align="left">{user.name}</TableCell>
               <TableCell align="left">{user.nickname}</TableCell>
               <TableCell align="left">{user.email}</TableCell>
-
-              <FontAwesomeIcon
-                icon={faEdit}
-                cursor= "pointer"
-                onClick={() => handleEdit(user)}
+              
+              <EditNoteTwoToneIcon
+                sx={{ cursor: "pointer" }}
+                onClick={() => setOnEdit(user)}
               />
-
               <DeleteRoundedIcon
                 sx={{ cursor: "pointer" }}
                 onClick={() => handleDelete(user.id)}

@@ -1,88 +1,93 @@
-import * as React from "react";
-import "react-toastify/dist/ReactToastify.css";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import FormControl from "@mui/material/FormControl";
-import { Grid, Stack } from "@mui/material";
+import React from "react";
+import {
+  Typography,
+  Divider,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Grid,
+  Link,
+  Stack,
+} from "@mui/material";
+import EmailIcon from "@mui/icons-material/Email";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
-import DeleteRoundedIcon from "@mui/icons-material/DeleteRounded";
-import { createSvgIcon } from "@mui/material/utils";
-
-const PlusIcon = createSvgIcon(
-  // credit: plus icon from https://heroicons.com/
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    strokeWidth={1.5}
-    stroke="currentColor"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M12 4.5v15m7.5-7.5h-15"
-    />
-  </svg>,
-  "Plus"
-);
-
-export default function Contact() {
+const ContactPage = () => {
   return (
-    <>
-      
-      <Stack
-        direction="row"
-        spacing={2}
-        mt={20}
-        bgcolor="yellow"
-        sx={{ margin: 10 }}
-      >
-        <Box bgcolor="aqua">
-          <FormControl>
-            <Grid container spacing={2} alignItems="center">
-              <Grid item>
-                <TextField
-                  sx={{ width: "100px" }}
-                  id="user-id"
-                  label="ID"
-                  variant="outlined"
-                  disabled
-                />
-              </Grid>
-              <Grid item>
-                <TextField
-                  // sx={{ width: "300px" }}
-                  id="name"
-                  label="Name"
-                  variant="outlined"
-                  required
-                />
-              </Grid>
-              <Grid item>
-                <TextField
-                  // sx={{ width: "300px" }}
-                  id="nickname"
-                  label="Nickname"
-                  variant="outlined"
-                  required
-                />
-              </Grid>
-              <Grid item>
-                <TextField
-                  id="email"
-                  label="Email"
-                  type="email"
-                  variant="outlined"
-                  required
-                />
-                <PlusIcon />
-                <DeleteRoundedIcon />
-              </Grid>
-            </Grid>
-          </FormControl>
-          
-        </Box>
-      </Stack>
-    </>
+    <Stack alignContent="center" alignItems="center">
+      <Typography variant="h4" gutterBottom>
+        Contato
+      </Typography>
+      <Divider variant="middle" />
+
+      <Typography variant="h5" gutterBottom>
+        Horário de Atendimento
+      </Typography>
+      <Typography>Segunda a Sexta-feira: 9h - 18h</Typography>
+
+      <Divider variant="middle" />
+
+      <Typography variant="h5" gutterBottom>
+        Informações de Contato
+      </Typography>
+      <Grid container spacing={2} alignItems="center" bgcolor="beige" >
+        <Grid item xs={12} sm={6}>
+          <List>
+            <ListItem>
+              <ListItemIcon>
+                <EmailIcon />
+              </ListItemIcon>
+              <ListItemText
+                primary="Suporte"
+                secondary={
+                  <Link href="mailto:suporte@southescorts.com">
+                    suporte@southescorts.com
+                  </Link>
+                }
+              />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <EmailIcon />
+              </ListItemIcon>
+              <ListItemText
+                primary="Comercial"
+                secondary={
+                  <Link href="mailto:comercial@southescorts.com">
+                    comercial@southescorts.com
+                  </Link>
+                }
+              />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <EmailIcon />
+              </ListItemIcon>
+              <ListItemText
+                primary="Financeiro"
+                secondary={
+                  <Link href="mailto:financeiro@southescorts.com">
+                    financeiro@southescorts.com
+                  </Link>
+                }
+              />
+            </ListItem>
+          </List>
+        </Grid>
+        <Grid item xs={12} sm={6} bgcolor="white" >
+          <List>
+            <ListItem>
+              <ListItemIcon color="white">
+                <WhatsAppIcon />
+              </ListItemIcon>
+              <ListItemText primary="WhatsApp" secondary="51992002599" />
+            </ListItem>
+          </List>
+        </Grid>
+      </Grid>
+    </Stack>
   );
-}
+};
+
+export default ContactPage;

@@ -3,29 +3,12 @@ import "react-toastify/dist/ReactToastify.css";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import FormControl from "@mui/material/FormControl";
-import { Button, Grid, Stack } from "@mui/material";
-import { createSvgIcon } from "@mui/material/utils";
+import { Grid, Stack } from "@mui/material";
+import LoadingButton from "@mui/lab/LoadingButton";
+import SaveIcon from "@mui/icons-material/Save";
 import GridTable from "../../components/GridTable";
 import axios from "axios";
 import { toast } from "react-toastify";
-
-const PlusIcon = createSvgIcon(
-  // credit: plus icon from https://heroicons.com/
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    strokeWidth={1.5}
-    stroke="currentColor"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M12 4.5v15m7.5-7.5h-15"
-    />
-  </svg>,
-  "Plus"
-);
 
 const UserForm = ({
   onEdit,
@@ -39,12 +22,15 @@ const UserForm = ({
   const [name, setName] = React.useState("");
   const [nickname, setNickname] = React.useState("");
   const [email, setEmail] = React.useState("");
+  const [id, setId] = React.useState("");
+  const [loading, setLoading] = React.useState(false);
 
   React.useEffect(() => {
     if (onEdit) {
       setName(onEdit.name);
       setNickname(onEdit.nickname);
       setEmail(onEdit.email);
+      setId(onEdit.id);
     }
   }, [onEdit]);
 
@@ -54,31 +40,48 @@ const UserForm = ({
     if (!name || !nickname || !email) {
       return toast.error("Please fill all fields");
     }
-    
-      if (onEdit) {
-        await axios.put(`http://localhost:8800/${onEdit.id}`, {
-          name,
-          nickname,
-          email,
-        });
+
+    setLoading(true);
+
+    if (onEdit) {
+      await axios.put(`http://localhost:8800/${onEdit.id}`, {
+        name,
+        nickname,
+        email,
+        id,
+      });
+      setTimeout(() => {
+        setLoading(false);
         toast.success("User updated successfully");
-      } else {
-        await axios.post("http://localhost:8800", {
+      }, 1000);
+    } else {
+      await axios
+        .post("http://localhost:8800", {
           name,
           nickname,
           email,
         })
-        .then(({ data }) => toast.success(data))
-        .catch(({ data }) => toast.error(data));
-      }
+        .then(({ data }) => {
+          setTimeout(() => {
+            setLoading(false);
+            toast.success(data);
+          }, 1000);
+        })
+        .catch(({ data }) => {
+          setTimeout(() => {
+            setLoading(false);
+            toast.error(data);
+          }, 1000);
+        });
+    }
 
-      setOnEdit(null);
-      getUsers();
-      setName("");
-      setNickname("");
-      setEmail("");
-    } 
- 
+    setOnEdit(null);
+    getUsers();
+    setName("");
+    setNickname("");
+    setEmail("");
+    setId("");
+  };
 
   return (
     <FormControl component="form" onSubmit={handleSubmit}>
@@ -89,6 +92,7 @@ const UserForm = ({
             id="user_id"
             label="ID"
             variant="outlined"
+            value={id}
             disabled
           />
         </Grid>
@@ -123,11 +127,28 @@ const UserForm = ({
             onChange={(e) => setEmail(e.target.value)}
           />
         </Grid>
-        <Button variant="contained" color="primary" type="submit">
-          Save
-        </Button>
-        <PlusIcon sx={{ cursor: "pointer" }} />
       </Grid>
+      <Box
+        
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100%",
+          mt: 2,
+        }}
+      >
+        <LoadingButton
+          variant="contained"
+          color="primary"
+          type="submit"
+          loading={loading}
+          loadingPosition="start"
+          startIcon={<SaveIcon />}
+        >
+          Save
+        </LoadingButton>
+      </Box>
     </FormControl>
   );
 };
@@ -154,11 +175,10 @@ export default function Admin() {
     <Stack
       direction="row"
       spacing={2}
-      mt={20}
-      bgcolor="yellow"
-      sx={{ margin: 10 }}
+      margin={10}
+      width="full"
     >
-      <Box bgcolor="aqua">
+      <Box width="100%" >
         <UserForm onEdit={onEdit} setOnEdit={setOnEdit} getUsers={getUsers} />
         <GridTable
           users={users}

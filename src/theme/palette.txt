@@ -1,0 +1,13 @@
+golden: {
+      50: "#FFFFE0",
+      100: "#FFFFD0",
+      200: "#FFFFC0",
+      300: "#FFFFB0",
+      400: "#FFFFA0",
+      500: "#FFFF90",
+      600: "#FFD770",
+      700: "#C7B33B",
+      800: "#8D7B26",
+      900: "#60541E",
+      main: "#FFFFA0", // Define main gold color for easier reference
+    },
