@@ -82,13 +82,13 @@ export default function Models() {
 
   // ================== Snackbar ================== //
 
-  const [state, setState] = React.useState<State>({
+  const [state] = React.useState<State>({
     open: false,
     vertical: "top",
     horizontal: "center",
   });
 
-  const { vertical, horizontal, open } = state;
+  const { vertical, horizontal } = state;
 
   // const handleSnackbar = () => {
   //   setState({ ...state, open: true });
