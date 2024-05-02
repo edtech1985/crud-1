@@ -66,11 +66,16 @@ interface State extends SnackbarOrigin {
 }
 
 export default function Models() {
+  const [favorites, setFavorites] = useState<number[]>([]);
+  const [selectedModel, setSelectedModel] = useState<Model | null>(null);
   const [snackbarStates, setSnackbarStates] = useState<{
     [key: number]: boolean;
   }>({});
-
-  const [selectedModel, setSelectedModel] = useState<Model | null>(null);
+  const [filterOpen, setFilterOpen] = useState(false);
+  const [filters, setFilters] = useState<Filters>({
+    modelType: "indiferente",
+    showFace: "indiferente",
+  });
 
   const handleMouseEnter = (model: Model) => {
     setSelectedModel(model);
@@ -80,8 +85,7 @@ export default function Models() {
     setSelectedModel(null);
   };
 
-  // ================== Snackbar ================== //
-
+  // === === === BEGIN Snackbar === === === //
   const [state] = React.useState<State>({
     open: false,
     vertical: "top",
@@ -90,15 +94,6 @@ export default function Models() {
 
   const { vertical, horizontal } = state;
 
-  // const handleSnackbar = () => {
-  //   setState({ ...state, open: true });
-  // };
-
-  // const handleClose = () => {
-  //   setState({ ...state, open: false });
-  // };
-
-  // Função para abrir o Snackbar
   const handleSnackbar = (modelId: number) => {
     setSnackbarStates((prevState) => ({
       ...prevState,
@@ -106,20 +101,15 @@ export default function Models() {
     }));
   };
 
-  // Função para fechar o Snackbar
   const handleClose = (modelId: number) => {
     setSnackbarStates((prevState) => ({
       ...prevState,
       [modelId]: false,
     }));
   };
-
-  // ================== ENDSnackbar ================== //
+  // === === === END Snackbar === === === //
 
   // === === === BEGIN FAVORITES === === === //
-
-  const [favorites, setFavorites] = useState<number[]>([]);
-
   useEffect(() => {
     const storedFavorites = localStorage.getItem("favorites");
     if (storedFavorites) {
@@ -137,15 +127,9 @@ export default function Models() {
     setFavorites(updatedFavorites);
     localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
   };
+  // === === === END FAVORITES === === === //
 
   // === === === BEGIN FILTERING === === === //
-
-  const [filterOpen, setFilterOpen] = useState(false);
-  const [filters, setFilters] = useState<Filters>({
-    modelType: "indiferente",
-    showFace: "indiferente",
-  });
-
   const handleFilterChange = (value: string, filterName: keyof Filters) => {
     setFilters((prevFilters) => ({
       ...prevFilters,
@@ -189,9 +173,9 @@ export default function Models() {
     }
     return true;
   });
+  // === === === END FILTERING === === === //
 
   // === === === BEGIN SCROLL TO TOP === === === //
-
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const anchor = (
       (event.target as HTMLDivElement).ownerDocument || document
@@ -203,6 +187,7 @@ export default function Models() {
       });
     }
   };
+  // === === === END SCROLL TO TOP === === === //
 
   return (
     <Box textAlign="center">
@@ -550,26 +535,29 @@ export default function Models() {
         ))}
       </Grid>
 
-      <Tooltip title="Voltar ao topo" arrow>
-        <Fab
-          size="small"
-          aria-label="scroll back to top"
-          // onClick={handleClick}
-          sx={{
-            position: "fixed",
-            bottom: 16,
-            right: 16,
-            zIndex: 9999,
-            opacity: 0.4,
-            transition: "opacity 0.5s ease",
-            "&:hover": {
-              opacity: 1,
-            },
-          }}
-        >
-          <KeyboardArrowUpIcon />
-        </Fab>
-      </Tooltip>
+      <Fade in={useScrollTrigger({ target: window })}>
+        <Box>
+          <Tooltip title="Voltar ao topo" arrow>
+            <Fab
+              size="small"
+              aria-label="scroll back to top"
+              sx={{
+                position: "fixed",
+                bottom: 16,
+                right: 16,
+                zIndex: 9999,
+                opacity: 0.4,
+                transition: "opacity 0.5s ease",
+                "&:hover": {
+                  opacity: 1,
+                },
+              }}
+            >
+              <KeyboardArrowUpIcon />
+            </Fab>
+          </Tooltip>
+        </Box>
+      </Fade>
     </Box>
   );
 }
