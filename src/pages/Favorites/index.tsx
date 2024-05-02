@@ -1,19 +1,7 @@
 import React, { useState, useEffect } from "react";
-import {
-  Box,
-  Typography,
-  Grid,
-  Slide,
-  Paper,
-  IconButton,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-} from "@mui/material";
+import { Box, Typography, Grid, Slide, Paper, IconButton } from "@mui/material";
 
 import TuneIcon from "@mui/icons-material/Tune";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 import modelsData from "../Models/models-details.json";
 import ImageBox from "../../components/ImageBox";
@@ -35,26 +23,14 @@ interface Model {
   showFace: string;
 }
 
-interface Filters {
-  modelType:
-    | "loiras"
-    | "morenas"
-    | "ruivas"
-    | "orientais"
-    | "negras"
-    | "mulatas"
-    | "duplas"
-    | "indiferente"
-    | "";
-  showFace: "sim" | "não" | "indiferente";
-}
-
 export default function Favorites() {
   const [selectedModel, setSelectedModel] = useState<Model | null>(null);
-  const [favorites, setFavorites] = useState<string[]>([]);
+  const [favorites, setFavorites] = useState<number[]>([]);
 
   useEffect(() => {
-    const storedFavorites = Object.keys(localStorage);
+    const storedFavorites = JSON.parse(
+      localStorage.getItem("favorites") || "[]"
+    );
     setFavorites(storedFavorites);
   }, []);
 
@@ -66,72 +42,29 @@ export default function Favorites() {
     setSelectedModel(null);
   };
 
-  const handleFavoriteToggle = () => {
-    const storedFavorites = Object.keys(localStorage);
-    setFavorites(storedFavorites);
-  };
-
-  // === === === BEGIN FILTERING === === === //
-
-  const [filterOpen, setFilterOpen] = useState(false);
-  const [filters, setFilters] = useState<Filters>({
-    modelType: "indiferente",
-    showFace: "indiferente",
-  });
-
-  const handleFilterChange = (value: string, filterName: keyof Filters) => {
-    setFilters((prevFilters) => ({
-      ...prevFilters,
-      [filterName]: value,
-    }));
-  };
-
-  const handlemodelTypeChange = (e: React.ChangeEvent<{ value: unknown }>) => {
-    handleFilterChange(e.target.value as string, "modelType");
-  };
-
-  const handleshowFaceChange = (e: React.ChangeEvent<{ value: unknown }>) => {
-    handleFilterChange(e.target.value as string, "showFace");
-  };
-
-  const filteredModels = modelsData.filter((model) => {
-    if (
-      filters.modelType !== "indiferente" &&
-      model.modelType !== filters.modelType
-    ) {
-      return false;
+  const handleFavoriteToggle = (modelId: number) => {
+    let updatedFavorites: number[] = [];
+    if (favorites.includes(modelId)) {
+      updatedFavorites = favorites.filter((id) => id !== modelId);
+    } else {
+      updatedFavorites = [...favorites, modelId];
     }
-    if (
-      filters.showFace !== "indiferente" &&
-      model.showFace !== filters.showFace
-    ) {
-      return false;
-    }
-    return true;
-  });
+    setFavorites(updatedFavorites);
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+  };
 
-  const favoriteModels = filteredModels.filter((model) =>
-    favorites.includes(model.name)
+  const favoriteModels = modelsData.filter((model) =>
+    favorites.includes(model.id)
   );
 
   return (
     <Box textAlign="center">
       <Box mb={2}>
         <Typography variant="h4" component="h1" gutterBottom>
-          Nossas Modelos
+          Modelos Favoritos
         </Typography>
-        <Typography variant="body1" paragraph>
-          Nossos terapeutas e massagistas são dedicados exclusivamente a
-          proporcionar o máximo de prazer e relaxamento ao público masculino.
-        </Typography>
-        <IconButton onClick={() => setFilterOpen(!filterOpen)} color="primary">
-          <TuneIcon />
-          <Typography variant="body1" component="span" ml={1}>
-            Filtros
-          </Typography>
-        </IconButton>
+        {/* Removido o botão de filtros */}
       </Box>
-     
       <Grid container justifyContent="center" spacing={1}>
         {favoriteModels.map((model) => (
           <Grid item key={model.id} xs={12} sm={6} md={4}>
@@ -141,15 +74,17 @@ export default function Favorites() {
               display="flex"
               flexDirection="column"
               alignItems="center"
-              onMouseEnter={() => handleMouseEnter(model as Model)}
+              onMouseEnter={() => handleMouseEnter(model)}
               onMouseLeave={handleMouseLeave}
               sx={{ marginBottom: 2 }}
             >
               <ImageBox
                 src={model.profilePicture}
+                id={model.id}
                 alt={model.name}
                 modelAvatar={model.avatar}
-                onFavoriteToggle={handleFavoriteToggle}
+                onFavoriteToggle={() => handleFavoriteToggle(model.id)}
+                handleSnackbar={() => {}}
               />
               {selectedModel === model && (
                 <Slide

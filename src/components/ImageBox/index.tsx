@@ -1,41 +1,53 @@
 import React, { useEffect, useState } from "react";
 import { Avatar, Box, Fab, Link, Stack } from "@mui/material";
-
 import FavoriteIcon from "@mui/icons-material/Favorite";
+
+
 
 const ImageBox = ({
   src,
+  id,
   alt,
   modelAvatar,
   onFavoriteToggle,
+  handleSnackbar,
 }: {
   src: string;
+  id: number;
   alt: string;
   modelAvatar: string;
   onFavoriteToggle: () => void;
+  handleSnackbar: () => void;
 }) => {
+
   const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
     // Recupera as informações do localStorage ao montar o componente
-    const storedFavorite = localStorage.getItem(alt);
-    if (storedFavorite) {
-      const { isFavorite: storedIsFavorite } = JSON.parse(storedFavorite);
-      setIsFavorite(storedIsFavorite);
-    }
-  }, [alt]); // Executa apenas quando alt muda
+    const storedFavorites = JSON.parse(
+      localStorage.getItem("favorites") || "[]"
+    );
+    const isModelFavorite = storedFavorites.includes(id);
+    setIsFavorite(isModelFavorite);
+  }, [id]); // Executa apenas quando id muda
 
   const toggleFavorite = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
     setIsFavorite((prevIsFavorite) => !prevIsFavorite);
     onFavoriteToggle();
+    handleSnackbar();
 
-    localStorage.setItem(
-      alt,
-      JSON.stringify({
-        isFavorite: !isFavorite,
-      })
-    );
+    let storedFavorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+    if (isFavorite) {
+      // Remove o ID do modelo dos favoritos
+      storedFavorites = storedFavorites.filter(
+        (modelId: number) => modelId !== id
+      );
+    } else {
+      // Adiciona o ID do modelo aos favoritos
+      storedFavorites.push(id);
+    }
+    localStorage.setItem("favorites", JSON.stringify(storedFavorites));
   };
 
   const preventClickPropagation = (
@@ -90,11 +102,15 @@ const ImageBox = ({
         />
       </Stack>
       <Fab
-        color={isFavorite ? "secondary" : "primary"}
         size="small"
         onMouseDown={preventClickPropagation}
         onClick={toggleFavorite}
         sx={{
+          "&:hover": {
+            color: isFavorite ? "grey" : "#DB3937",
+          },
+          color: isFavorite ? "#ffffff" : "#FFD770",
+          bgcolor: isFavorite ? "#8202DC" : "#60541E",
           position: "absolute",
           zIndex: 700,
           top: 15,

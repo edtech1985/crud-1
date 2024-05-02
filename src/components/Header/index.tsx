@@ -22,6 +22,7 @@ const navItems = [
   { label: "Models", path: "/models" },
   { label: "Contact", path: "/contact" },
   { label: "Anuncie", path: "/advertise" },
+  { label: "Favoritos", path: "/favorites" },
   { label: "Admin", path: "/admin" },
 ];
 

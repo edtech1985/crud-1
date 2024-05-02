@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Typography,
@@ -15,14 +15,20 @@ import {
   FormControl,
   Fab,
   Badge,
+  Tooltip,
 } from "@mui/material";
 
 import TuneIcon from "@mui/icons-material/Tune";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-
 import modelsData from "./models-details.json";
 import ImageBox from "../../components/ImageBox";
 
+import useScrollTrigger from "@mui/material/useScrollTrigger";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import Fade from "@mui/material/Fade";
+
+
+import Snackbar, { SnackbarOrigin } from "@mui/material/Snackbar";
 interface Model {
   id: number;
   name: string;
@@ -56,6 +62,10 @@ interface Filters {
   alturaMax?: string;
 }
 
+interface State extends SnackbarOrigin {
+  open: boolean;
+}
+
 export default function Models() {
   const [selectedModel, setSelectedModel] = useState<Model | null>(null);
 
@@ -67,9 +77,47 @@ export default function Models() {
     setSelectedModel(null);
   };
 
-  const handleFavoriteToggle = () => {
-  // Lógica para lidar com o evento de favoritar
-};
+  // ================== Snackbar ================== //
+
+  const [state, setState] = React.useState<State>({
+    open: false,
+    vertical: "top",
+    horizontal: "center",
+  });
+
+  const { vertical, horizontal, open } = state;
+
+  const handleSnackbar = () => {
+    setState({ ...state, open: true });
+  };
+
+  const handleClose = () => {
+    setState({ ...state, open: false });
+  };
+
+  // ================== ENDSnackbar ================== //
+
+  // === === === BEGIN FAVORITES === === === //
+
+  const [favorites, setFavorites] = useState<number[]>([]);
+
+  useEffect(() => {
+    const storedFavorites = localStorage.getItem("favorites");
+    if (storedFavorites) {
+      setFavorites(JSON.parse(storedFavorites));
+    }
+  }, []);
+
+  const handleFavoriteToggle = (modelId: number) => {
+    let updatedFavorites: number[] = [];
+    if (favorites.includes(modelId)) {
+      updatedFavorites = favorites.filter((id) => id !== modelId);
+    } else {
+      updatedFavorites = [...favorites, modelId];
+    }
+    setFavorites(updatedFavorites);
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+  };
 
   // === === === BEGIN FILTERING === === === //
 
@@ -122,6 +170,20 @@ export default function Models() {
     }
     return true;
   });
+
+  // === === === BEGIN SCROLL TO TOP === === === //
+
+  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    const anchor = (
+      (event.target as HTMLDivElement).ownerDocument || document
+    ).querySelector("#back-to-top-anchor");
+
+    if (anchor) {
+      anchor.scrollIntoView({
+        block: "center",
+      });
+    }
+  };
 
   return (
     <Box textAlign="center">
@@ -313,12 +375,14 @@ export default function Models() {
               sx={{ marginBottom: 2 }}
               zIndex={999}
             >
-                <ImageBox
-                  src={model.profilePicture}
-                  alt={model.name}
-                  modelAvatar={model.avatar}
-                  onFavoriteToggle={handleFavoriteToggle}
-                />
+              <ImageBox
+                src={model.profilePicture}
+                id={model.id}
+                alt={model.name}
+                modelAvatar={model.avatar}
+                onFavoriteToggle={() => handleFavoriteToggle(model.id)}
+                handleSnackbar={handleSnackbar}
+              />
               {selectedModel === model && (
                 <Slide
                   direction="up"
@@ -449,6 +513,27 @@ export default function Models() {
           </Grid>
         ))}
       </Grid>
+
+      <Tooltip title="Voltar ao topo" arrow>
+        <Fab
+          size="small"
+          aria-label="scroll back to top"
+          // onClick={handleClick}
+          sx={{
+            position: "fixed",
+            bottom: 16,
+            right: 16,
+            zIndex: 9999,
+            opacity: 0.4,
+            transition: "opacity 0.5s ease",
+            "&:hover": {
+              opacity: 1,
+            },
+          }}
+        >
+          <KeyboardArrowUpIcon />
+        </Fab>
+      </Tooltip>
     </Box>
   );
 }
