@@ -27,7 +27,6 @@ import useScrollTrigger from "@mui/material/useScrollTrigger";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Fade from "@mui/material/Fade";
 
-
 import Snackbar, { SnackbarOrigin } from "@mui/material/Snackbar";
 interface Model {
   id: number;
@@ -67,6 +66,10 @@ interface State extends SnackbarOrigin {
 }
 
 export default function Models() {
+  const [snackbarStates, setSnackbarStates] = useState<{
+    [key: number]: boolean;
+  }>({});
+
   const [selectedModel, setSelectedModel] = useState<Model | null>(null);
 
   const handleMouseEnter = (model: Model) => {
@@ -87,12 +90,28 @@ export default function Models() {
 
   const { vertical, horizontal, open } = state;
 
-  const handleSnackbar = () => {
-    setState({ ...state, open: true });
+  // const handleSnackbar = () => {
+  //   setState({ ...state, open: true });
+  // };
+
+  // const handleClose = () => {
+  //   setState({ ...state, open: false });
+  // };
+
+  // Função para abrir o Snackbar
+  const handleSnackbar = (modelId: number) => {
+    setSnackbarStates((prevState) => ({
+      ...prevState,
+      [modelId]: true,
+    }));
   };
 
-  const handleClose = () => {
-    setState({ ...state, open: false });
+  // Função para fechar o Snackbar
+  const handleClose = (modelId: number) => {
+    setSnackbarStates((prevState) => ({
+      ...prevState,
+      [modelId]: false,
+    }));
   };
 
   // ================== ENDSnackbar ================== //
@@ -375,13 +394,30 @@ export default function Models() {
               sx={{ marginBottom: 2 }}
               zIndex={999}
             >
+              <Snackbar
+                anchorOrigin={{ vertical, horizontal }}
+                // open={open}
+                open={snackbarStates[model.id] || false}
+                autoHideDuration={2000}
+                // onClose={handleClose}
+                onClose={() => handleClose(model.id)}
+                message={
+                  favorites.includes(model.id)
+                    ? "Modelo adicionado aos favoritos"
+                    : "Modelo removido dos favoritos"
+                }
+                key={vertical + horizontal}
+                sx={{ zIndex: 9999, mt: 5 }}
+              />
+
               <ImageBox
                 src={model.profilePicture}
                 id={model.id}
                 alt={model.name}
                 modelAvatar={model.avatar}
                 onFavoriteToggle={() => handleFavoriteToggle(model.id)}
-                handleSnackbar={handleSnackbar}
+                // handleSnackbar={handleSnackbar}
+                handleSnackbar={() => handleSnackbar(model.id)} // Passa o model.id como argumento
               />
               {selectedModel === model && (
                 <Slide
