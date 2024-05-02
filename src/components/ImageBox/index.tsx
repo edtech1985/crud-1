@@ -1,8 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { Avatar, Box, Fab, Link, Stack } from "@mui/material";
+import { Avatar, Box, Fab, Link, Stack, Tooltip } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import ShareIcon from "@mui/icons-material/Share";
 
 
+// Função para compartilhar o link da página de perfil da modelo
+const handleShare = (modelId: number) => {
+  // const model = modelsData.find((m) => m.id === modelId);
+  // if (model) {
+  //   // Lógica para compartilhar o link, por exemplo:
+  //   const modelProfileLink = `https://example.com/models/${model.id}`;
+  //   navigator.share({
+  //     title: model.name,
+  //     text: `Confira o perfil de ${model.name}`,
+  //     url: modelProfileLink,
+  //   });
+  // }
+  console.log("Compartilhado com sucesso!");
+};
+// === === === END SHARE === === === //
 
 const ImageBox = ({
   src,
@@ -118,6 +134,20 @@ const ImageBox = ({
         }}
       >
         <FavoriteIcon />
+      </Fab>
+      <Fab
+        // onClick={() => handleShare(model.id)}
+        sx={{
+          bgcolor: "white",
+          position: "absolute",
+          zIndex: 999,
+          top: 15,
+          left: 15,
+        }}
+      >
+        <Tooltip title="Compartilhe com um amigo" arrow>
+          <ShareIcon />
+        </Tooltip>
       </Fab>
     </Box>
   );

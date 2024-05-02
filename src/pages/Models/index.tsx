@@ -20,15 +20,13 @@ import {
 
 import TuneIcon from "@mui/icons-material/Tune";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+
 import modelsData from "./models-details.json";
 import ImageBox from "../../components/ImageBox";
-
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Fade from "@mui/material/Fade";
-
 import Snackbar, { SnackbarOrigin } from "@mui/material/Snackbar";
-import zIndex from "@mui/material/styles/zIndex";
 interface Model {
   id: number;
   name: string;
@@ -102,6 +100,7 @@ function ScrollTop(props: Props) {
   );
 }
 // === === === END SCROLL TO TOP === === === //
+
 
 export default function Models() {
   const [favorites, setFavorites] = useState<number[]>([]);
@@ -452,7 +451,6 @@ export default function Models() {
                     <Typography variant="subtitle1" gutterBottom>
                       {model.name}
                     </Typography>
-
                     <Grid container spacing={0} zIndex={999}>
                       <Grid item xs={4}>
                         <Box>
@@ -492,7 +490,6 @@ export default function Models() {
                         </Box>
                       </Grid>
                     </Grid>
-
                     <Avatar
                       alt={model.name}
                       src={model.avatar}
@@ -504,7 +501,7 @@ export default function Models() {
                         height: 40,
                         zIndex: 900,
                       }}
-                    />
+                    />{" "}
                     <Fab
                       color="inherit"
                       size="small"
