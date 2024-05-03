@@ -1,11 +1,61 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Luxury Escorts",
+  "name": "Luxury Escorts - Acompanhantes de Luxo",
+  "description": "Luxury Escorts - Acompanhantes de Luxo - Acompanhantes em Porto Alegre, Acompanhantes em São Paulo, Acompanhantes em Minas Gerais, Acompanhantes em Rio de Janeiro, Acompanhantes em  Florianópolis, Garotas de Programa Porto Alegre, Garotas de Programa São Paulo,  Garotas de Programa Minas Gerais,  Garotas de Programa Rio de Janeiro,  Garotas de Programa Florianópolis ",
+  "author": "edtech 1985",
+  "version": "1.0",
+  "shortcuts": [
+    {
+      "name": "Acompanhantes Porto Alegre",
+      "description": "Acompanhantes Porto Alegre",
+      "url": "https://www.luxuryescorts.com.br/acompanhantes-porto-alegre"
+    },
+    {
+      "name": "Acompanhantes São Paulo",
+      "description": "Acompanhantes São Paulo",
+      "url": "https://www.luxuryescorts.com.br/acompanhantes-sao-paulo"
+    },
+    {
+      "name": "Acompanhantes Minas Gerais",
+      "description": "Acompanhantes Minas Gerais",
+      "url": "https://www.luxuryescorts.com.br/acompanhantes-minas-gerais"
+    },
+    {
+      "name": "Acompanhantes Rio de Janeiro",
+      "description": "Acompanhantes Rio de Janeiro",
+      "url": "https://www.luxuryescorts.com.br/acompanhantes-rio-de-janeiro"
+    },
+    {
+      "name": "Acompanhantes Florianópolis",
+      "description": "Acompanhantes Florianópolis",
+      "url": "https://www.luxuryescorts.com.br/acompanhantes-florianopolis"
+    },
+    {
+      "name": "Garotas de Programa Porto Alegre",
+      "description": "Garotas de Programa Porto Alegre",
+      "url": "https://www.luxuryescorts.com.br/acompanhantes-porto-alegre"
+    }
+  ],
   "icons": [
     {
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
+    },
+    {
+      "src": "favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
     },
     {
       "src": "logo192.png",
@@ -18,8 +68,30 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#C7B33B",
+  "orientation": "any",
+  "scope": "/",
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "categories": ["adult", "entertainment", "luxury", "escorts", "acompanhantes", "garotas de programa", "acompanhantes de luxo", "garotas de programa de luxo", "dating", "relacionamento", "sexo", "personal service"],
+  "screenshots": [
+    {
+      "src": "screenshot-1.png",
+      "sizes": "1280x720",
+      "type": "image/png"
+    },
+    {
+      "src": "screenshot-2.png",
+      "sizes": "1280x720",
+      "type": "image/png"
+    }
+  ],
+  "serviceworker": {
+    "src": "service-worker.js",
+    "scope": "./",
+    "update_via_cache": "none"
+  }
 }

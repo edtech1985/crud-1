@@ -1,8 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { Avatar, Box, Fab, Link, Stack } from "@mui/material";
+import {
+  Avatar,
+  Box,
+  Fab,
+  Link,
+  Popover,
+  Button,
+  Stack,
+  Tooltip,
+  Zoom,
+} from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-
-
+import ShareIcon from "@mui/icons-material/Share";
+import modelsData from "../../db/models-details.json";
 
 const ImageBox = ({
   src,
@@ -19,17 +29,16 @@ const ImageBox = ({
   onFavoriteToggle: () => void;
   handleSnackbar: () => void;
 }) => {
-
   const [isFavorite, setIsFavorite] = useState(false);
+  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
   useEffect(() => {
-    // Recupera as informações do localStorage ao montar o componente
     const storedFavorites = JSON.parse(
       localStorage.getItem("favorites") || "[]"
     );
     const isModelFavorite = storedFavorites.includes(id);
     setIsFavorite(isModelFavorite);
-  }, [id]); // Executa apenas quando id muda
+  }, [id]);
 
   const toggleFavorite = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
@@ -39,15 +48,42 @@ const ImageBox = ({
 
     let storedFavorites = JSON.parse(localStorage.getItem("favorites") || "[]");
     if (isFavorite) {
-      // Remove o ID do modelo dos favoritos
       storedFavorites = storedFavorites.filter(
         (modelId: number) => modelId !== id
       );
     } else {
-      // Adiciona o ID do modelo aos favoritos
       storedFavorites.push(id);
     }
     localStorage.setItem("favorites", JSON.stringify(storedFavorites));
+  };
+
+  const handleShareClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleShareClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const shareId = open ? "simple-popover" : undefined;
+
+  const handleShare = (method: string) => {
+    const model = modelsData.find((m) => m.id === id);
+    if (model) {
+      const modelProfileLink = `https://example.com/models/${model.name}`;
+      if (method === "whatsapp") {
+        window.open(
+          `https://api.whatsapp.com/send?text=${encodeURIComponent(
+            `Confira o perfil de ${model.name}: ${modelProfileLink}`
+          )}`
+        );
+      } else if (method === "copy") {
+        navigator.clipboard.writeText(modelProfileLink);
+        alert("Link copiado para a área de transferência!");
+      }
+    }
+    handleShareClose();
   };
 
   const preventClickPropagation = (
@@ -63,17 +99,20 @@ const ImageBox = ({
       height="100%"
       overflow="hidden"
       zIndex={600}
+      borderRadius={6}
     >
       <Link href={`/models/${alt.toLowerCase()}`}>
-        <img
-          src={src}
-          alt={alt}
-          style={{
-            width: "100%",
-            height: "auto",
-            objectFit: "contain",
-          }}
-        />
+        <Zoom in={true} timeout={250} style={{ transitionDelay: "50ms" }}>
+          <img
+            src={src}
+            alt={alt}
+            style={{
+              width: "100%",
+              height: "auto",
+              objectFit: "contain",
+            }}
+          />
+        </Zoom>
       </Link>
       <Stack
         bgcolor={"rgba(0, 0, 0, 0.5)"}
@@ -119,6 +158,53 @@ const ImageBox = ({
       >
         <FavoriteIcon />
       </Fab>
+      <Fab
+        size="small"
+        aria-describedby={shareId}
+        onClick={handleShareClick}
+        sx={{
+          bgcolor: "white",
+          color: "#60541E",
+          "&:hover": {
+            color: "#8202DC",
+          },
+          position: "absolute",
+          zIndex: 999,
+          top: 15,
+          left: 15,
+        }}
+      >
+        <Tooltip title="Compartilhe com um amigo" arrow>
+          <ShareIcon />
+        </Tooltip>
+      </Fab>
+
+      <Popover
+        id={shareId}
+        open={open}
+        anchorEl={anchorEl}
+        onClose={handleShareClose}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "right",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+      >
+        <Stack direction="column" sx={{ bgcolor: "rgba(96, 84, 30, 0.75)" }}>
+          <Button
+            sx={{ color: "yellow" }}
+            onClick={() => handleShare("whatsapp")}
+          >
+            Compartilhar via WhatsApp
+          </Button>
+          <Button sx={{ color: "yellow" }} onClick={() => handleShare("copy")}>
+            Copiar Link
+          </Button>
+        </Stack>
+      </Popover>
     </Box>
   );
 };

@@ -6,6 +6,7 @@ import {
   Avatar,
   IconButton,
   Stack,
+  Tooltip,
 } from "@mui/material";
 import { useParams } from "react-router-dom";
 import {
@@ -14,7 +15,7 @@ import {
   Telegram,
   X,
 } from "@mui/icons-material";
-import modelsData from "../models-details.json";
+import modelsData from "../../../db/models-details.json";
 import BackButton from "../../../components/buttons/backButton";
 import WhatsApp from "@mui/icons-material/WhatsApp";
 import Instagram from "@mui/icons-material/Instagram";
@@ -26,15 +27,15 @@ interface ModelProfileProps {
 }
 
 const ModelProfile: React.FC<ModelProfileProps> = () => {
-  const { name: massagistName } = useParams<{ name: string }>();
+  const { name: modelName } = useParams<{ name: string }>();
 
-  const massagist = modelsData.find(
-    (model: { name: string }) => model.name.toLowerCase() === massagistName
+  const model = modelsData.find(
+    (model: { name: string }) => model.name.toLowerCase() === modelName
   );
 
-  if (!massagist) {
+  if (!model) {
     return (
-      <Typography>Detalhes sobre o massagista não encontrados.</Typography>
+      <Typography>Detalhes sobre a acompanhante não encontrados.</Typography>
     );
   }
 
@@ -58,7 +59,7 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
     hourlyRate,
     paymentMethods,
     workHours,
-  } = massagist;
+  } = model;
 
   return (
     <Box textAlign="center">
@@ -93,9 +94,9 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
                     >
                       <ImageModelProfile
                         src={photo}
-                        alt={`Massagista ${name}`}
-                        aria-label={`Massagista ${name}`}
-                        modelAvatar={massagist.avatar}
+                        alt={`model ${name}`}
+                        aria-label={`model ${name}`}
+                        modelAvatar={model.avatar}
                       />
                     </Box>
                   </Grid>
@@ -123,9 +124,11 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
                       <td>Verificação de Vídeo:</td>
                       <td>
                         {hasVideoVerification ? (
+                          <Tooltip title="Verificado" arrow>
                           <IconButton>
                             <CheckCircleOutline style={{ color: "green" }} />
-                          </IconButton>
+                            </IconButton>
+                          </Tooltip>
                         ) : (
                           <IconButton>
                             <HighlightOff style={{ color: "red" }} />
