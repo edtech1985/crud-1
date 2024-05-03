@@ -14,38 +14,20 @@ import {
   InputLabel,
   FormControl,
   Fab,
-  Badge,
   Tooltip,
+  Chip,
 } from "@mui/material";
-
 import TuneIcon from "@mui/icons-material/Tune";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-
 import modelsData from "../../db/models-details.json";
 import ImageBox from "../../components/ImageBox";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Fade from "@mui/material/Fade";
 import Snackbar, { SnackbarOrigin } from "@mui/material/Snackbar";
-interface Model {
-  id: number;
-  name: string;
-  profilePicture: string;
-  avatar: string;
-  age: number;
-  height: string;
-  weight: string;
-  eyeColor: string;
-  bust: string;
-  waist: string;
-  hips: string;
-  feet: string;
-  modelType: string;
-  showFace: string;
-  socialMedia: {
-    whatsapp: string;
-  };
-}
+import { Model } from "../../types";
+import { UnverifiedTooltip, VerifiedTooltip } from "../../components/Tooltips";
+import { NewReleases, Verified } from "@mui/icons-material";
 
 interface Filters {
   modelType:
@@ -395,14 +377,13 @@ export default function Models() {
         {filteredModels.map((model) => (
           <Grid item key={model.id} xs={12} sm={6} md={4} zIndex={999}>
             <Box
-              bgcolor="primary.dark"
+              // bgcolor="primary.dark"
               position="relative"
               display="flex"
               flexDirection="column"
               alignItems="center"
               onMouseEnter={() => handleMouseEnter(model as Model)}
               onMouseLeave={handleMouseLeave}
-              sx={{ marginBottom: 2 }}
               zIndex={999}
             >
               <Snackbar
@@ -505,20 +486,62 @@ export default function Models() {
                       }}
                     />{" "}
                     <Fab
-                      color="inherit"
                       size="small"
                       sx={{
                         bgcolor: "transparent",
                         position: "absolute",
                         zIndex: 600,
                         top: 5,
-                        right: 25,
+                        right: 40,
+                        '&:hover': {
+                          bgcolor: "transparent",
+                        }
                       }}
                     >
                       {model.hasVideoVerification === true ? (
-                        <Badge badgeContent={"Verified"} color="success" />
+                        <Box
+                          sx={{
+                            width: "fit-content",
+                            borderRadius: "16px",
+                          }}
+                        >
+                          <VerifiedTooltip
+                            title="Esta modelo enviou o vídeo de verificação a menos de 6 meses."
+                            TransitionComponent={Fade}
+                            TransitionProps={{ timeout: 700 }}
+                            placement="top"
+                            arrow
+                          >
+                            <Chip
+                              label="Verified"
+                              size="small"
+                              icon={<Verified />}
+                              color="success"
+                            />
+                          </VerifiedTooltip>
+                        </Box>
                       ) : (
-                        <Badge badgeContent={"Unverified"} color="error" />
+                        <Box
+                          sx={{
+                            width: "fit-content",
+                            borderRadius: "16px",
+                          }}
+                        >
+                          <UnverifiedTooltip
+                            title="Esta modelo ainda não enviou o vídeo de verificação."
+                            TransitionComponent={Fade}
+                            TransitionProps={{ timeout: 700 }}
+                            placement="top"
+                            arrow
+                          >
+                            <Chip
+                              label="Unverified"
+                              size="small"
+                              icon={<NewReleases />}
+                              color="error"
+                            />
+                          </UnverifiedTooltip>
+                        </Box>
                       )}
                     </Fab>
                     <Fab
