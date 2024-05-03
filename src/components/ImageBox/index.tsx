@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Avatar, Box, Fab, Link, Stack, Tooltip } from "@mui/material";
+import { Avatar, Box, Fab, Link, Skeleton, Stack, Tooltip, Zoom } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 
-
-// Função para compartilhar o link da página de perfil da modelo
+// === === === BEGIN SHARE === === === //
 const handleShare = (modelId: number) => {
   // const model = modelsData.find((m) => m.id === modelId);
   // if (model) {
@@ -35,7 +34,6 @@ const ImageBox = ({
   onFavoriteToggle: () => void;
   handleSnackbar: () => void;
 }) => {
-
   const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
@@ -81,15 +79,18 @@ const ImageBox = ({
       zIndex={600}
     >
       <Link href={`/models/${alt.toLowerCase()}`}>
-        <img
-          src={src}
-          alt={alt}
-          style={{
-            width: "100%",
-            height: "auto",
-            objectFit: "contain",
-          }}
-        />
+        
+          <Zoom in={true} timeout={250} style={{ transitionDelay: "50ms" }}>
+            <img
+              src={src}
+              alt={alt}
+              style={{
+                width: "100%",
+                height: "auto",
+                objectFit: "contain",
+              }}
+            />
+          </Zoom>
       </Link>
       <Stack
         bgcolor={"rgba(0, 0, 0, 0.5)"}
@@ -136,7 +137,7 @@ const ImageBox = ({
         <FavoriteIcon />
       </Fab>
       <Fab
-        // onClick={() => handleShare(model.id)}
+        onClick={() => handleShare}
         sx={{
           bgcolor: "white",
           position: "absolute",

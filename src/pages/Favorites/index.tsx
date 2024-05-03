@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Box, Typography, Grid, Snackbar } from "@mui/material";
-import modelsData from "../Models/models-details.json";
+import modelsData from "../../db/models-details.json";
 import ImageBox from "../../components/ImageBox";
 
 interface Model {
@@ -69,6 +69,7 @@ export default function Favorites() {
                   message="Modelo removido dos favoritos"
                   sx={{ zIndex: 9999, mt: 5 }}
                 />
+
                 <ImageBox
                   src={model.profilePicture}
                   id={model.id}

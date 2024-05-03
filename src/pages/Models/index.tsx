@@ -21,7 +21,7 @@ import {
 import TuneIcon from "@mui/icons-material/Tune";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
-import modelsData from "./models-details.json";
+import modelsData from "../../db/models-details.json";
 import ImageBox from "../../components/ImageBox";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
@@ -42,6 +42,9 @@ interface Model {
   feet: string;
   modelType: string;
   showFace: string;
+  socialMedia: {
+    whatsapp: string;
+  };
 }
 
 interface Filters {
@@ -100,7 +103,6 @@ function ScrollTop(props: Props) {
   );
 }
 // === === === END SCROLL TO TOP === === === //
-
 
 export default function Models() {
   const [favorites, setFavorites] = useState<number[]>([]);
@@ -528,6 +530,14 @@ export default function Models() {
                         zIndex: 600,
                         bottom: 15,
                         right: 15,
+                      }}
+                      onClick={() => {
+                        if (selectedModel) {
+                          const whatsappNumber =
+                            selectedModel.socialMedia.whatsapp;
+                          const url = `https://wa.me/${whatsappNumber}`;
+                          window.open(url, "_blank");
+                        }
                       }}
                     >
                       <WhatsAppIcon />
