@@ -9,7 +9,6 @@ import {
   Tooltip,
   Modal,
   Fade,
-  Chip,
 } from "@mui/material";
 import { useParams } from "react-router-dom";
 import {
@@ -17,9 +16,7 @@ import {
   HighlightOff,
   NavigateBefore,
   NavigateNext,
-  NewReleases,
   Telegram,
-  Verified,
   X,
 } from "@mui/icons-material";
 import modelsData from "../../../db/models-details.json";
@@ -29,10 +26,6 @@ import Instagram from "@mui/icons-material/Instagram";
 import Facebook from "@mui/icons-material/Facebook";
 import ImageModelProfile from "../../../components/ImageModelProfile";
 import styles from "./ModelProfile.module.css"; // Importar arquivo de estilos CSS
-import {
-  UnverifiedTooltip,
-  VerifiedTooltip,
-} from "../../../components/Tooltips";
 
 interface ModelProfileProps {
   name: string;
@@ -40,7 +33,7 @@ interface ModelProfileProps {
 }
 
 const ModelProfile: React.FC<ModelProfileProps> = () => {
-  const [open, setOpen] = useState(false);
+   const [open, setOpen] = useState(false); 
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(0);
   const { name: modelName } = useParams<{ name: string }>();
 
@@ -54,26 +47,27 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
     );
   }
 
-  const handleOpenModal = (index: number) => {
-    setSelectedPhotoIndex(index);
-    setOpen(true);
-  };
+ const handleOpenModal = (index: number) => {
+   setSelectedPhotoIndex(index);
+   setOpen(true);
+ };
 
-  const handleCloseModal = () => {
-    setOpen(false);
-  };
+ const handleCloseModal = () => {
+   setOpen(false);
+ };
 
-  const handleNextPhoto = () => {
-    setSelectedPhotoIndex((prevIndex) =>
-      prevIndex === model.photos.length - 1 ? 0 : prevIndex + 1
-    );
-  };
+ const handleNextPhoto = () => {
+   setSelectedPhotoIndex((prevIndex) =>
+     prevIndex === model.photos.length - 1 ? 0 : prevIndex + 1
+   );
+ };
 
-  const handlePrevPhoto = () => {
-    setSelectedPhotoIndex((prevIndex) =>
-      prevIndex === 0 ? model.photos.length - 1 : prevIndex - 1
-    );
-  };
+ const handlePrevPhoto = () => {
+   setSelectedPhotoIndex((prevIndex) =>
+     prevIndex === 0 ? model.photos.length - 1 : prevIndex - 1
+   );
+ };
+
 
   const {
     name,
@@ -122,61 +116,15 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
                   <td>Verificação de Vídeo:</td>
                   <td>
                     {hasVideoVerification ? (
-                      <Box
-                        sx={{
-                          width: "fit-content",
-                          borderRadius: "16px",
-                        }}
-                      >
-                        <VerifiedTooltip
-                          title="Esta modelo enviou o vídeo de verificação a menos de 6 meses."
-                          TransitionComponent={Fade}
-                          TransitionProps={{ timeout: 700 }}
-                          placement="top"
-                          arrow
-                        >
-                          <Chip
-                            label="Verified"
-                            size="small"
-                            icon={<Verified />}
-                            color="success"
-                            sx={{
-                              "&:hover": {
-                                bgcolor: "green",
-                              },
-                              cursor: "help",
-                            }}
-                          />
-                        </VerifiedTooltip>
-                      </Box>
+                      <Tooltip title="Verificado" arrow>
+                        <IconButton>
+                          <CheckCircleOutline style={{ color: "green" }} />
+                        </IconButton>
+                      </Tooltip>
                     ) : (
-                      <Box
-                        sx={{
-                          width: "fit-content",
-                          borderRadius: "16px",
-                        }}
-                      >
-                        <UnverifiedTooltip
-                          title="Esta modelo ainda não enviou o vídeo de verificação."
-                          TransitionComponent={Fade}
-                          TransitionProps={{ timeout: 700 }}
-                          placement="top"
-                          arrow
-                        >
-                          <Chip
-                            label="Unverified"
-                            size="small"
-                            icon={<NewReleases />}
-                            color="error"
-                            sx={{
-                              "&:hover": {
-                                bgcolor: "red",
-                              },
-                              cursor: "help",
-                            }}
-                          />
-                        </UnverifiedTooltip>
-                      </Box>
+                      <IconButton>
+                        <HighlightOff style={{ color: "red" }} />
+                      </IconButton>
                     )}
                   </td>
                 </tr>
@@ -263,7 +211,6 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
                     justifyContent="center"
                     alignItems="center"
                     onClick={() => handleOpenModal(index)}
-                    sx={{ cursor: "pointer" }}
                   >
                     <ImageModelProfile
                       src={photo}
