@@ -6,15 +6,12 @@ import {
   Avatar,
   IconButton,
   Stack,
-  Tooltip,
   Modal,
   Fade,
   Chip,
 } from "@mui/material";
 import { useParams } from "react-router-dom";
 import {
-  CheckCircleOutline,
-  HighlightOff,
   NavigateBefore,
   NavigateNext,
   NewReleases,
@@ -28,7 +25,7 @@ import WhatsApp from "@mui/icons-material/WhatsApp";
 import Instagram from "@mui/icons-material/Instagram";
 import Facebook from "@mui/icons-material/Facebook";
 import ImageModelProfile from "../../../components/ImageModelProfile";
-import styles from "./ModelProfile.module.css"; // Importar arquivo de estilos CSS
+import styles from "./ModelProfile.module.css";
 import {
   UnverifiedTooltip,
   VerifiedTooltip,
@@ -110,7 +107,7 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
           <Typography variant="body1" paragraph>
             {description}
           </Typography>
-          <Box mb={4}>
+          <Box id="model-profile" mb={4}>
             <Typography variant="edtech">Perfil</Typography>
             <table>
               <tbody>
@@ -195,7 +192,7 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
               </tbody>
             </table>
           </Box>
-          <Box mb={4}>
+          <Box id="model-service" mb={4}>
             <Typography variant="edtech">Atendimento</Typography>
             <table>
               <tbody>
@@ -228,7 +225,7 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
               </tbody>
             </table>
           </Box>
-          <Box>
+          <Box id="social-media">
             <Typography variant="edtech">Redes Sociais</Typography>
             <Stack direction="column" alignItems="center" spacing={1}>
               <Avatar sx={{ bgcolor: "transparent", color: "green" }}>

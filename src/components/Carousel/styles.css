@@ -26,7 +26,6 @@ body {
     text-align: center;
     font-size: 18px;
     background: #fff;
-
     /* Center slide text vertically */
     display: flex;
     justify-content: center;
@@ -51,7 +50,7 @@ body {
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    color: var(--swiper-theme-color);
+    color: yellow;
 }
 
 .autoplay-progress svg {
@@ -63,9 +62,23 @@ body {
     width: 100%;
     height: 100%;
     stroke-width: 4px;
-    stroke: var(--swiper-theme-color);
+    stroke: #8D7B26;
     fill: none;
     stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
     stroke-dasharray: 125.6;
     transform: rotate(-90deg);
+}
+
+.swiper-pagination-bullet {
+ background-color: #FFD770;
+}
+.swiper-pagination-bullet-active {
+ 
+ background-color: yellow;
+}
+
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #C7B33B;
 }
