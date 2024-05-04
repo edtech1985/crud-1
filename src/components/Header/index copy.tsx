@@ -15,8 +15,6 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
-import logo from "../../assets/logo512.png"; // Importe a imagem do logo
-
 const drawerWidth = 240;
 const navItems = [
   { label: "Home", path: "/" },
@@ -51,24 +49,9 @@ export default function Header() {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-          <img
-            src={logo}
-            alt="Logo"
-            style={{ width: "80%", marginBottom: "20px" }}
-          />
-        </Link>
-        <Typography variant="h6" noWrap>
-          South Escorts
-        </Typography>
-      </Box>
+      <Typography variant="logo" sx={{ my: 2 }}>
+        South Escorts Mobile
+      </Typography>
       <Divider />
       <List>{renderNavItems()}</List>
     </Box>
@@ -93,25 +76,7 @@ export default function Header() {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            {/* Logo e nome do site */}
-            <Link
-              to="/"
-              style={{
-                textDecoration: "none",
-                color: "inherit",
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <img
-                src={logo}
-                alt="Logo"
-                style={{ height: "50px", marginRight: "10px" }}
-              />
-              <Typography variant="h6" noWrap>
-                South Escorts
-              </Typography>
-            </Link>
+            South Escorts
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
