@@ -1,10 +1,23 @@
 import * as React from "react";
 import Carousel from "../../components/Carousel";
 import { Box, Grid, Typography } from "@mui/material";
+import Loading from "../../components/Loading";
 
 export default function Home() {
+  const [loading, setLoading] = React.useState(true); // Novo estado de carregamento
+
+  React.useEffect(() => {
+    
+    // Simula o carregamento por 2 segundos
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <>
+      {loading && <Loading />}
       <Grid container spacing={2} alignItems="center" px={1} pt={2} pb={4}>
         <Grid item xs={2}>
           {/* Banner lateral esquerdo */}

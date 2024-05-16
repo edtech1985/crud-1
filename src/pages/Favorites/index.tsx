@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Box, Typography, Grid, Snackbar } from "@mui/material";
 import modelsData from "../../db/models-details.json";
 import ImageBox from "../../components/ImageBox";
+import Loading from "../../components/Loading";
 
 interface Model {
   id: number;
@@ -14,13 +15,21 @@ export default function Favorites() {
   const [favorites, setFavorites] = useState<number[]>([]);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [selectedModel, setSelectedModel] = useState<Model | null>(null);
+  const [loading, setLoading] = useState(true); // Novo estado de carregamento
 
   useEffect(() => {
     const storedFavorites = JSON.parse(
       localStorage.getItem("favorites") || "[]"
     );
     setFavorites(storedFavorites);
-  }, []);
+
+  // Simula o carregamento por 2 segundos
+  const timer = setTimeout(() => {
+    setLoading(false);
+  }, 1500);
+
+  return () => clearTimeout(timer);
+}, []);
 
   const handleFavoriteToggle = (modelId: number) => {
     const updatedFavorites = favorites.includes(modelId)
@@ -41,6 +50,7 @@ export default function Favorites() {
 
   return (
     <Box textAlign="center">
+      {loading && <Loading />}
       <Box mb={2}>
         <Typography variant="h4" component="h1" gutterBottom>
           Modelos Favoritos

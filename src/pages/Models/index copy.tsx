@@ -28,7 +28,6 @@ import Snackbar, { SnackbarOrigin } from "@mui/material/Snackbar";
 import { Model } from "../../types";
 import { UnverifiedTooltip, VerifiedTooltip } from "../../components/Tooltips";
 import { NewReleases, Verified } from "@mui/icons-material";
-import Loading from "../../components/Loading";
 
 interface Filters {
   modelType:
@@ -103,7 +102,6 @@ export default function Models() {
     modelType: "indiferente",
     showFace: "indiferente",
   });
-  const [loading, setLoading] = useState(true); // Novo estado de carregamento
 
   const handleMouseEnter = (model: Model) => {
     setSelectedModel(model);
@@ -143,13 +141,6 @@ export default function Models() {
     if (storedFavorites) {
       setFavorites(JSON.parse(storedFavorites));
     }
-
-    // Simula o carregamento por 2 segundos
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1500);
-
-    return () => clearTimeout(timer);
   }, []);
 
   const handleFavoriteToggle = (modelId: number) => {
@@ -212,7 +203,6 @@ export default function Models() {
 
   return (
     <Box textAlign="center">
-      {loading && <Loading />}
       <div id="back-to-top-anchor" />
       <Box mb={2}>
         <Typography variant="h4" component="h1" gutterBottom>
