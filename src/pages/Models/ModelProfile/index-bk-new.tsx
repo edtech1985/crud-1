@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Box,
   Typography,
@@ -6,17 +6,13 @@ import {
   Avatar,
   IconButton,
   Stack,
-  Modal,
-  Fade,
-  Chip,
+  Tooltip,
 } from "@mui/material";
 import { useParams } from "react-router-dom";
 import {
-  NavigateBefore,
-  NavigateNext,
-  NewReleases,
+  CheckCircleOutline,
+  HighlightOff,
   Telegram,
-  Verified,
   X,
 } from "@mui/icons-material";
 import modelsData from "../../../db/models-details.json";
@@ -25,20 +21,12 @@ import WhatsApp from "@mui/icons-material/WhatsApp";
 import Instagram from "@mui/icons-material/Instagram";
 import Facebook from "@mui/icons-material/Facebook";
 import ImageModelProfile from "../../../components/ImageModelProfile";
-import styles from "./ModelProfile.module.css";
-import {
-  UnverifiedTooltip,
-  VerifiedTooltip,
-} from "../../../components/Tooltips";
 
 interface ModelProfileProps {
   name: string;
-  photos?: string[];
 }
 
 const ModelProfile: React.FC<ModelProfileProps> = () => {
-  const [open, setOpen] = useState(false);
-  const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(0);
   const { name: modelName } = useParams<{ name: string }>();
 
   const model = modelsData.find(
@@ -50,27 +38,6 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
       <Typography>Detalhes sobre a acompanhante não encontrados.</Typography>
     );
   }
-
-  const handleOpenModal = (index: number) => {
-    setSelectedPhotoIndex(index);
-    setOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setOpen(false);
-  };
-
-  const handleNextPhoto = () => {
-    setSelectedPhotoIndex((prevIndex) =>
-      prevIndex === model.photos.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const handlePrevPhoto = () => {
-    setSelectedPhotoIndex((prevIndex) =>
-      prevIndex === 0 ? model.photos.length - 1 : prevIndex - 1
-    );
-  };
 
   const {
     name,
@@ -107,7 +74,7 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
           <Typography variant="body1" paragraph>
             {description}
           </Typography>
-          <Box id="model-profile" mb={4}>
+          <Box mb={4}>
             <Typography variant="edtech">Perfil</Typography>
             <table>
               <tbody>
@@ -119,61 +86,15 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
                   <td>Verificação de Vídeo:</td>
                   <td>
                     {hasVideoVerification ? (
-                      <Box
-                        sx={{
-                          width: "fit-content",
-                          borderRadius: "16px",
-                        }}
-                      >
-                        <VerifiedTooltip
-                          title="Esta modelo enviou o vídeo de verificação a menos de 6 meses."
-                          TransitionComponent={Fade}
-                          TransitionProps={{ timeout: 700 }}
-                          placement="top"
-                          arrow
-                        >
-                          <Chip
-                            label="Verified"
-                            size="small"
-                            icon={<Verified />}
-                            color="success"
-                            sx={{
-                              "&:hover": {
-                                bgcolor: "green",
-                              },
-                              cursor: "help",
-                            }}
-                          />
-                        </VerifiedTooltip>
-                      </Box>
+                      <Tooltip title="Verificado" arrow>
+                        <IconButton>
+                          <CheckCircleOutline style={{ color: "green" }} />
+                        </IconButton>
+                      </Tooltip>
                     ) : (
-                      <Box
-                        sx={{
-                          width: "fit-content",
-                          borderRadius: "16px",
-                        }}
-                      >
-                        <UnverifiedTooltip
-                          title="Esta modelo ainda não enviou o vídeo de verificação."
-                          TransitionComponent={Fade}
-                          TransitionProps={{ timeout: 700 }}
-                          placement="top"
-                          arrow
-                        >
-                          <Chip
-                            label="Unverified"
-                            size="small"
-                            icon={<NewReleases />}
-                            color="error"
-                            sx={{
-                              "&:hover": {
-                                bgcolor: "red",
-                              },
-                              cursor: "help",
-                            }}
-                          />
-                        </UnverifiedTooltip>
-                      </Box>
+                      <IconButton>
+                        <HighlightOff style={{ color: "red" }} />
+                      </IconButton>
                     )}
                   </td>
                 </tr>
@@ -192,7 +113,7 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
               </tbody>
             </table>
           </Box>
-          <Box id="model-service" mb={4}>
+          <Box mb={4}>
             <Typography variant="edtech">Atendimento</Typography>
             <table>
               <tbody>
@@ -225,7 +146,7 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
               </tbody>
             </table>
           </Box>
-          <Box id="social-media">
+          <Box>
             <Typography variant="edtech">Redes Sociais</Typography>
             <Stack direction="column" alignItems="center" spacing={1}>
               <Avatar sx={{ bgcolor: "transparent", color: "green" }}>
@@ -252,15 +173,13 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
         <Grid item xs={12} md={9}>
           <Grid container spacing={2}>
             {[photo1, photo2, photo3, photo4, photo5, photo6].map(
-              (photo: string, index: number) => (
+              (photo, index) => (
                 <Grid item key={index} xs={12} sm={6} md={4}>
                   <Box
                     position="relative"
                     display="flex"
                     justifyContent="center"
                     alignItems="center"
-                    onClick={() => handleOpenModal(index)}
-                    sx={{ cursor: "pointer" }}
                   >
                     <ImageModelProfile
                       src={photo}
@@ -275,42 +194,6 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
           </Grid>
         </Grid>
       </Grid>
-      <Modal
-        className={styles.modal}
-        open={open}
-        onClose={handleCloseModal}
-        closeAfterTransition
-      >
-        <Fade in={open}>
-          <div className={styles.modalContent}>
-            {/* Foto principal */}
-            <img src={model.photos[selectedPhotoIndex]} alt={`model ${name}`} />
-            {/* Botões de navegação */}
-            <IconButton className={styles.prevButton} onClick={handlePrevPhoto}>
-              <NavigateBefore />
-            </IconButton>
-            <IconButton className={styles.nextButton} onClick={handleNextPhoto}>
-              <NavigateNext />
-            </IconButton>
-            {/* Miniaturas */}
-            <div className={styles.thumbnailContainer}>
-              {model.photos.map((photo: string, index: number) => (
-                <img
-                  key={index}
-                  src={photo}
-                  alt={`thumbnail ${index}`}
-                  onClick={() => setSelectedPhotoIndex(index)}
-                  className={
-                    index === selectedPhotoIndex
-                      ? styles.activeThumbnail
-                      : styles.thumbnail
-                  }
-                />
-              ))}
-            </div>
-          </div>
-        </Fade>
-      </Modal>
     </Box>
   );
 };

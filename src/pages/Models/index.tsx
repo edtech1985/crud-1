@@ -54,6 +54,11 @@ interface Props {
   children: React.ReactElement;
 }
 
+const MenuItemStyles = {
+  bgcolor: "black",
+  color: "gold",
+};
+
 // === === === BEGIN SCROLL TO TOP === === === //
 function ScrollTop(props: Props) {
   const { children, window } = props;
@@ -106,7 +111,7 @@ export default function Models() {
     setSelectedModel(null);
   };
 
-  // === === === BEGIN Snackbar === === === //
+  // === === === BEGIN SNACKBAR === === === //
   const [state] = React.useState<State>({
     open: false,
     vertical: "top",
@@ -128,7 +133,7 @@ export default function Models() {
       [modelId]: false,
     }));
   };
-  // === === === END Snackbar === === === //
+  // === === === END SNACKBAR === === === //
 
   // === === === BEGIN FAVORITES === === === //
   useEffect(() => {
@@ -244,84 +249,33 @@ export default function Models() {
               >
                 <MenuItem
                   value="Selecione o Tipo de Modelo"
-                  sx={{
-                    bgcolor: "black",
-                    color: "gold",
-                  }}
+                  sx={{ MenuItemStyles }}
                   disabled
                 >
                   Selecione o Tipo de Modelo
                 </MenuItem>
-                <MenuItem
-                  value="indiferente"
-                  sx={{
-                    bgcolor: "black",
-                    color: "gold",
-                  }}
-                >
+                <MenuItem value="indiferente" sx={{ MenuItemStyles }}>
                   Indiferente
                 </MenuItem>
-                <MenuItem
-                  value="loiras"
-                  sx={{
-                    bgcolor: "black",
-                    color: "gold",
-                  }}
-                >
+                <MenuItem value="loiras" sx={{ MenuItemStyles }}>
                   Loiras
                 </MenuItem>
-                <MenuItem
-                  value="morenas"
-                  sx={{
-                    bgcolor: "black",
-                    color: "gold",
-                  }}
-                >
+                <MenuItem value="morenas" sx={{ MenuItemStyles }}>
                   Morenas
                 </MenuItem>
-                <MenuItem
-                  value="ruivas"
-                  sx={{
-                    bgcolor: "black",
-                    color: "gold",
-                  }}
-                >
+                <MenuItem value="ruivas" sx={{ MenuItemStyles }}>
                   Ruivas
                 </MenuItem>
-                <MenuItem
-                  value="orientais"
-                  sx={{
-                    bgcolor: "black",
-                    color: "gold",
-                  }}
-                >
+                <MenuItem value="orientais" sx={{ MenuItemStyles }}>
                   Orientais
                 </MenuItem>
-                <MenuItem
-                  value="negras"
-                  sx={{
-                    bgcolor: "black",
-                    color: "gold",
-                  }}
-                >
+                <MenuItem value="negras" sx={{ MenuItemStyles }}>
                   Negras
                 </MenuItem>
-                <MenuItem
-                  value="mulatas"
-                  sx={{
-                    bgcolor: "black",
-                    color: "gold",
-                  }}
-                >
+                <MenuItem value="mulatas" sx={{ MenuItemStyles }}>
                   Mulatas
                 </MenuItem>
-                <MenuItem
-                  value="duplas"
-                  sx={{
-                    bgcolor: "black",
-                    color: "gold",
-                  }}
-                >
+                <MenuItem value="duplas" sx={{ MenuItemStyles }}>
                   Duplas
                 </MenuItem>
               </Select>
@@ -347,24 +301,15 @@ export default function Models() {
                 >
                   <MenuItem
                     value="Mostar o rosto"
-                    sx={{ bgcolor: "black", color: "gold" }}
+                    sx={{ MenuItemStyles }}
                   ></MenuItem>
-                  <MenuItem
-                    value="indiferente"
-                    sx={{ bgcolor: "black", color: "gold" }}
-                  >
+                  <MenuItem value="indiferente" sx={{ MenuItemStyles }}>
                     Indiferente
                   </MenuItem>
-                  <MenuItem
-                    value="sim"
-                    sx={{ bgcolor: "black", color: "gold" }}
-                  >
+                  <MenuItem value="sim" sx={{ MenuItemStyles }}>
                     Mostra o rosto
                   </MenuItem>
-                  <MenuItem
-                    value="nao"
-                    sx={{ bgcolor: "black", color: "gold" }}
-                  >
+                  <MenuItem value="nao" sx={{ MenuItemStyles }}>
                     Não mostra o rosto
                   </MenuItem>
                 </Select>
@@ -377,7 +322,6 @@ export default function Models() {
         {filteredModels.map((model) => (
           <Grid item key={model.id} xs={12} sm={6} md={4} zIndex={999}>
             <Box
-              // bgcolor="primary.dark"
               position="relative"
               display="flex"
               flexDirection="column"
@@ -388,10 +332,8 @@ export default function Models() {
             >
               <Snackbar
                 anchorOrigin={{ vertical, horizontal }}
-                // open={open}
                 open={snackbarStates[model.id] || false}
                 autoHideDuration={2000}
-                // onClose={handleClose}
                 onClose={() => handleClose(model.id)}
                 message={
                   favorites.includes(model.id)
@@ -408,7 +350,6 @@ export default function Models() {
                 alt={model.name}
                 modelAvatar={model.avatar}
                 onFavoriteToggle={() => handleFavoriteToggle(model.id)}
-                // handleSnackbar={handleSnackbar}
                 handleSnackbar={() => handleSnackbar(model.id)} // Passa o model.id como argumento
               />
               {selectedModel === model && (
@@ -493,9 +434,9 @@ export default function Models() {
                         zIndex: 600,
                         top: 5,
                         right: 40,
-                        '&:hover': {
+                        "&:hover": {
                           bgcolor: "transparent",
-                        }
+                        },
                       }}
                     >
                       {model.hasVideoVerification === true ? (
@@ -517,6 +458,11 @@ export default function Models() {
                               size="small"
                               icon={<Verified />}
                               color="success"
+                              sx={{
+                                "&:hover": {
+                                  bgcolor: "green",
+                                },
+                              }}
                             />
                           </VerifiedTooltip>
                         </Box>
@@ -539,16 +485,28 @@ export default function Models() {
                               size="small"
                               icon={<NewReleases />}
                               color="error"
+                              sx={{
+                                "&:hover": {
+                                  bgcolor: "red",
+                                },
+                              }}
                             />
                           </UnverifiedTooltip>
                         </Box>
                       )}
                     </Fab>
                     <Fab
-                      color="inherit"
                       size="small"
                       sx={{
+                        color: "white",
                         bgcolor: "green",
+                        border: "solid 2px green",
+                        "&:hover": {
+                          color: "#8D7B26",
+                          bgcolor: "black",
+                          borderColor: "#8D7B26",
+                          borderWidth: 2,
+                        },
                         position: "absolute",
                         zIndex: 600,
                         bottom: 15,

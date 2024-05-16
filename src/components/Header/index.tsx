@@ -14,12 +14,25 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import { Menu, MenuItem } from "@mui/material";
+
+import logo from "../../assets/logo512.png"; // Importe a imagem do logo
 
 const drawerWidth = 240;
 const navItems = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
   { label: "Models", path: "/models" },
+  {
+    label: "Cities",
+    submenu: [
+      { label: "Porto Alegre-RS", path: "/cities/porto-alegre-rs" },
+      { label: "Florianópolis-SC", path: "/cities/florianopolis-sc" },
+      { label: "São Paulo-SP", path: "/cities/sao-paulo-sp" },
+      { label: "Belo Horizonte-MG", path: "/cities/belo-horizonte-mg" },
+      { label: "Rio de Janeiro-RJ", path: "/cities/rio-de-janeiro-rj" },
+    ],
+  },
   { label: "Contact", path: "/contact" },
   { label: "Anuncie", path: "/advertise" },
   { label: "Favoritos", path: "/favorites" },
@@ -28,30 +41,88 @@ const navItems = [
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [submenuAnchorEl, setSubmenuAnchorEl] =
+    React.useState<null | HTMLElement>(null);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
 
+  const handleMenuClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleSubmenuClick = (event: React.MouseEvent<HTMLElement>) => {
+    setSubmenuAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+    setSubmenuAnchorEl(null);
+  };
+
   const renderNavItems = () => {
     return navItems.map((item) => (
       <ListItem key={item.label} disablePadding>
-        <ListItemButton
-          component={Link}
-          to={item.path}
-          sx={{ textAlign: "center" }}
-        >
-          <ListItemText primary={item.label} />
-        </ListItemButton>
+        {item.submenu ? (
+          <>
+            <ListItemButton
+              onClick={handleSubmenuClick}
+              sx={{ textAlign: "center" }}
+            >
+              <ListItemText primary={item.label} />
+            </ListItemButton>
+            <Menu
+              anchorEl={submenuAnchorEl}
+              open={Boolean(submenuAnchorEl)}
+              onClose={handleMenuClose}
+            >
+              {item.submenu.map((subItem) => (
+                <MenuItem
+                  key={subItem.label}
+                  component={Link}
+                  to={subItem.path}
+                  onClick={handleMenuClose}
+                >
+                  {subItem.label}
+                </MenuItem>
+              ))}
+            </Menu>
+          </>
+        ) : (
+          <ListItemButton
+            component={Link}
+            to={item.path}
+            sx={{ textAlign: "center" }}
+          >
+            <ListItemText primary={item.label} />
+          </ListItemButton>
+        )}
       </ListItem>
     ));
   };
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="logo" sx={{ my: 2 }}>
-        South Escorts Mobile
-      </Typography>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+          <img
+            src={logo}
+            alt="Logo"
+            style={{ width: "80%", marginBottom: "20px" }}
+          />
+        </Link>
+        <Typography variant="h6" noWrap>
+          South Escorts
+        </Typography>
+      </Box>
       <Divider />
       <List>{renderNavItems()}</List>
     </Box>
@@ -76,18 +147,66 @@ export default function Header() {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            South Escorts
+            <Link
+              to="/"
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <img
+                src={logo}
+                alt="Logo"
+                style={{ height: "50px", marginRight: "10px" }}
+              />
+              <Typography variant="h6" noWrap>
+                South Escorts
+              </Typography>
+            </Link>
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button
-                key={item.label}
-                component={Link}
-                to={item.path}
-                sx={{ color: "primary.light" }}
-              >
-                {item.label}
-              </Button>
+              <React.Fragment key={item.label}>
+                {item.submenu ? (
+                  <>
+                    <Button
+                      aria-controls="city-menu"
+                      aria-haspopup="true"
+                      onClick={handleMenuClick}
+                      sx={{ color: "primary.light" }}
+                    >
+                      {item.label}
+                    </Button>
+                    <Menu
+                      id="city-menu"
+                      anchorEl={anchorEl}
+                      open={Boolean(anchorEl)}
+                      onClose={handleMenuClose}
+                    >
+                      {item.submenu.map((subItem) => (
+                        <MenuItem
+                          key={subItem.label}
+                          component={Link}
+                          to={subItem.path}
+                          onClick={handleMenuClose}
+                        >
+                          {subItem.label}
+                        </MenuItem>
+                      ))}
+                    </Menu>
+                  </>
+                ) : (
+                  <Button
+                    component={Link}
+                    to={item.path}
+                    sx={{ color: "primary.light" }}
+                  >
+                    {item.label}
+                  </Button>
+                )}
+              </React.Fragment>
             ))}
           </Box>
         </Toolbar>
