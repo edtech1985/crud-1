@@ -286,12 +286,25 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
             {/* Foto principal */}
             <img src={model.photos[selectedPhotoIndex]} alt={`model ${name}`} />
             {/* Botões de navegação */}
-            <IconButton className={styles.prevButton} onClick={handlePrevPhoto}>
-              <NavigateBefore />
-            </IconButton>
-            <IconButton className={styles.nextButton} onClick={handleNextPhoto}>
-              <NavigateNext />
-            </IconButton>
+            <Box
+              justifyContent="space-between"
+              width="100%"
+              sx={{ backgroundColor: "blue", height: 50}}
+            >
+              <IconButton
+                className={styles.prevButton}
+                onClick={handlePrevPhoto}
+                sx={{ width: 100, height: 100, backgroundColor: "black" }}
+              >
+                <NavigateBefore sx={{ width: 100, height: 100 }} />
+              </IconButton>
+              <IconButton
+                className={styles.nextButton}
+                onClick={handleNextPhoto}
+                sx={{ width: 100, height: 100, backgroundColor: "black" }}
+              >
+                <NavigateNext sx={{ width: 100, height: 100 }} />
+              </IconButton>
             {/* Miniaturas */}
             <div className={styles.thumbnailContainer}>
               {model.photos.map((photo: string, index: number) => (
@@ -308,6 +321,7 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
                 />
               ))}
             </div>
+            </Box>
           </div>
         </Fade>
       </Modal>

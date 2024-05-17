@@ -5,62 +5,80 @@
 }
 
 .modalContent {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #0a0a0a;
   /* Cor de fundo do modal */
   border: 10px solid #ffd700;
-  /* Cor e espessura da borda do modal (dourado) */
   border-radius: 20px;
-  /* Arredondamento das bordas do modal */
-  outline: none;
-  /* Remover contorno ao redor do modal */
+  outline: none; /* Remover contorno ao redor do modal */
   padding: 20px;
   position: relative;
   max-width: 50vw;
   max-height: 90vh;
-  overflow: hidden;
-  /* Ocultar rolagem do conteúdo do modal */
+  overflow: hidden; /* Ocultar rolagem do conteúdo do modal */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .modalContent img {
   max-width: 100%;
-  max-height: calc(100vh - 120px); /* Altura máxima do modal - altura dos botões de navegação e miniaturas */
+  height: 70vh; /* Altura máxima do modal - altura dos botões de navegação e miniaturas */
 }
 
 .prevButton,
 .nextButton {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-200%);
   color: white;
-  background-color: rgba(0, 0, 0, 0.5); /* Cor do fundo dos botões de navegação */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Cor do fundo dos botões de navegação */
+  z-index: 10;
+  border-radius: 50%;
+  /* width: 100px; /* Aumenta a largura do botão */
+  /* height: 100px; /* Aumenta a altura do botão */
+  font-size: 100px;
 }
 
 .prevButton {
-  left: 0;
+  left: 10%; /* Posiciona o botão à esquerda da imagem */
 }
 
 .nextButton {
-  right: 0;
+  right: -50%; /* Posiciona o botão à direita da imagem */
 }
 
 .thumbnailContainer {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+  margin-bottom: 10px;
   gap: 5px;
+}
+
+.thumbnailContainer img {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
 }
 
 .thumbnail {
   width: 50px;
   height: 50px;
   cursor: pointer;
-  opacity: 0.5; /* Opacidade das miniaturas não selecionadas */
+  opacity: 0.25; /* Opacidade das miniaturas não selecionadas */
 }
 
 .activeThumbnail {
   opacity: 1; /* Opacidade da miniatura selecionada */
 }
-
 
 .Backdrop-root {
   backdrop-filter: blur(8px);
