@@ -21,7 +21,7 @@ import logo from "../../assets/logo512.png"; // Importe a imagem do logo
 const drawerWidth = 240;
 const navItems = [
   { label: "Home", path: "/" },
-  { label: "Acompanhantes", path: "/models" },
+  { label: "Acompanhantes", path: "/acompanhantes" },
   {
     label: "Cidades",
     submenu: [
@@ -32,9 +32,9 @@ const navItems = [
       { label: "Rio de Janeiro-RJ", path: "/acompanhantes-rio-de-janeiro-rj" },
     ],
   },
-  { label: "Contato", path: "/contact" },
-  { label: "Anuncie", path: "/advertise" },
-  { label: "Favoritos", path: "/favorites" },
+  { label: "Contato", path: "/contato" },
+  { label: "Anuncie", path: "/anuncie" },
+  { label: "Favoritos", path: "/favoritos" },
 ];
 
 export default function Header() {
