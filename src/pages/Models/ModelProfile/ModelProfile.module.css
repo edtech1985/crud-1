@@ -1,66 +1,17 @@
-.modal {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.modalContent {
-  background-color: rgba(255, 255, 255, 0.9);
-  /* Cor de fundo do modal */
-  border: 10px solid #ffd700;
-  /* Cor e espessura da borda do modal (dourado) */
-  border-radius: 20px;
-  /* Arredondamento das bordas do modal */
-  outline: none;
-  /* Remover contorno ao redor do modal */
-  padding: 20px;
-  position: relative;
-  max-width: 50vw;
-  max-height: 90vh;
-  overflow: hidden;
-  /* Ocultar rolagem do conteúdo do modal */
-}
 
-.modalContent img {
-  max-width: 100%;
-  max-height: calc(100vh - 120px); /* Altura máxima do modal - altura dos botões de navegação e miniaturas */
-}
-
-.prevButton,
-.nextButton {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5); /* Cor do fundo dos botões de navegação */
-}
-
-.prevButton {
-  left: 0;
-}
-
-.nextButton {
-  right: 0;
-}
-
-.thumbnailContainer {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-  gap: 5px;
-}
-
-.thumbnail {
+/* .thumbnail {
   width: 50px;
   height: 50px;
   cursor: pointer;
-  opacity: 0.5; /* Opacidade das miniaturas não selecionadas */
-}
+  opacity: 0.25; 
+} */
+  /* Opacidade das miniaturas não selecionadas */
 
-.activeThumbnail {
-  opacity: 1; /* Opacidade da miniatura selecionada */
-}
-
+  /* Opacidade da miniatura selecionada */
+/* .activeThumbnail {
+  opacity: 1;  */
+/* } */
 
 .Backdrop-root {
   backdrop-filter: blur(8px);

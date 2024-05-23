@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
 import {
   Box,
   Typography,
@@ -11,10 +10,12 @@ import {
   Fade,
   Chip,
 } from "@mui/material";
+import { useParams } from "react-router-dom";
 import {
   NavigateBefore,
   NavigateNext,
   NewReleases,
+  Opacity,
   Telegram,
   Verified,
   X,
@@ -102,6 +103,7 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
 
   const modalContentStyle = {
     backgroundColor: "#0a0a0a",
+    /* Cor de fundo do modal */
     border: "10px solid #ffd700",
     borderRadius: "20px",
     outline: "none" /* Remover contorno ao redor do modal */,
@@ -109,17 +111,16 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
     position: "relative",
     maxWidth: "50vw",
     maxHeight: "90vh",
-    overflow: "hidden",
+    overflow: "hidden" /* Ocultar rolagem do conteúdo do modal */,
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+  };
 
-    "& img": {
-      maxWidth: "100%",
-      height: "70vh",
-      objectFit: "contain",
-    },
+  const imgStyle = {
+    maxWidth: "100%",
+    height: "70vh", /* Altura máxima do modal - altura dos botões de navegação e miniaturas */
   };
 
   const iconButtonStyle: React.CSSProperties & {
@@ -146,40 +147,21 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
   };
 
   const thumbnailContainerStyle = {
-    display: "flex", 
-    justifyContent: "center", 
-    position: "absolute",
+    display: 'flex', // Replace 'flex' with a string value
+    justifyContent: 'center', // Replace 'justify- content' with 'justifyContent'
+    position: 'absolute',
     bottom: 0,
-    width: "90%", 
-    marginBottom: "10px", 
-    gap: "5px", 
-
-    "& img": {
-      width: "50px",
-      height: "50px",
-      opacity: 0.25,
-      cursor: "pointer",
-    },
+    width: '90%', // Add quotes around the percentage value
+    marginBottom: '10px', // Replace 'margin - bottom' with 'marginBottom'
+    gap: '5px', // Add quotes around the pixel value
   };
 
-  const thumbnailContainerActiveStyle = {
-    opacity: 1,
+  const thumbnailStyle = {
+    width: '50px', 
+    height: '50px',
+    opacity: 0.25,
+    cursor: 'pointer',
   };
-
-  const backdropStyle = {
-    backdropFilter: "blur(8px)",
-  };
-
-    const thumbnailStyle = {
-      width: "50px",
-      height: "50px",
-      cursor: "pointer",
-      opacity: 0.25,
-    };
-
-    const activeThumbnailStyle = {
-      opacity: 1,
-    };
 
   return (
     <Box textAlign="center">
@@ -369,7 +351,7 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
         closeAfterTransition
       >
         <Fade in={open}>
-          <Box sx={modalContentStyle}>
+          <div className={styles.modalContent}>
             {/* Foto principal */}
             <img src={model.photos[selectedPhotoIndex]} alt={`model ${name}`} />
             {/* Botões de navegação */}
@@ -381,23 +363,23 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
                 <NavigateNext sx={{ width: 50, height: 50 }} />
               </IconButton>
               {/* Miniaturas */}
-              <Box sx={thumbnailContainerStyle}>
+              <div className={styles.thumbnailContainer}>
                 {model.photos.map((photo: string, index: number) => (
                   <img
                     key={index}
                     src={photo}
                     alt={`thumbnail ${index}`}
                     onClick={() => setSelectedPhotoIndex(index)}
-                    style={
+                    className={
                       index === selectedPhotoIndex
-                        ? activeThumbnailStyle
-                        : thumbnailStyle
+                        ? styles.activeThumbnail
+                        : styles.thumbnail
                     }
                   />
                 ))}
-              </Box>
+              </div>
             </Box>
-          </Box>
+          </div>
         </Fade>
       </Modal>
     </Box>
