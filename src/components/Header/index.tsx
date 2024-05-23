@@ -21,7 +21,6 @@ import logo from "../../assets/logo512.png"; // Importe a imagem do logo
 const drawerWidth = 240;
 const navItems = [
   { label: "Home", path: "/" },
-  { label: "About", path: "/about" },
   { label: "Models", path: "/models" },
   {
     label: "Cities",

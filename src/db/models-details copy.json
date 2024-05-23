@@ -19,15 +19,6 @@
       "/img/models/blonde5.jpg",
       "/img/models/blonde6.jpg"
     ],
-    "hasLocation": true,
-    "localInfo": {
-      "state": "RS",
-      "city": "Porto Alegre",
-      "zipCode": "90010-230",
-      "neighborhood": "Centro",
-      "zone": "Zona Sul",
-      "address": "Rua dos Andradas, 123"
-    },
     "hasVideoVerification": true,
     "showFace": "sim",
     "modelType": "loiras",
@@ -40,17 +31,7 @@
     "waist": "60cm",
     "hips": "90cm",
     "feet": "36",
-    "modelDetaisl": {
-      "age": 25,
-      "height": "1.70m",
-      "weight": "60kg",
-      "hairColor": "Loiros",
-      "eyeColor": "Azul",
-      "bust": "90cm",
-      "waist": "60cm",
-      "hips": "90cm",
-      "feet": "36"
-    },
+    "hasLocation": true,
     "location": "Copacabana",
     "services": ["Hotéis", "Motéis", "A domicílio", "Virtual"],
     "availableForTravel": true,
@@ -88,15 +69,6 @@
       "/img/models/asian5.jpg",
       "/img/models/asian6.jpg"
     ],
-    "hasLocation": false,
-    "localInfo": {
-      "state": "RS",
-      "city": "Porto Alegre",
-      "zipCode": "90010-230",
-      "neighborhood": "Centro",
-      "zone": "Zona Sul",
-      "address": "Rua dos Andradas, 123"
-    },
     "hasVideoVerification": false,
     "showFace": "sim",
     "modelType": "orientais",
@@ -109,17 +81,7 @@
     "waist": "55cm",
     "hips": "85cm",
     "feet": "35",
-    "modelDetaisl": {
-      "age": 28,
-      "height": "1.65m",
-      "weight": "55kg",
-      "hairColor": "Azuis",
-      "eyeColor": "Verde",
-      "bust": "85cm",
-      "waist": "55cm",
-      "hips": "85cm",
-      "feet": "35"
-    },
+    "hasLocation": false,
     "services": ["Hotéis", "Motéis", "A domicílio"],
     "availableForTravel": false,
     "hourlyRate": "R$ 250",
@@ -156,15 +118,6 @@
       "/img/models/afro5.jpg",
       "/img/models/afro6.jpg"
     ],
-    "hasLocation": true,
-    "localInfo": {
-      "state": "RS",
-      "city": "Porto Alegre",
-      "zipCode": "90010-230",
-      "neighborhood": "Centro",
-      "zone": "Zona Sul",
-      "address": "Rua dos Andradas, 123"
-    },
     "hasVideoVerification": true,
     "showFace": "sim",
     "modelType": "negras",
@@ -177,17 +130,7 @@
     "waist": "65cm",
     "hips": "95cm",
     "feet": "38",
-    "modelDetaisl": {
-      "age": 30,
-      "height": "1.75m",
-      "weight": "65kg",
-      "hairColor": "Castanhos",
-      "eyeColor": "Castanho",
-      "bust": "100cm",
-      "waist": "65cm",
-      "hips": "95cm",
-      "feet": "38"
-    },
+    "hasLocation": true,
     "location": "Ipanema",
     "services": ["Hotéis", "Motéis", "A domicílio", "Virtual"],
     "availableForTravel": true,
@@ -225,15 +168,6 @@
       "/img/models/muscular5.jpg",
       "/img/models/muscular6.jpg"
     ],
-    "hasLocation": true,
-    "localInfo": {
-      "state": "RS",
-      "city": "Porto Alegre",
-      "zipCode": "90010-230",
-      "neighborhood": "Centro",
-      "zone": "Zona Sul",
-      "address": "Rua dos Andradas, 123"
-    },
     "hasVideoVerification": true,
     "showFace": "não",
     "modelType": "loiras",
@@ -246,17 +180,7 @@
     "waist": "65cm",
     "hips": "90cm",
     "feet": "37",
-    "modelDetaisl": {
-      "age": 27,
-      "height": "1.68m",
-      "weight": "62kg",
-      "hairColor": "Loiros",
-      "eyeColor": "Azul",
-      "bust": "95cm",
-      "waist": "65cm",
-      "hips": "90cm",
-      "feet": "37"
-    },
+    "hasLocation": true,
     "location": "Leblon",
     "services": ["Hotéis", "Motéis", "A domicílio"],
     "availableForTravel": true,
@@ -294,15 +218,6 @@
       "/img/models/indian5.jpg",
       "/img/models/indian6.jpg"
     ],
-    "hasLocation": true,
-    "localInfo": {
-      "state": "RS",
-      "city": "Porto Alegre",
-      "zipCode": "90010-230",
-      "neighborhood": "Centro",
-      "zone": "Zona Sul",
-      "address": "Rua dos Andradas, 123"
-    },
     "hasVideoVerification": false,
     "showFace": "sim",
     "modelType": "morenas",
@@ -315,17 +230,7 @@
     "waist": "60cm",
     "hips": "90cm",
     "feet": "36",
-    "modelDetaisl": {
-      "age": 26,
-      "height": "1.62m",
-      "weight": "57kg",
-      "hairColor": "Pretos",
-      "eyeColor": "Castanho",
-      "bust": "85cm",
-      "waist": "60cm",
-      "hips": "90cm",
-      "feet": "36"
-    },
+    "hasLocation": true,
     "location": "Barra da Tijuca",
     "services": ["Hotéis", "Motéis", "A domicílio"],
     "availableForTravel": false,
@@ -363,15 +268,6 @@
       "/img/models/brazillian5.jpg",
       "/img/models/brazillian2.jpg"
     ],
-    "hasLocation": true,
-    "localInfo": {
-      "state": "RS",
-      "city": "Porto Alegre",
-      "zipCode": "90010-230",
-      "neighborhood": "Centro",
-      "zone": "Zona Sul",
-      "address": "Rua dos Andradas, 123"
-    },
     "hasVideoVerification": true,
     "showFace": "sim",
     "modelType": "morenas",
@@ -384,17 +280,7 @@
     "waist": "60cm",
     "hips": "90cm",
     "feet": "37",
-    "modelDetaisl": {
-      "age": 29,
-      "height": "1.67m",
-      "weight": "58kg",
-      "hairColor": "Castanhos",
-      "eyeColor": "Castanho",
-      "bust": "95cm",
-      "waist": "60cm",
-      "hips": "90cm",
-      "feet": "37"
-    },
+    "hasLocation": true,
     "location": "Flamengo",
     "services": ["Hotéis", "Motéis", "A domicílio", "Virtual"],
     "availableForTravel": true,
@@ -432,15 +318,6 @@
       "/img/models/green2.jpg",
       "/img/models/green3.jpg"
     ],
-    "hasLocation": false,
-    "localInfo": {
-      "state": "RS",
-      "city": "Porto Alegre",
-      "zipCode": "90010-230",
-      "neighborhood": "Centro",
-      "zone": "Zona Sul",
-      "address": "Rua dos Andradas, 123"
-    },
     "hasVideoVerification": false,
     "showFace": "não",
     "modelType": "morenas",
@@ -453,17 +330,7 @@
     "waist": "60cm",
     "hips": "90cm",
     "feet": "36",
-    "modelDetaisl": {
-      "age": 31,
-      "height": "1.70m",
-      "weight": "63kg",
-      "hairColor": "Pretos",
-      "eyeColor": "Castanho",
-      "bust": "85cm",
-      "waist": "60cm",
-      "hips": "90cm",
-      "feet": "36"
-    },
+    "hasLocation": false,
     "services": ["Hotéis", "Motéis", "A domicílio"],
     "availableForTravel": false,
     "hourlyRate": "R$ 280",
@@ -500,15 +367,6 @@
       "/img/models/american5.jpg",
       "/img/models/american2.jpg"
     ],
-    "hasLocation": true,
-    "localInfo": {
-      "state": "RS",
-      "city": "Porto Alegre",
-      "zipCode": "90010-230",
-      "neighborhood": "Centro",
-      "zone": "Zona Sul",
-      "address": "Rua dos Andradas, 123"
-    },
     "hasVideoVerification": true,
     "showFace": "não",
     "modelType": "loiras",
@@ -521,17 +379,7 @@
     "waist": "60cm",
     "hips": "90cm",
     "feet": "37",
-    "modelDetaisl": {
-      "age": 29,
-      "height": "1.75m",
-      "weight": "60kg",
-      "hairColor": "Castanhos Claros",
-      "eyeColor": "Castanho",
-      "bust": "95cm",
-      "waist": "60cm",
-      "hips": "90cm",
-      "feet": "37"
-    },
+    "hasLocation": true,
     "location": "Tijuca",
     "services": ["Hotéis", "Motéis", "A domicílio", "Virtual"],
     "availableForTravel": true,
@@ -569,15 +417,6 @@
       "/img/models/chubby5.jpg",
       "/img/models/chubby6.jpg"
     ],
-    "hasLocation": false,
-    "localInfo": {
-      "state": "RS",
-      "city": "Porto Alegre",
-      "zipCode": "90010-230",
-      "neighborhood": "Centro",
-      "zone": "Zona Sul",
-      "address": "Rua dos Andradas, 123"
-    },
     "hasVideoVerification": true,
     "showFace": "sim",
     "modelType": "ruivas",
@@ -590,17 +429,7 @@
     "waist": "60cm",
     "hips": "90cm",
     "feet": "36",
-    "modelDetaisl": {
-      "age": 33,
-      "height": "1.65m",
-      "weight": "70kg",
-      "hairColor": "Ruivos",
-      "eyeColor": "Azul",
-      "bust": "90cm",
-      "waist": "60cm",
-      "hips": "90cm",
-      "feet": "36"
-    },
+    "hasLocation": false,
     "services": ["Motéis", "A domicílio"],
     "availableForTravel": true,
     "hourlyRate": "R$ 270",
@@ -617,74 +446,53 @@
       "telegram": "link_para_telegram"
     }
   },
-  {
-    "id": 10,
-    "name": "Nicole",
-    "description": "Com mãos que deslizam como seda sobre a pele, Nicole é uma mestra da arte da massagem. Sua abordagem delicada e habilidosa promete levar você a um estado de êxtase e relaxamento supremo, onde cada toque é uma experiência de luxo.",
-    "profilePicture": "/img/models/ginger1.jpg",
-    "avatar": "/img/models/ginger1.jpg",
-    "photo1": "/img/models/ginger1.jpg",
-    "photo2": "/img/models/ginger2.jpg",
-    "photo3": "/img/models/ginger3.jpg",
-    "photo4": "/img/models/ginger4.jpg",
-    "photo5": "/img/models/ginger1.jpg",
-    "photo6": "/img/models/ginger2.jpg",
-    "photos": [
-      "/img/models/ginger1.jpg",
-      "/img/models/ginger2.jpg",
-      "/img/models/ginger3.jpg",
-      "/img/models/ginger4.jpg",
-      "/img/models/ginger1.jpg",
-      "/img/models/ginger2.jpg"
-    ],
-    "feet": "36",
-    "localInfo": {
-      "state": "RS",
-      "city": "Porto Alegre",
-
-      "zipCode": "90010-230",
-      "neighborhood": "Centro",
-      "zone": "Zona Sul",
-      "address": "Rua dos Andradas, 123"
-    },
-
-    "hasVideoVerification": true,
-    "showFace": "sim",
-    "modelType": "ruivas",
-    "age": 33,
-    "height": "1.65m",
-    "weight": "70kg",
-    "hairColor": "Ruivos",
-    "eyeColor": "Azul",
-    "bust": "90cm",
-    "waist": "60cm",
-    "hips": "90cm",
-    "hasLocation": false,
-    "modelDetaisl": {
-      "age": 33,
-      "height": "1.65m",
-      "weight": "70kg",
-      "hairColor": "Ruivos",
-      "eyeColor": "Azul",
-      "bust": "90cm",
-      "waist": "60cm",
-      "hips": "90cm",
-      "hasLocation": false
-    },
-    "services": ["Motéis", "A domicílio"],
-    "availableForTravel": true,
-    "hourlyRate": "R$ 270",
-    "paymentMethods": ["Dinheiro", "PIX"],
-    "workHours": "Segunda a sexta, 11h às 20h",
-    "socialMedia": {
-      "whatsapp": "5551992002595",
-      "onlyfans": "link_para_onlyfans",
-      "privacy": "link_para_privacy",
-      "instagram": "link_para_instagram",
-      "twitter": "link_para_twitter",
-      "facebook": "link_para_facebook",
-      "tiktok": "link_para_tiktok",
-      "telegram": "link_para_telegram"
-    }
-  }
+   {
+     "id": 10,
+     "name": "Nicole",
+     "description": "Com mãos que deslizam como seda sobre a pele, Nicole é uma mestra da arte da massagem. Sua abordagem delicada e habilidosa promete levar você a um estado de êxtase e relaxamento supremo, onde cada toque é uma experiência de luxo.",
+     "profilePicture": "/img/models/ginger1.jpg",
+     "avatar": "/img/models/ginger1.jpg",
+     "photo1": "/img/models/ginger1.jpg",
+     "photo2": "/img/models/ginger2.jpg",
+     "photo3": "/img/models/ginger3.jpg",
+     "photo4": "/img/models/ginger4.jpg",
+     "photo5": "/img/models/ginger1.jpg",
+     "photo6": "/img/models/ginger2.jpg",
+     "photos": [
+       "/img/models/ginger1.jpg",
+       "/img/models/ginger2.jpg",
+       "/img/models/ginger3.jpg",
+       "/img/models/ginger4.jpg",
+       "/img/models/ginger1.jpg",
+       "/img/models/ginger2.jpg"
+     ],
+     "hasVideoVerification": true,
+     "showFace": "sim",
+     "modelType": "ruivas",
+     "age": 33,
+     "height": "1.65m",
+     "weight": "70kg",
+     "hairColor": "Ruivos",
+     "eyeColor": "Azul",
+     "bust": "90cm",
+     "waist": "60cm",
+     "hips": "90cm",
+     "feet": "36",
+     "hasLocation": false,
+     "services": ["Motéis", "A domicílio"],
+     "availableForTravel": true,
+     "hourlyRate": "R$ 270",
+     "paymentMethods": ["Dinheiro", "PIX"],
+     "workHours": "Segunda a sexta, 11h às 20h",
+     "socialMedia": {
+       "whatsapp": "5551992002595",
+       "onlyfans": "link_para_onlyfans",
+       "privacy": "link_para_privacy",
+       "instagram": "link_para_instagram",
+       "twitter": "link_para_twitter",
+       "facebook": "link_para_facebook",
+       "tiktok": "link_para_tiktok",
+       "telegram": "link_para_telegram"
+     }
+   }
 ]
