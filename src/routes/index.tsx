@@ -24,13 +24,13 @@ export default function AppRouter() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/models" element={<Models />} />
-            <Route path="/models/:name" element={<ModelProfile name="" />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/advertise" element={<Advertise />} />
+            <Route path="/acompanhantes" element={<Models />} />
+            <Route path="/acompanhantes/:name" element={<ModelProfile name="" />} />
+            <Route path="/contato" element={<Contact />} />
+            <Route path="/anuncie" element={<Advertise />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/favorites" element={<Favorites />} />
+            <Route path="/favoritos" element={<Favorites />} />
             <Route
               path="/admin"
               element={
