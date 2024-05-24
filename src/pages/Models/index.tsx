@@ -30,6 +30,7 @@ import {
   BustTooltip,
   UnverifiedTooltip,
   VerifiedTooltip,
+  WhatsappTooltip,
 } from "../../components/Tooltips";
 import { NewReleases, Verified } from "@mui/icons-material";
 import Loading from "../../components/Loading";
@@ -538,34 +539,43 @@ export default function Models() {
                         </Box>
                       )}
                     </Fab>
-                    <Fab
-                      size="small"
-                      sx={{
-                        color: "white",
-                        bgcolor: "green",
-                        border: "solid 2px green",
-                        "&:hover": {
-                          color: "#8D7B26",
-                          bgcolor: "black",
-                          borderColor: "#8D7B26",
-                          borderWidth: 2,
-                        },
-                        position: "absolute",
-                        zIndex: 600,
-                        bottom: 15,
-                        right: 15,
-                      }}
-                      onClick={() => {
-                        if (selectedModel) {
-                          const whatsappNumber =
-                            selectedModel.socialMedia.whatsapp;
-                          const url = `https://wa.me/${whatsappNumber}`;
-                          window.open(url, "_blank");
-                        }
-                      }}
+                    <WhatsappTooltip
+                      title="Enviar mensagem via WhatsApp"
+                      TransitionComponent={Fade}
+                      TransitionProps={{ timeout: 700 }}
+                      placement="top"
+                      arrow
                     >
-                      <WhatsAppIcon />
-                    </Fab>
+                      <Fab
+                        id="whatsapp-button"
+                        size="small"
+                        sx={{
+                          color: "white",
+                          bgcolor: "green",
+                          border: "solid 2px green",
+                          "&:hover": {
+                            color: "#8D7B26",
+                            bgcolor: "black",
+                            borderColor: "#8D7B26",
+                            borderWidth: 2,
+                          },
+                          position: "absolute",
+                          zIndex: 600,
+                          bottom: 15,
+                          right: 15,
+                        }}
+                        onClick={() => {
+                          if (selectedModel) {
+                            const whatsappNumber =
+                              selectedModel.socialMedia.whatsapp;
+                            const url = `https://wa.me/${whatsappNumber}`;
+                            window.open(url, "_blank");
+                          }
+                        }}
+                      >
+                        <WhatsAppIcon />
+                      </Fab>
+                    </WhatsappTooltip>
                   </Paper>
                 </Slide>
               )}
