@@ -14,6 +14,7 @@ import { Stack } from "@mui/material";
 import ModelProfile from "../pages/Models/ModelProfile";
 import Advertise from "../pages/Advertise";
 import Favorites from "../pages/Favorites";
+import Terms from "../pages/Terms";
 
 export default function AppRouter() {
   return (
@@ -31,6 +32,7 @@ export default function AppRouter() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/favoritos" element={<Favorites />} />
+            <Route path="/terms" element={<Terms />} />
             <Route
               path="/admin"
               element={
