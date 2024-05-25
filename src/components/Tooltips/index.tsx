@@ -34,3 +34,34 @@ export const UnverifiedTooltip = styled(
     border: "1px solid #dadde9",
   },
 }));
+
+
+export const BustTooltip = styled(({ className, ...props }: TooltipProps) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.arrow}`]: {
+    color: "black",
+  },
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: "black",
+    color: "white",
+    maxWidth: 220,
+    fontSize: theme.typography.pxToRem(12),
+    border: "1px solid #dadde9",
+  },
+}));
+
+export const WhatsappTooltip = styled(({ className, ...props }: TooltipProps) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.arrow}`]: {
+    color: "green",
+  },
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: "green",
+    color: "white",
+    maxWidth: 220,
+    fontSize: theme.typography.pxToRem(12),
+    border: "1px solid #dadde9",
+  },
+}));

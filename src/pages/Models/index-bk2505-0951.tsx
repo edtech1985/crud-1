@@ -26,8 +26,15 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Fade from "@mui/material/Fade";
 import Snackbar, { SnackbarOrigin } from "@mui/material/Snackbar";
 import { Model } from "../../types";
-import { UnverifiedTooltip, VerifiedTooltip } from "../../components/Tooltips";
+import {
+  BustTooltip,
+  UnverifiedTooltip,
+  VerifiedTooltip,
+  WhatsappTooltip,
+} from "../../components/Tooltips";
 import { NewReleases, Verified } from "@mui/icons-material";
+import Loading from "../../components/Loading";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 interface Filters {
   modelType:
@@ -102,6 +109,7 @@ export default function Models() {
     modelType: "indiferente",
     showFace: "indiferente",
   });
+  const [loading, setLoading] = useState(true); // Novo estado de carregamento
 
   const handleMouseEnter = (model: Model) => {
     setSelectedModel(model);
@@ -141,6 +149,13 @@ export default function Models() {
     if (storedFavorites) {
       setFavorites(JSON.parse(storedFavorites));
     }
+
+    // Simula o carregamento por 2 segundos
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const handleFavoriteToggle = (modelId: number) => {
@@ -203,6 +218,7 @@ export default function Models() {
 
   return (
     <Box textAlign="center">
+      {loading && <Loading />}
       <div id="back-to-top-anchor" />
       <Box mb={2}>
         <Typography variant="h4" component="h1" gutterBottom>
@@ -375,42 +391,70 @@ export default function Models() {
                     <Typography variant="subtitle1" gutterBottom>
                       {model.name}
                     </Typography>
-                    <Grid container spacing={0} zIndex={999}>
+                    <Grid id="model-details" container spacing={0} zIndex={999}>
                       <Grid item xs={4}>
-                        <Box>
+                        <Box id="model-details-1">
                           <Typography variant="body2" gutterBottom>
-                            Idade: {model.age}
+                            Idade: {model.modelDetails.age}
                           </Typography>
                           <Typography variant="body2" gutterBottom>
-                            Altura: {model.height}
+                            Altura: {model.modelDetails.height}
                           </Typography>
                           <Typography variant="body2" gutterBottom>
-                            Peso: {model.weight}
+                            Peso: {model.modelDetails.weight}
                           </Typography>
                         </Box>
                       </Grid>
                       <Grid item xs={4}>
-                        <Box>
+                        <Box id="model-details-2">
                           <Typography variant="body2" gutterBottom>
-                            Olhos: {model.eyeColor}
+                            Olhos: {model.modelDetails.eyeColor}
                           </Typography>
+                          <BustTooltip
+                            title={
+                              "Tipo de busto: " + model.modelDetails.bustType
+                            }
+                            TransitionComponent={Fade}
+                            TransitionProps={{ timeout: 700 }}
+                            placement="top"
+                            arrow
+                          >
+                            <Typography variant="body2" gutterBottom>
+                              Busto: {model.modelDetails.bust}
+                            </Typography>
+                          </BustTooltip>
                           <Typography variant="body2" gutterBottom>
-                            Busto: {model.bust}
-                          </Typography>
-                          <Typography variant="body2" gutterBottom>
-                            Cintura: {model.waist}
+                            Cintura: {model.modelDetails.waist}
                           </Typography>
                         </Box>
                       </Grid>
 
                       <Grid item xs={4}>
-                        <Box>
+                        <Box id="model-details-3">
                           <Typography variant="body2" gutterBottom>
-                            Quadril: {model.hips}
+                            Quadril: {model.modelDetails.hips}
                           </Typography>
                           <Typography variant="body2" gutterBottom>
-                            Pés: {model.feet}
+                            Pés: {model.modelDetails.feet}
                           </Typography>
+                        </Box>
+                      </Grid>
+                      <Grid item xs={12} pt={2}>
+                        <Box
+                          id="model-location"
+                          display="flex"
+                          justifyContent="center"
+                          alignItems="center"
+                          textAlign="center"
+                        >
+                          <LocationOnIcon />
+                          {model.hasLocation ? (
+                            <Typography>
+                              {model.localInfo.neighborhood}
+                            </Typography>
+                          ) : (
+                            <Typography>Sem local</Typography>
+                          )}
                         </Box>
                       </Grid>
                     </Grid>
@@ -495,34 +539,43 @@ export default function Models() {
                         </Box>
                       )}
                     </Fab>
-                    <Fab
-                      size="small"
-                      sx={{
-                        color: "white",
-                        bgcolor: "green",
-                        border: "solid 2px green",
-                        "&:hover": {
-                          color: "#8D7B26",
-                          bgcolor: "black",
-                          borderColor: "#8D7B26",
-                          borderWidth: 2,
-                        },
-                        position: "absolute",
-                        zIndex: 600,
-                        bottom: 15,
-                        right: 15,
-                      }}
-                      onClick={() => {
-                        if (selectedModel) {
-                          const whatsappNumber =
-                            selectedModel.socialMedia.whatsapp;
-                          const url = `https://wa.me/${whatsappNumber}`;
-                          window.open(url, "_blank");
-                        }
-                      }}
+                    <WhatsappTooltip
+                      title="Enviar mensagem via WhatsApp"
+                      TransitionComponent={Fade}
+                      TransitionProps={{ timeout: 700 }}
+                      placement="top"
+                      arrow
                     >
-                      <WhatsAppIcon />
-                    </Fab>
+                      <Fab
+                        id="whatsapp-button"
+                        size="small"
+                        sx={{
+                          color: "white",
+                          bgcolor: "green",
+                          border: "solid 2px green",
+                          "&:hover": {
+                            color: "#8D7B26",
+                            bgcolor: "black",
+                            borderColor: "#8D7B26",
+                            borderWidth: 2,
+                          },
+                          position: "absolute",
+                          zIndex: 600,
+                          bottom: 15,
+                          right: 15,
+                        }}
+                        onClick={() => {
+                          if (selectedModel) {
+                            const whatsappNumber =
+                              selectedModel.socialMedia.whatsapp;
+                            const url = `https://wa.me/${whatsappNumber}`;
+                            window.open(url, "_blank");
+                          }
+                        }}
+                      >
+                        <WhatsAppIcon />
+                      </Fab>
+                    </WhatsappTooltip>
                   </Paper>
                 </Slide>
               )}

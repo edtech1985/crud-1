@@ -2,6 +2,7 @@ import * as React from "react";
 import Carousel from "../../components/Carousel";
 import { Box, Grid, Typography } from "@mui/material";
 import Loading from "../../components/Loading";
+import About from "../About";
 
 export default function Home() {
   const [loading, setLoading] = React.useState(true); // Novo estado de carregamento
@@ -61,6 +62,7 @@ export default function Home() {
           </Box>
         </Grid>
       </Grid>
+       <About />
     </>
   );
 }

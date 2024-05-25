@@ -21,22 +21,20 @@ import logo from "../../assets/logo512.png"; // Importe a imagem do logo
 const drawerWidth = 240;
 const navItems = [
   { label: "Home", path: "/" },
-  { label: "About", path: "/about" },
-  { label: "Models", path: "/models" },
+  { label: "Acompanhantes", path: "/acompanhantes" },
   {
-    label: "Cities",
+    label: "Cidades",
     submenu: [
-      { label: "Porto Alegre-RS", path: "/cities/porto-alegre-rs" },
-      { label: "Florianópolis-SC", path: "/cities/florianopolis-sc" },
-      { label: "São Paulo-SP", path: "/cities/sao-paulo-sp" },
-      { label: "Belo Horizonte-MG", path: "/cities/belo-horizonte-mg" },
-      { label: "Rio de Janeiro-RJ", path: "/cities/rio-de-janeiro-rj" },
+      { label: "Porto Alegre-RS", path: "/acompanhantes-porto-alegre-rs" },
+      { label: "Florianópolis-SC", path: "/acompanhantes-florianopolis-sc" },
+      { label: "São Paulo-SP", path: "/acompanhantes-sao-paulo-sp" },
+      { label: "Belo Horizonte-MG", path: "/acompanhantes-belo-horizonte-mg" },
+      { label: "Rio de Janeiro-RJ", path: "/acompanhantes-rio-de-janeiro-rj" },
     ],
   },
-  { label: "Contact", path: "/contact" },
-  { label: "Anuncie", path: "/advertise" },
-  { label: "Favoritos", path: "/favorites" },
-  { label: "Admin", path: "/admin" },
+  { label: "Contato", path: "/contato" },
+  { label: "Anuncie", path: "/anuncie" },
+  { label: "Favoritos", path: "/favoritos" },
 ];
 
 export default function Header() {

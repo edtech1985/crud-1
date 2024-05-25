@@ -8,7 +8,6 @@ import Carousel from "../../components/Carousel";
 export default function About() {
   return (
     <Box>
-      <Carousel />
       <Box sx={{ textAlign: "center", padding: "20px" }}>
         <Typography variant="h2" sx={{ marginBottom: "20px" }}>
           Sobre Nós
@@ -28,6 +27,7 @@ export default function About() {
           Conheça Nossas Modelos
         </Button>
       </Box>
+      <Carousel />
     </Box>
   );
 }

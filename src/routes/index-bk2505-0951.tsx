@@ -26,11 +26,7 @@ export default function AppRouter() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/acompanhantes" element={<Models />} />
-            <Route
-              path="/acompanhantes/:name"
-              element={<ModelProfile name="" />}
-            />
-            <Route path="/acompanhantes/:estado/:cidade" element={<Models />} />
+            <Route path="/acompanhantes/:name" element={<ModelProfile name="" />} />
             <Route path="/contato" element={<Contact />} />
             <Route path="/anuncie" element={<Advertise />} />
             <Route path="/login" element={<Login />} />

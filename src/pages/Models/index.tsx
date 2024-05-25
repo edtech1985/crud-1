@@ -16,6 +16,7 @@ import {
   Fab,
   Tooltip,
   Chip,
+  Button,
 } from "@mui/material";
 import TuneIcon from "@mui/icons-material/Tune";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
@@ -26,11 +27,29 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Fade from "@mui/material/Fade";
 import Snackbar, { SnackbarOrigin } from "@mui/material/Snackbar";
 import { Model } from "../../types";
-import { UnverifiedTooltip, VerifiedTooltip } from "../../components/Tooltips";
+import {
+  BustTooltip,
+  UnverifiedTooltip,
+  VerifiedTooltip,
+  WhatsappTooltip,
+} from "../../components/Tooltips";
 import { NewReleases, Verified } from "@mui/icons-material";
 import Loading from "../../components/Loading";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import { useParams } from "react-router-dom";
 
 interface Filters {
+  city:
+    | "Porto Alegre"
+    | "Canoas"
+    | "Novo Hamburgo"
+    | "São Leopoldo"
+    | "Florianópolis"
+    | "Camboriú"
+    | "Joinville"
+    | "Blumenau"
+    | "Itajaí"
+    | "";
   modelType:
     | "loiras"
     | "morenas"
@@ -100,10 +119,31 @@ export default function Models() {
   }>({});
   const [filterOpen, setFilterOpen] = useState(false);
   const [filters, setFilters] = useState<Filters>({
+    city: "",
     modelType: "indiferente",
     showFace: "indiferente",
   });
   const [loading, setLoading] = useState(true); // Novo estado de carregamento
+
+  const [models, setModels] = useState<Model[]>([]);
+  const { estado, cidade } = useParams<{ estado: string; cidade: string }>(); // Obtenha o estado e a cidade dos parâmetros da URL
+
+  useEffect(() => {
+    // Filtrar as modelos com base no estado e na cidade
+    const filteredModels = modelsData.filter((model) => {
+      if (model.hasLocation) {
+        return (
+          model.localInfo.state.toLowerCase() ===
+            (estado ?? "").toLowerCase() &&
+          model.localInfo.city.toLowerCase() === (cidade ?? "").toLowerCase()
+        );
+      } else {
+        return false;
+      }
+    });
+
+    setModels(filteredModels);
+  }, [estado, cidade]); // Atualize o filtro sempre que o estado ou a cidade mudarem
 
   const handleMouseEnter = (model: Model) => {
     setSelectedModel(model);
@@ -143,7 +183,6 @@ export default function Models() {
     if (storedFavorites) {
       setFavorites(JSON.parse(storedFavorites));
     }
-
     // Simula o carregamento por 2 segundos
     const timer = setTimeout(() => {
       setLoading(false);
@@ -172,6 +211,22 @@ export default function Models() {
     }));
   };
 
+  const handleCityChange = (
+    e: SelectChangeEvent<
+      | "Porto Alegre"
+      | "Florianópolis"
+      | "Canoas"
+      | "Novo Hamburgo"
+      | "São Leopoldo"
+      | "Camboriú"
+      | "Joinville"
+      | "Blumenau"
+      | "Itajaí"
+    >
+  ) => {
+    handleFilterChange(e.target.value, "city");
+  };
+
   const handlemodelTypeChange = (
     e: SelectChangeEvent<
       | "loiras"
@@ -194,6 +249,9 @@ export default function Models() {
   };
 
   const filteredModels = modelsData.filter((model) => {
+    if (filters.city !== "" && model.localInfo.city !== filters.city) {
+      return false;
+    }
     if (
       filters.modelType !== "indiferente" &&
       model.modelType !== filters.modelType
@@ -208,6 +266,18 @@ export default function Models() {
     }
     return true;
   });
+  const clearFilters = () => {
+    setFilters({
+      city: "",
+      modelType: "indiferente",
+      showFace: "indiferente",
+    });
+  };
+
+  const totalModelsInCity = modelsData.filter(
+    (model) => model.localInfo.city === filters.city
+  ).length;
+
   // === === === END FILTERING === === === //
 
   return (
@@ -218,10 +288,38 @@ export default function Models() {
         <Typography variant="h4" component="h1" gutterBottom>
           Nossas Modelos
         </Typography>
-        <Typography variant="body1" paragraph>
-          Nossos terapeutas e massagistas são dedicados exclusivamente a
-          proporcionar o máximo de prazer e relaxamento ao público masculino.
-        </Typography>
+
+        {filters.city && (
+      <Typography variant="body1">
+        {totalModelsInCity} modelos disponíveis em {filters.city}
+      </Typography>
+    )}
+    {(filters.modelType !== "indiferente" || filters.showFace !== "indiferente") && (
+      <Box display="inline">
+        {filters.modelType !== "indiferente" && (
+          <Typography variant="body1" display="inline">
+            {
+              filteredModels.filter(
+                (model) => model.modelType === filters.modelType
+              ).length
+            }{" "}
+            modelos {filters.modelType}{" "}
+          </Typography>
+        )}
+        {filters.showFace !== "indiferente" && (
+          <Typography variant="body1" display="inline">
+            {
+              filteredModels.filter(
+                (model) => model.showFace === filters.showFace
+              ).length
+            }{" "}
+            modelos {filters.showFace === "sim" ? "mostram" : "não mostram"} o
+            rosto.
+          </Typography>
+        )}
+      </Box>
+    )}
+
         <Stack direction="row" spacing={4} justifyContent="center">
           <IconButton
             onClick={() => setFilterOpen(!filterOpen)}
@@ -235,13 +333,61 @@ export default function Models() {
         </Stack>
       </Box>
       {filterOpen && (
-        <Stack direction="row" justifyContent="center" mb={2}>
-          <Box
-            width={400}
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-          >
+        <Grid container justifyContent="center" spacing={2} mb={2}>
+          <Grid item xs={12} sm={4}>
+            <FormControl fullWidth>
+              <InputLabel id="city">Cidade</InputLabel>
+              <Select
+                value={filters.city}
+                onChange={handleCityChange}
+                variant="standard"
+                color="primary"
+                id="city"
+                label="Cidade"
+                labelId="city"
+                sx={{
+                  mx: 1,
+                  bgcolor: "primary.light",
+                }}
+              >
+                <MenuItem
+                  value="Selecione a cidade"
+                  sx={{ MenuItemStyles }}
+                  disabled
+                >
+                  Selecione a Cidade
+                </MenuItem>
+                <MenuItem value="Porto Alegre" sx={{ MenuItemStyles }}>
+                  Porto Alegre
+                </MenuItem>
+                <MenuItem value="Canoas" sx={{ MenuItemStyles }}>
+                  Canoas
+                </MenuItem>
+                <MenuItem value="Novo Hamburgo" sx={{ MenuItemStyles }}>
+                  Novo Hamburgo
+                </MenuItem>
+                <MenuItem value="São Leopoldo" sx={{ MenuItemStyles }}>
+                  São Leopoldo
+                </MenuItem>
+                <MenuItem value="Florianópolis" sx={{ MenuItemStyles }}>
+                  Florianópolis
+                </MenuItem>
+                <MenuItem value="Camboriú" sx={{ MenuItemStyles }}>
+                  Camboriú
+                </MenuItem>
+                <MenuItem value="Joinville" sx={{ MenuItemStyles }}>
+                  Joinville
+                </MenuItem>
+                <MenuItem value="Blumenau" sx={{ MenuItemStyles }}>
+                  Blumenau
+                </MenuItem>
+                <MenuItem value="Itajaí" sx={{ MenuItemStyles }}>
+                  Itajaí
+                </MenuItem>
+              </Select>
+            </FormControl>
+          </Grid>
+          <Grid item xs={12} sm={4}>
             <FormControl fullWidth>
               <InputLabel id="modelType">Tipo de Modelo</InputLabel>
               <Select
@@ -290,46 +436,53 @@ export default function Models() {
                 </MenuItem>
               </Select>
             </FormControl>
-
-            <Box
-              width={400}
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-            >
-              <FormControl fullWidth>
-                <InputLabel id="showFace">Mostra o rosto</InputLabel>
-                <Select
-                  value={filters.showFace || "Mostra o rosto"}
-                  onChange={handleshowFaceChange}
-                  variant="standard"
-                  color="primary"
-                  id="showFace"
-                  label="Mostra o rosto"
-                  labelId="showFace"
-                  sx={{ mx: 1, bgcolor: "primary.light" }}
-                >
-                  <MenuItem
-                    value="Mostar o rosto"
-                    sx={{ MenuItemStyles }}
-                  ></MenuItem>
-                  <MenuItem value="indiferente" sx={{ MenuItemStyles }}>
-                    Indiferente
-                  </MenuItem>
-                  <MenuItem value="sim" sx={{ MenuItemStyles }}>
-                    Mostra o rosto
-                  </MenuItem>
-                  <MenuItem value="nao" sx={{ MenuItemStyles }}>
-                    Não mostra o rosto
-                  </MenuItem>
-                </Select>
-              </FormControl>
-            </Box>
-          </Box>
-        </Stack>
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <FormControl fullWidth>
+              <InputLabel id="showFace">Mostra o rosto</InputLabel>
+              <Select
+                value={filters.showFace || "Mostra o rosto"}
+                onChange={handleshowFaceChange}
+                variant="standard"
+                color="primary"
+                id="showFace"
+                label="Mostra o rosto"
+                labelId="showFace"
+                sx={{ mx: 1, bgcolor: "primary.light" }}
+              >
+                <MenuItem
+                  value="Mostar o rosto"
+                  sx={{ MenuItemStyles }}
+                ></MenuItem>
+                <MenuItem value="indiferente" sx={{ MenuItemStyles }}>
+                  Indiferente
+                </MenuItem>
+                <MenuItem value="sim" sx={{ MenuItemStyles }}>
+                  Mostra o rosto
+                </MenuItem>
+                <MenuItem value="nao" sx={{ MenuItemStyles }}>
+                  Não mostra o rosto
+                </MenuItem>
+              </Select>
+            </FormControl>
+          </Grid>
+          <Grid item xs={12}>
+            <Button variant="outlined" color="secondary" onClick={clearFilters}>
+              Limpar Filtros
+            </Button>
+          </Grid>
+        </Grid>
       )}
+
       <Grid container justifyContent="center" spacing={1}>
-        {filteredModels.map((model) => (
+                {filteredModels.length === 0 ? (
+          <Typography variant="body1" paragraph>
+            Nenhum modelo encontrado com os filtros selecionados. Por favor,
+            escolha outros filtros.
+          </Typography>
+        ) : (
+        
+        filteredModels.map((model) => (
           <Grid item key={model.id} xs={12} sm={6} md={4} zIndex={999}>
             <Box
               position="relative"
@@ -385,42 +538,70 @@ export default function Models() {
                     <Typography variant="subtitle1" gutterBottom>
                       {model.name}
                     </Typography>
-                    <Grid container spacing={0} zIndex={999}>
+                    <Grid id="model-details" container spacing={0} zIndex={999}>
                       <Grid item xs={4}>
-                        <Box>
+                        <Box id="model-details-1">
                           <Typography variant="body2" gutterBottom>
-                            Idade: {model.age}
+                            Idade: {model.modelDetails.age}
                           </Typography>
                           <Typography variant="body2" gutterBottom>
-                            Altura: {model.height}
+                            Altura: {model.modelDetails.height}
                           </Typography>
                           <Typography variant="body2" gutterBottom>
-                            Peso: {model.weight}
+                            Peso: {model.modelDetails.weight}
                           </Typography>
                         </Box>
                       </Grid>
                       <Grid item xs={4}>
-                        <Box>
+                        <Box id="model-details-2">
                           <Typography variant="body2" gutterBottom>
-                            Olhos: {model.eyeColor}
+                            Olhos: {model.modelDetails.eyeColor}
                           </Typography>
+                          <BustTooltip
+                            title={
+                              "Tipo de busto: " + model.modelDetails.bustType
+                            }
+                            TransitionComponent={Fade}
+                            TransitionProps={{ timeout: 700 }}
+                            placement="top"
+                            arrow
+                          >
+                            <Typography variant="body2" gutterBottom>
+                              Busto: {model.modelDetails.bust}
+                            </Typography>
+                          </BustTooltip>
                           <Typography variant="body2" gutterBottom>
-                            Busto: {model.bust}
-                          </Typography>
-                          <Typography variant="body2" gutterBottom>
-                            Cintura: {model.waist}
+                            Cintura: {model.modelDetails.waist}
                           </Typography>
                         </Box>
                       </Grid>
 
                       <Grid item xs={4}>
-                        <Box>
+                        <Box id="model-details-3">
                           <Typography variant="body2" gutterBottom>
-                            Quadril: {model.hips}
+                            Quadril: {model.modelDetails.hips}
                           </Typography>
                           <Typography variant="body2" gutterBottom>
-                            Pés: {model.feet}
+                            Pés: {model.modelDetails.feet}
                           </Typography>
+                        </Box>
+                      </Grid>
+                      <Grid item xs={12} pt={2}>
+                        <Box
+                          id="model-location"
+                          display="flex"
+                          justifyContent="center"
+                          alignItems="center"
+                          textAlign="center"
+                        >
+                          <LocationOnIcon />
+                          {model.hasLocation ? (
+                            <Typography>
+                              {model.localInfo.neighborhood}
+                            </Typography>
+                          ) : (
+                            <Typography>Sem local</Typography>
+                          )}
                         </Box>
                       </Grid>
                     </Grid>
@@ -505,34 +686,43 @@ export default function Models() {
                         </Box>
                       )}
                     </Fab>
-                    <Fab
-                      size="small"
-                      sx={{
-                        color: "white",
-                        bgcolor: "green",
-                        border: "solid 2px green",
-                        "&:hover": {
-                          color: "#8D7B26",
-                          bgcolor: "black",
-                          borderColor: "#8D7B26",
-                          borderWidth: 2,
-                        },
-                        position: "absolute",
-                        zIndex: 600,
-                        bottom: 15,
-                        right: 15,
-                      }}
-                      onClick={() => {
-                        if (selectedModel) {
-                          const whatsappNumber =
-                            selectedModel.socialMedia.whatsapp;
-                          const url = `https://wa.me/${whatsappNumber}`;
-                          window.open(url, "_blank");
-                        }
-                      }}
+                    <WhatsappTooltip
+                      title="Enviar mensagem via WhatsApp"
+                      TransitionComponent={Fade}
+                      TransitionProps={{ timeout: 700 }}
+                      placement="top"
+                      arrow
                     >
-                      <WhatsAppIcon />
-                    </Fab>
+                      <Fab
+                        id="whatsapp-button"
+                        size="small"
+                        sx={{
+                          color: "white",
+                          bgcolor: "green",
+                          border: "solid 2px green",
+                          "&:hover": {
+                            color: "#8D7B26",
+                            bgcolor: "black",
+                            borderColor: "#8D7B26",
+                            borderWidth: 2,
+                          },
+                          position: "absolute",
+                          zIndex: 600,
+                          bottom: 15,
+                          right: 15,
+                        }}
+                        onClick={() => {
+                          if (selectedModel) {
+                            const whatsappNumber =
+                              selectedModel.socialMedia.whatsapp;
+                            const url = `https://wa.me/${whatsappNumber}`;
+                            window.open(url, "_blank");
+                          }
+                        }}
+                      >
+                        <WhatsAppIcon />
+                      </Fab>
+                    </WhatsappTooltip>
                   </Paper>
                 </Slide>
               )}
@@ -555,7 +745,8 @@ export default function Models() {
               </Typography>
             </Box>
           </Grid>
-        ))}
+        ))
+        )}
       </Grid>
 
       <ScrollTop>

@@ -13,6 +13,13 @@ export interface Model {
   feet: string;
   modelType: string;
   showFace: string;
+  localInfo: {
+    city: string;
+    state: string;
+    neighborhood?: string;
+    address?: string;
+    zipCode?: string;
+  };
   socialMedia: {
     whatsapp: string;
     onlyfans?: string;

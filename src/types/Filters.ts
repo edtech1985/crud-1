@@ -30,6 +30,14 @@ export interface Filters {
 
   hasLocation?: boolean;
 
+  localInfo?: {
+    city?: string;
+    state?: string;
+    neighborhood?: string;
+    address?: string;
+    zipCode?: string;
+  };
+
   services?: "Hotéis" | "Motéis" | "A domicílio" | "Virtual" | "Indiferente";
 
   avaibleForTravel?: boolean;
