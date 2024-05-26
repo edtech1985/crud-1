@@ -939,8 +939,7 @@ const AdvertiserTerms: React.FC = () => {
             <li>
               (II) reconhecer que o presente instrumento se formaliza,
               vinculando as partes, com a confirmação contratual, o que se fará
-              mediante o clique no espaço reservado para tanto no site FATAL
-              MODEL.
+              mediante o clique no espaço reservado para tanto no site LUXURY ESCORTS.
             </li>
           </ul>
         </Typography>

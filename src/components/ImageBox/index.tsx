@@ -101,7 +101,7 @@ const ImageBox = ({
       zIndex={600}
       borderRadius={6}
     >
-      <Link href={`/models/${alt.toLowerCase()}`}>
+      <Link href={`/acompanhantes/${alt.toLowerCase()}`}>
         <Zoom in={true} timeout={250} style={{ transitionDelay: "50ms" }}>
           <img
             src={src}
