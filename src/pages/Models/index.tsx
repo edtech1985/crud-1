@@ -131,7 +131,7 @@ export default function Models() {
     // Filtrar as modelos com base no estado e na cidade
   useEffect(() => {
     const filteredModels = modelsData.filter((model) => {
-      if (model.hasLocation) {
+      if (model.hasLocation && model.album.profilePicture) {
         return (
           model.localInfo.state.toLowerCase() ===
             (estado ?? "").toLowerCase() &&
@@ -510,10 +510,10 @@ export default function Models() {
               />
 
               <ImageBox
-                src={model.profilePicture}
+                src={model.album.profilePicture}
                 id={model.id}
                 alt={model.name}
-                modelAvatar={model.avatar}
+                modelAvatar={model.album.avatar}
                 onFavoriteToggle={() => handleFavoriteToggle(model.id)}
                 handleSnackbar={() => handleSnackbar(model.id)}
               />

@@ -406,12 +406,12 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
         <Grid item xs={12} md={9}>
           <Grid container spacing={2}>
             {[
-              model.photo1,
-              model.photo2,
-              model.photo3,
-              model.photo4,
-              model.photo5,
-              model.photo6,
+              model.album.photo1,
+              model.album.photo2,
+              model.album.photo3,
+              model.album.photo4,
+              model.album.photo5,
+              model.album.photo6,
             ].map((photo: string, index: number) => (
               <Grid item key={index} xs={12} sm={6} md={4}>
                 <Box
@@ -426,7 +426,7 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
                     src={photo}
                     alt={`model ${model.name}`}
                     aria-label={`model ${model.name}`}
-                    modelAvatar={model.avatar}
+                    modelAvatar={model.album.avatar}
                   />
                 </Box>
               </Grid>

@@ -187,7 +187,7 @@ export default function Header() {
                         <MenuItem
                           key={subItem.label}
                           component={Link}
-                          to={`/acompanhantes/${encodeURIComponent("Porto Alegre")}`} // Construa a URL com a cidade desejada
+                          to={subItem.path} // URL da cidade selecionada
                           onClick={handleMenuClose}
                         >
                           {subItem.label}

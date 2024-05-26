@@ -1,8 +1,16 @@
+import { ReactNode } from "react";
+
 export interface Model {
+  hasVideoVerification: any;
+  description: ReactNode;
   id: number;
   name: string;
-  profilePicture: string;
-  avatar: string;
+  album: {
+    profilePicture: string;
+    avatar: string;
+  };
+  profilePicture?: string;
+  avatar?: string;
   age: number;
   height: string;
   weight: string;
