@@ -128,8 +128,8 @@ export default function Models() {
   const [models, setModels] = useState<Model[]>([]);
   const { estado, cidade } = useParams<{ estado: string; cidade: string }>(); // Obtenha o estado e a cidade dos parâmetros da URL
 
-  useEffect(() => {
     // Filtrar as modelos com base no estado e na cidade
+  useEffect(() => {
     const filteredModels = modelsData.filter((model) => {
       if (model.hasLocation) {
         return (
@@ -145,6 +145,7 @@ export default function Models() {
     setModels(filteredModels);
   }, [estado, cidade]); // Atualize o filtro sempre que o estado ou a cidade mudarem
 
+  // === === === BEGIN MOUSE ENTER AND LEAVE === === === //
   const handleMouseEnter = (model: Model) => {
     setSelectedModel(model);
   };
@@ -152,6 +153,7 @@ export default function Models() {
   const handleMouseLeave = () => {
     setSelectedModel(null);
   };
+  // === === === END MOUSE ENTER AND LEAVE === === === //
 
   // === === === BEGIN SNACKBAR === === === //
   const [state] = React.useState<State>({
@@ -210,6 +212,7 @@ export default function Models() {
       [filterName]: value,
     }));
   };
+  // === === === END FILTERING === === === //
 
   const handleCityChange = (
     e: SelectChangeEvent<
@@ -277,14 +280,13 @@ export default function Models() {
   const totalModelsInCity = modelsData.filter(
     (model) => model.localInfo.city === filters.city
   ).length;
-
   // === === === END FILTERING === === === //
 
   return (
     <Box textAlign="center">
       {loading && <Loading />}
       <div id="back-to-top-anchor" />
-      <Box mb={2}>
+      <Box id="page-description" mb={2}>
         <Typography variant="h4" component="h1" gutterBottom>
           Nossas Modelos
         </Typography>
@@ -477,7 +479,7 @@ export default function Models() {
       <Grid container justifyContent="center" spacing={1}>
                 {filteredModels.length === 0 ? (
           <Typography variant="body1" paragraph>
-            Nenhum modelo encontrado com os filtros selecionados. Por favor,
+            Nenhuma modelo encontrada com os filtros selecionados. Por favor,
             escolha outros filtros.
           </Typography>
         ) : (
@@ -513,7 +515,7 @@ export default function Models() {
                 alt={model.name}
                 modelAvatar={model.avatar}
                 onFavoriteToggle={() => handleFavoriteToggle(model.id)}
-                handleSnackbar={() => handleSnackbar(model.id)} // Passa o model.id como argumento
+                handleSnackbar={() => handleSnackbar(model.id)}
               />
               {selectedModel === model && (
                 <Slide
