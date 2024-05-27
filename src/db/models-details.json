@@ -1,8 +1,11 @@
 [
   {
     "id": 1,
-    "name": "Larissa",
-    "description": "Com mãos que deslizam como seda sobre a pele, Larissa é uma mestra da arte da massagem. Sua abordagem delicada e habilidosa promete levar você a um estado de êxtase e relaxamento supremo, onde cada toque é uma experiência de luxo.",
+    "modelProfile": {
+      "name": "Larissa",
+      "description": "Com mãos que deslizam como seda sobre a pele, Larissa é uma mestra da arte da massagem. Sua abordagem delicada e habilidosa promete levar você a um estado de êxtase e relaxamento supremo, onde cada toque é uma experiência de luxo.",
+      "gender": "Feminino"
+    },
     "album": {
       "profilePicture": "/img/models/blonde1.jpg",
       "avatar": "/img/models/blonde4.jpg",
@@ -46,11 +49,35 @@
       "hips": "90cm",
       "feet": "36"
     },
-    "servicesLocations": ["Hotéis", "Motéis", "A domicílio", "Virtual"],
-    "availableForTravel": true,
-    "hourlyRate": "R$ 300",
-    "paymentMethods": ["Dinheiro", "PIX", "Cartão"],
-    "workHours": "Segunda a sábado, 10h às 20h",
+    "services": {
+      "servicesLocations": ["Hotéis", "Motéis", "A domicílio", "Virtual"],
+      "availableForTravel": true,
+      "hourlyRate": "R$ 300",
+      "halfHourRate": "R$ 200",
+      "twoHourRate": "R$ 500",
+      "overnightRate": "R$ 1000",
+      "paymentMethods": ["Dinheiro", "PIX", "Cartão"],
+      "workHours": "Segunda a sábado, 10h às 20h"
+    },
+    "escortServices": {
+      "roleReversal": "sim",
+      "videoCall": "sim",
+      "69position": "sim",
+      "anal": "sim",
+      "analExtra": "R$ 100",
+      "cumInMouth": "sim",
+      "greekKiss": "sim",
+      "eroticMassage": "sim",
+      "handjob": "sim",
+      "striptease": "sim",
+      "oralWithoutCondom": "sim",
+      "oralWithoutCondomExtra": "R$ 50"
+    },
+    "videoCallRates": {
+      "15min": "R$ 50",
+      "30min": "R$ 100",
+      "1h": "R$ 200"
+    },
     "socialMedia": {
       "whatsapp": "5551992002595",
       "onlyfans": "link_para_onlyfans",
@@ -64,8 +91,11 @@
   },
   {
     "id": 2,
-    "name": "Nakamura",
-    "description": "Nakamura domina a arte da massagem com uma mistura única de graça e sensualidade. Seu toque suave e preciso é como uma dança sobre o seu corpo, despertando sensações que o transportam para um mundo de prazer e indulgência.",
+    "modelProfile": {
+      "name": "Nakamura",
+      "description": "Nakamura domina a arte da massagem com uma mistura única de graça e sensualidade. Seu toque suave e preciso é como uma dança sobre o seu corpo, despertando sensações que o transportam para um mundo de prazer e indulgência.",
+      "gender": "Feminino"
+    },
     "album": {
       "profilePicture": "/img/models/asian1.jpg",
       "avatar": "/img/models/asian-avatar.jpg",
@@ -116,11 +146,35 @@
       "hips": "85cm",
       "feet": "35"
     },
-    "servicesLocations": ["Hotéis", "Motéis", "A domicílio"],
-    "availableForTravel": false,
-    "hourlyRate": "R$ 250",
-    "paymentMethods": ["Dinheiro"],
-    "workHours": "Segunda a sexta, 9h às 18h",
+    "services": {
+      "servicesLocations": ["Hotéis", "Motéis", "A domicílio"],
+      "availableForTravel": false,
+      "hourlyRate": "R$ 250",
+      "halfHourRate": "R$ 200",
+      "twoHourRate": "R$ 500",
+      "overnightRate": "R$ 1000",
+      "paymentMethods": ["Dinheiro"],
+      "workHours": "Segunda a sexta, 9h às 18h"
+    },
+    "escortServices": {
+      "roleReversal": "sim",
+      "videoCall": "sim",
+      "69position": "sim",
+      "anal": "sim",
+      "analExtra": "R$ 100",
+      "cumInMouth": "sim",
+      "greekKiss": "sim",
+      "eroticMassage": "sim",
+      "handjob": "sim",
+      "striptease": "sim",
+      "oralWithoutCondom": "sim",
+      "oralWithoutCondomExtra": "R$ 50"
+    },
+    "videoCallRates": {
+      "15min": "R$ 50",
+      "30min": "R$ 100",
+      "1h": "R$ 200"
+    },
     "socialMedia": {
       "whatsapp": "5551992002596",
       "onlyfans": "link_para_onlyfans",
@@ -134,8 +188,11 @@
   },
   {
     "id": 3,
-    "name": "Aisha",
-    "description": "Aisha é uma verdadeira deusa das massagens, combinando técnica impecável com uma aura de sedução irresistível. Seus movimentos fluem com a harmonia de uma sinfonia, levando-o a um estado de relaxamento profundo e satisfação total.",
+    "modelProfile": {
+      "name": "Aisha",
+      "description": "Aisha é uma verdadeira deusa das massagens, combinando técnica impecável com uma aura de sedução irresistível. Seus movimentos fluem com a harmonia de uma sinfonia, levando-o a um estado de relaxamento profundo e satisfação total.",
+      "gender": "Feminino"
+    },
     "album": {
       "profilePicture": "/img/models/afro1.jpg",
       "avatar": "/img/models/afro-avatar.jpg",
@@ -178,12 +235,36 @@
       "hips": "95cm",
       "feet": "38"
     },
-    
-    "servicesLocations": ["Hotéis", "Motéis", "A domicílio", "Virtual"],
-    "availableForTravel": true,
-    "hourlyRate": "R$ 350",
-    "paymentMethods": ["Dinheiro", "PIX", "Cartão"],
-    "workHours": "Segunda a domingo, 8h às 22h",
+
+    "services": {
+      "servicesLocations": ["Hotéis", "Motéis", "A domicílio", "Virtual"],
+      "availableForTravel": true,
+      "hourlyRate": "R$ 350",
+      "halfHourRate": "R$ 200",
+      "twoHourRate": "R$ 500",
+      "overnightRate": "R$ 1000",
+      "paymentMethods": ["Dinheiro", "PIX", "Cartão"],
+      "workHours": "Segunda a domingo, 8h às 22h"
+    },
+    "escortServices": {
+      "roleReversal": "sim",
+      "videoCall": "sim",
+      "69position": "sim",
+      "anal": "sim",
+      "analExtra": "R$ 100",
+      "cumInMouth": "sim",
+      "greekKiss": "sim",
+      "eroticMassage": "sim",
+      "handjob": "sim",
+      "striptease": "sim",
+      "oralWithoutCondom": "sim",
+      "oralWithoutCondomExtra": "R$ 50"
+    },
+    "videoCallRates": {
+      "15min": "R$ 50",
+      "30min": "R$ 100",
+      "1h": "R$ 200"
+    },
     "socialMedia": {
       "whatsapp": "5551992002597",
       "onlyfans": "link_para_onlyfans",
@@ -197,8 +278,11 @@
   },
   {
     "id": 4,
-    "name": "Camila",
-    "description": "Com um olhar penetrante e mãos habilidosas, Camila cativa seus clientes com uma experiência de massagem única. Sua abordagem sensual e cuidadosa é como um convite para explorar os limites do prazer e da serenidade.",
+    "modelProfile": {
+      "name": "Camila",
+      "description": "Com um olhar penetrante e mãos habilidosas, Camila cativa seus clientes com uma experiência de massagem única. Sua abordagem sensual e cuidadosa é como um convite para explorar os limites do prazer e da serenidade.",
+      "gender": "Feminino"
+    },
     "album": {
       "profilePicture": "/img/models/muscular1.jpg",
       "avatar": "/img/models/muscular5.jpg",
@@ -241,12 +325,36 @@
       "hips": "90cm",
       "feet": "37"
     },
-    
-    "servicesLocations": ["Hotéis", "Motéis", "A domicílio"],
-    "availableForTravel": true,
-    "hourlyRate": "R$ 280",
-    "paymentMethods": ["Dinheiro", "PIX", "Cartão"],
-    "workHours": "Segunda a sábado, 10h às 20h",
+
+    "services": {
+      "servicesLocations": ["Hotéis", "Motéis", "A domicílio"],
+      "availableForTravel": true,
+      "hourlyRate": "R$ 280",
+      "halfHourRate": "R$ 200",
+      "twoHourRate": "R$ 500",
+      "overnightRate": "R$ 1000",
+      "paymentMethods": ["Dinheiro", "PIX", "Cartão"],
+      "workHours": "Segunda a sábado, 10h às 20h"
+    },
+    "escortServices": {
+      "roleReversal": "sim",
+      "videoCall": "sim",
+      "69position": "sim",
+      "anal": "sim",
+      "analExtra": "R$ 100",
+      "cumInMouth": "sim",
+      "greekKiss": "sim",
+      "eroticMassage": "sim",
+      "handjob": "sim",
+      "striptease": "sim",
+      "oralWithoutCondom": "sim",
+      "oralWithoutCondomExtra": "R$ 50"
+    },
+    "videoCallRates": {
+      "15min": "R$ 50",
+      "30min": "R$ 100",
+      "1h": "R$ 200"
+    },
     "socialMedia": {
       "whatsapp": "5551992002598",
       "onlyfans": "link_para_onlyfans",
@@ -260,8 +368,11 @@
   },
   {
     "id": 5,
-    "name": "Aruna",
-    "description": "Aruna é uma especialista em despertar os sentidos e acalmar a alma. Sua massagem envolvente é como uma jornada sensorial, onde cada movimento é uma carícia que desperta o desejo e a tranquilidade ao mesmo tempo.",
+    "modelProfile": {
+      "name": "Aruna",
+      "description": "Aruna é uma especialista em despertar os sentidos e acalmar a alma. Sua massagem envolvente é como uma jornada sensorial, onde cada movimento é uma carícia que desperta o desejo e a tranquilidade ao mesmo tempo.",
+      "gender": "Feminino"
+    },
     "album": {
       "profilePicture": "/img/models/indian1.jpg",
       "avatar": "/img/models/indian5.jpg",
@@ -304,12 +415,36 @@
       "hips": "90cm",
       "feet": "36"
     },
-    
-    "servicesLocations": ["Hotéis", "Motéis", "A domicílio"],
-    "availableForTravel": false,
-    "hourlyRate": "R$ 300",
-    "paymentMethods": ["Dinheiro", "PIX", "Cartão"],
-    "workHours": "Segunda a sexta, 9h às 18h",
+
+    "services": {
+      "servicesLocations": ["Hotéis", "Motéis", "A domicílio"],
+      "availableForTravel": false,
+      "hourlyRate": "R$ 300",
+      "halfHourRate": "R$ 200",
+      "twoHourRate": "R$ 500",
+      "overnightRate": "R$ 1000",
+      "paymentMethods": ["Dinheiro", "PIX", "Cartão"],
+      "workHours": "Segunda a sexta, 9h às 18h"
+    },
+    "escortServices": {
+      "roleReversal": "sim",
+      "videoCall": "sim",
+      "69position": "sim",
+      "anal": "sim",
+      "analExtra": "R$ 100",
+      "cumInMouth": "sim",
+      "greekKiss": "sim",
+      "eroticMassage": "sim",
+      "handjob": "sim",
+      "striptease": "sim",
+      "oralWithoutCondom": "sim",
+      "oralWithoutCondomExtra": "R$ 50"
+    },
+    "videoCallRates": {
+      "15min": "R$ 50",
+      "30min": "R$ 100",
+      "1h": "R$ 200"
+    },
     "socialMedia": {
       "whatsapp": "5551992002599",
       "onlyfans": "link_para_onlyfans",
@@ -323,8 +458,11 @@
   },
   {
     "id": 6,
-    "name": "Anitta",
-    "description": "Anitta é uma terapeuta dedicada, cujo toque gentil e envolvente leva seus clientes a um estado de pura felicidade. Sua técnica refinada e atenção aos detalhes garantem uma experiência de massagem verdadeiramente luxuosa.",
+    "modelProfile": {
+      "name": "Anitta",
+      "description": "Anitta é uma terapeuta dedicada, cujo toque gentil e envolvente leva seus clientes a um estado de pura felicidade. Sua técnica refinada e atenção aos detalhes garantem uma experiência de massagem verdadeiramente luxuosa.",
+      "gender": "Feminino"
+    },
     "album": {
       "profilePicture": "/img/models/brazillian1.jpg",
       "avatar": "/img/models/brazillian1.jpg",
@@ -367,12 +505,36 @@
       "hips": "90cm",
       "feet": "37"
     },
-    
-    "servicesLocations": ["Hotéis", "Motéis", "A domicílio", "Virtual"],
-    "availableForTravel": true,
-    "hourlyRate": "R$ 320",
-    "paymentMethods": ["Dinheiro", "PIX", "Cartão"],
-    "workHours": "Segunda a domingo, 9h às 22h",
+
+    "services": {
+      "servicesLocations": ["Hotéis", "Motéis", "A domicílio", "Virtual"],
+      "availableForTravel": true,
+      "hourlyRate": "R$ 320",
+      "halfHourRate": "R$ 200",
+      "twoHourRate": "R$ 500",
+      "overnightRate": "R$ 1000",
+      "paymentMethods": ["Dinheiro", "PIX", "Cartão"],
+      "workHours": "Segunda a domingo, 9h às 22h"
+    },
+    "escortServices": {
+      "roleReversal": "sim",
+      "videoCall": "sim",
+      "69position": "sim",
+      "anal": "sim",
+      "analExtra": "R$ 100",
+      "cumInMouth": "sim",
+      "greekKiss": "sim",
+      "eroticMassage": "sim",
+      "handjob": "sim",
+      "striptease": "sim",
+      "oralWithoutCondom": "sim",
+      "oralWithoutCondomExtra": "R$ 50"
+    },
+    "videoCallRates": {
+      "15min": "R$ 50",
+      "30min": "R$ 100",
+      "1h": "R$ 200"
+    },
     "socialMedia": {
       "whatsapp": "5551992002595",
       "onlyfans": "link_para_onlyfans",
@@ -386,8 +548,11 @@
   },
   {
     "id": 7,
-    "name": "Alejandra",
-    "description": "Com uma combinação de graciosidade e paixão, Alejandra oferece uma experiência de massagem que é verdadeiramente celestial. Seus movimentos delicados e precisos transportam você para um mundo de relaxamento absoluto e prazer inigualável.",
+    "modelProfile": {
+      "name": "Alejandra",
+      "description": "Com uma combinação de graciosidade e paixão, Alejandra oferece uma experiência de massagem que é verdadeiramente celestial. Seus movimentos delicados e precisos transportam você para um mundo de relaxamento absoluto e prazer inigualável.",
+      "gender": "Feminino"
+    },
     "album": {
       "profilePicture": "/img/models/green1.jpg",
       "avatar": "/img/models/green-avatar.jpg",
@@ -430,11 +595,35 @@
       "hips": "90cm",
       "feet": "36"
     },
-    "servicesLocations": ["Hotéis", "Motéis", "A domicílio"],
-    "availableForTravel": false,
-    "hourlyRate": "R$ 280",
-    "paymentMethods": ["Dinheiro", "PIX"],
-    "workHours": "Segunda a sexta, 10h às 19h",
+    "services": {
+      "servicesLocations": ["Hotéis", "Motéis", "A domicílio"],
+      "availableForTravel": false,
+      "hourlyRate": "R$ 280",
+      "halfHourRate": "R$ 200",
+      "twoHourRate": "R$ 500",
+      "overnightRate": "R$ 1000",
+      "paymentMethods": ["Dinheiro", "PIX"],
+      "workHours": "Segunda a sexta, 10h às 19h"
+    },
+    "escortServices": {
+      "roleReversal": "sim",
+      "videoCall": "sim",
+      "69position": "sim",
+      "anal": "sim",
+      "analExtra": "R$ 100",
+      "cumInMouth": "sim",
+      "greekKiss": "sim",
+      "eroticMassage": "sim",
+      "handjob": "sim",
+      "striptease": "sim",
+      "oralWithoutCondom": "sim",
+      "oralWithoutCondomExtra": "R$ 50"
+    },
+    "videoCallRates": {
+      "15min": "R$ 50",
+      "30min": "R$ 100",
+      "1h": "R$ 200"
+    },
     "socialMedia": {
       "whatsapp": "5551992002595",
       "onlyfans": "link_para_onlyfans",
@@ -448,8 +637,11 @@
   },
   {
     "id": 8,
-    "name": "Arianna",
-    "description": "Arianna é uma mestra em transformar a tensão em tranquilidade e o estresse em êxtase. Sua abordagem calorosa e acolhedora é como um bálsamo para a alma, deixando seus clientes revigorados e renovados após cada sessão.",
+    "modelProfile": {
+      "name": "Arianna",
+      "description": "Arianna é uma mestra em transformar a tensão em tranquilidade e o estresse em êxtase. Sua abordagem calorosa e acolhedora é como um bálsamo para a alma, deixando seus clientes revigorados e renovados após cada sessão.",
+      "gender": "Feminino"
+    },
     "album": {
       "profilePicture": "/img/models/american1.jpg",
       "avatar": "/img/models/american-avatar.jpg",
@@ -492,12 +684,36 @@
       "hips": "90cm",
       "feet": "37"
     },
-    
-    "servicesLocations": ["Hotéis", "Motéis", "A domicílio", "Virtual"],
-    "availableForTravel": true,
-    "hourlyRate": "R$ 300",
-    "paymentMethods": ["Dinheiro", "PIX", "Cartão"],
-    "workHours": "Segunda a sábado, 9h às 21h",
+
+    "services": {
+      "servicesLocations": ["Hotéis", "Motéis", "A domicílio", "Virtual"],
+      "availableForTravel": true,
+      "hourlyRate": "R$ 300",
+      "halfHourRate": "R$ 200",
+      "twoHourRate": "R$ 500",
+      "overnightRate": "R$ 1000",
+      "paymentMethods": ["Dinheiro", "PIX", "Cartão"],
+      "workHours": "Segunda a sábado, 9h às 21h"
+    },
+    "escortServices": {
+      "roleReversal": "sim",
+      "videoCall": "sim",
+      "69position": "sim",
+      "anal": "sim",
+      "analExtra": "R$ 100",
+      "cumInMouth": "sim",
+      "greekKiss": "sim",
+      "eroticMassage": "sim",
+      "handjob": "sim",
+      "striptease": "sim",
+      "oralWithoutCondom": "sim",
+      "oralWithoutCondomExtra": "R$ 50"
+    },
+    "videoCallRates": {
+      "15min": "R$ 50",
+      "30min": "R$ 100",
+      "1h": "R$ 200"
+    },
     "socialMedia": {
       "whatsapp": "5551992002595",
       "onlyfans": "link_para_onlyfans",
@@ -511,8 +727,11 @@
   },
   {
     "id": 9,
-    "name": "Renata",
-    "description": "Renata é uma massagista apaixonada, cuja dedicação à arte da massagem é evidente em cada movimento. Sua técnica exala sensualidade e requinte, criando uma experiência que é verdadeiramente indulgente e inesquecível.",
+    "modelProfile": {
+      "name": "Renata",
+      "description": "Renata é uma massagista apaixonada, cuja dedicação à arte da massagem é evidente em cada movimento. Sua técnica exala sensualidade e requinte, criando uma experiência que é verdadeiramente indulgente e inesquecível.",
+      "gender": "Feminino"
+    },
     "album": {
       "profilePicture": "/img/models/chubby1.jpg",
       "avatar": "/img/models/chubby-avatar.jpg",
@@ -555,11 +774,35 @@
       "hips": "90cm",
       "feet": "36"
     },
-    "servicesLocations": ["Motéis", "A domicílio"],
-    "availableForTravel": true,
-    "hourlyRate": "R$ 270",
-    "paymentMethods": ["Dinheiro", "PIX"],
-    "workHours": "Segunda a sexta, 11h às 20h",
+    "services": {
+      "servicesLocations": ["Motéis", "A domicílio"],
+      "availableForTravel": true,
+      "hourlyRate": "R$ 270",
+      "halfHourRate": "R$ 200",
+      "twoHourRate": "R$ 500",
+      "overnightRate": "R$ 1000",
+      "paymentMethods": ["Dinheiro", "PIX"],
+      "workHours": "Segunda a sexta, 11h às 20h"
+    },
+    "escortServices": {
+      "roleReversal": "sim",
+      "videoCall": "sim",
+      "69position": "sim",
+      "anal": "sim",
+      "analExtra": "R$ 100",
+      "cumInMouth": "sim",
+      "greekKiss": "sim",
+      "eroticMassage": "sim",
+      "handjob": "sim",
+      "striptease": "sim",
+      "oralWithoutCondom": "sim",
+      "oralWithoutCondomExtra": "R$ 50"
+    },
+    "videoCallRates": {
+      "15min": "R$ 50",
+      "30min": "R$ 100",
+      "1h": "R$ 200"
+    },
     "socialMedia": {
       "whatsapp": "5551992002595",
       "onlyfans": "link_para_onlyfans",
@@ -573,8 +816,11 @@
   },
   {
     "id": 10,
-    "name": "Nicole",
-    "description": "Com mãos que deslizam como seda sobre a pele, Nicole é uma mestra da arte da massagem. Sua abordagem delicada e habilidosa promete levar você a um estado de êxtase e relaxamento supremo, onde cada toque é uma experiência de luxo.",
+    "modelProfile": {
+      "name": "Nicole",
+      "description": "Com mãos que deslizam como seda sobre a pele, Nicole é uma mestra da arte da massagem. Sua abordagem delicada e habilidosa promete levar você a um estado de êxtase e relaxamento supremo, onde cada toque é uma experiência de luxo.",
+      "gender": "Feminino"
+    },
     "album": {
       "profilePicture": "/img/models/ginger1.jpg",
       "avatar": "/img/models/ginger1.jpg",
@@ -620,11 +866,35 @@
       "hips": "90cm",
       "hasLocation": false
     },
-    "servicesLocations": ["Motéis", "A domicílio"],
-    "availableForTravel": true,
-    "hourlyRate": "R$ 270",
-    "paymentMethods": ["Dinheiro", "PIX"],
-    "workHours": "Segunda a sexta, 11h às 20h",
+    "services": {
+      "servicesLocations": ["Motéis", "A domicílio"],
+      "availableForTravel": true,
+      "hourlyRate": "R$ 270",
+      "halfHourRate": "R$ 200",
+      "twoHourRate": "R$ 500",
+      "overnightRate": "R$ 1000",
+      "paymentMethods": ["Dinheiro", "PIX"],
+      "workHours": "Segunda a sexta, 11h às 20h"
+    },
+    "escortServices": {
+      "roleReversal": "sim",
+      "videoCall": "sim",
+      "69position": "sim",
+      "anal": "sim",
+      "analExtra": "R$ 100",
+      "cumInMouth": "sim",
+      "greekKiss": "sim",
+      "eroticMassage": "sim",
+      "handjob": "sim",
+      "striptease": "sim",
+      "oralWithoutCondom": "sim",
+      "oralWithoutCondomExtra": "R$ 50"
+    },
+    "videoCallRates": {
+      "15min": "R$ 50",
+      "30min": "R$ 100",
+      "1h": "R$ 200"
+    },
     "socialMedia": {
       "whatsapp": "5551992002595",
       "onlyfans": "link_para_onlyfans",
@@ -638,8 +908,11 @@
   },
   {
     "id": 11,
-    "name": "Antonelly",
-    "description": "Com mãos que deslizam como seda sobre a pele, Larissa é uma mestra da arte da massagem. Sua abordagem delicada e habilidosa promete levar você a um estado de êxtase e relaxamento supremo, onde cada toque é uma experiência de luxo.",
+    "modelProfile": {
+      "name": "Antonelly",
+      "description": "Com mãos que deslizam como seda sobre a pele, Larissa é uma mestra da arte da massagem. Sua abordagem delicada e habilidosa promete levar você a um estado de êxtase e relaxamento supremo, onde cada toque é uma experiência de luxo.",
+      "gender": "Feminino"
+    },
     "album": {
       "profilePicture": "/img/models/blonde1.jpg",
       "avatar": "/img/models/blonde4.jpg",
@@ -682,12 +955,36 @@
       "hips": "90cm",
       "feet": "36"
     },
-    
-    "servicesLocations": ["Hotéis", "Motéis", "A domicílio", "Virtual"],
-    "availableForTravel": true,
-    "hourlyRate": "R$ 300",
-    "paymentMethods": ["Dinheiro", "PIX", "Cartão"],
-    "workHours": "Segunda a sábado, 10h às 20h",
+
+    "services": {
+      "servicesLocations": ["Hotéis", "Motéis", "A domicílio", "Virtual"],
+      "availableForTravel": true,
+      "hourlyRate": "R$ 300",
+      "halfHourRate": "R$ 200",
+      "twoHourRate": "R$ 500",
+      "overnightRate": "R$ 1000",
+      "paymentMethods": ["Dinheiro", "PIX", "Cartão"],
+      "workHours": "Segunda a sábado, 10h às 20h"
+    },
+    "escortServices": {
+      "roleReversal": "sim",
+      "videoCall": "sim",
+      "69position": "sim",
+      "anal": "sim",
+      "analExtra": "R$ 100",
+      "cumInMouth": "sim",
+      "greekKiss": "sim",
+      "eroticMassage": "sim",
+      "handjob": "sim",
+      "striptease": "sim",
+      "oralWithoutCondom": "sim",
+      "oralWithoutCondomExtra": "R$ 50"
+    },
+    "videoCallRates": {
+      "15min": "R$ 50",
+      "30min": "R$ 100",
+      "1h": "R$ 200"
+    },
     "socialMedia": {
       "whatsapp": "5551992002595",
       "onlyfans": "link_para_onlyfans",
@@ -701,8 +998,11 @@
   },
   {
     "id": 12,
-    "name": "Nakamoto",
-    "description": "Nakamura domina a arte da massagem com uma mistura única de graça e sensualidade. Seu toque suave e preciso é como uma dança sobre o seu corpo, despertando sensações que o transportam para um mundo de prazer e indulgência.",
+    "modelProfile": {
+      "name": "Nakamoto",
+      "description": "Nakamura domina a arte da massagem com uma mistura única de graça e sensualidade. Seu toque suave e preciso é como uma dança sobre o seu corpo, despertando sensações que o transportam para um mundo de prazer e indulgência.",
+      "gender": "Feminino"
+    },
     "album": {
       "profilePicture": "/img/models/asian1.jpg",
       "avatar": "/img/models/asian-avatar.jpg",
@@ -745,11 +1045,35 @@
       "hips": "85cm",
       "feet": "35"
     },
-    "servicesLocations": ["Hotéis", "Motéis", "A domicílio"],
-    "availableForTravel": false,
-    "hourlyRate": "R$ 250",
-    "paymentMethods": ["Dinheiro"],
-    "workHours": "Segunda a sexta, 9h às 18h",
+    "services": {
+      "servicesLocations": ["Hotéis", "Motéis", "A domicílio"],
+      "availableForTravel": false,
+      "hourlyRate": "R$ 250",
+      "halfHourRate": "R$ 200",
+      "twoHourRate": "R$ 500",
+      "overnightRate": "R$ 1000",
+      "paymentMethods": ["Dinheiro"],
+      "workHours": "Segunda a sexta, 9h às 18h"
+    },
+    "escortServices": {
+      "roleReversal": "sim",
+      "videoCall": "sim",
+      "69position": "sim",
+      "anal": "sim",
+      "analExtra": "R$ 100",
+      "cumInMouth": "sim",
+      "greekKiss": "sim",
+      "eroticMassage": "sim",
+      "handjob": "sim",
+      "striptease": "sim",
+      "oralWithoutCondom": "sim",
+      "oralWithoutCondomExtra": "R$ 50"
+    },
+    "videoCallRates": {
+      "15min": "R$ 50",
+      "30min": "R$ 100",
+      "1h": "R$ 200"
+    },
     "socialMedia": {
       "whatsapp": "5551992002596",
       "onlyfans": "link_para_onlyfans",
@@ -763,8 +1087,11 @@
   },
   {
     "id": 13,
-    "name": "Aaliyah",
-    "description": "Aisha é uma verdadeira deusa das massagens, combinando técnica impecável com uma aura de sedução irresistível. Seus movimentos fluem com a harmonia de uma sinfonia, levando-o a um estado de relaxamento profundo e satisfação total.",
+    "modelProfile": {
+      "name": "Aaliyah",
+      "description": "Aisha é uma verdadeira deusa das massagens, combinando técnica impecável com uma aura de sedução irresistível. Seus movimentos fluem com a harmonia de uma sinfonia, levando-o a um estado de relaxamento profundo e satisfação total.",
+      "gender": "Feminino"
+    },
     "album": {
       "profilePicture": "/img/models/afro1.jpg",
       "avatar": "/img/models/afro-avatar.jpg",
@@ -807,12 +1134,36 @@
       "hips": "95cm",
       "feet": "38"
     },
-    
-    "servicesLocations": ["Hotéis", "Motéis", "A domicílio", "Virtual"],
-    "availableForTravel": true,
-    "hourlyRate": "R$ 350",
-    "paymentMethods": ["Dinheiro", "PIX", "Cartão"],
-    "workHours": "Segunda a domingo, 8h às 22h",
+
+    "services": {
+      "servicesLocations": ["Hotéis", "Motéis", "A domicílio", "Virtual"],
+      "availableForTravel": true,
+      "hourlyRate": "R$ 350",
+      "halfHourRate": "R$ 200",
+      "twoHourRate": "R$ 500",
+      "overnightRate": "R$ 1000",
+      "paymentMethods": ["Dinheiro", "PIX", "Cartão"],
+      "workHours": "Segunda a domingo, 8h às 22h"
+    },
+    "escortServices": {
+      "roleReversal": "sim",
+      "videoCall": "sim",
+      "69position": "sim",
+      "anal": "sim",
+      "analExtra": "R$ 100",
+      "cumInMouth": "sim",
+      "greekKiss": "sim",
+      "eroticMassage": "sim",
+      "handjob": "sim",
+      "striptease": "sim",
+      "oralWithoutCondom": "sim",
+      "oralWithoutCondomExtra": "R$ 50"
+    },
+    "videoCallRates": {
+      "15min": "R$ 50",
+      "30min": "R$ 100",
+      "1h": "R$ 200"
+    },
     "socialMedia": {
       "whatsapp": "5551992002597",
       "onlyfans": "link_para_onlyfans",
@@ -826,8 +1177,11 @@
   },
   {
     "id": 14,
-    "name": "Brenda",
-    "description": "Com um olhar penetrante e mãos habilidosas, Camila cativa seus clientes com uma experiência de massagem única. Sua abordagem sensual e cuidadosa é como um convite para explorar os limites do prazer e da serenidade.",
+    "modelProfile": {
+      "name": "Brenda",
+      "description": "Com um olhar penetrante e mãos habilidosas, Camila cativa seus clientes com uma experiência de massagem única. Sua abordagem sensual e cuidadosa é como um convite para explorar os limites do prazer e da serenidade.",
+      "gender": "Feminino"
+    },
     "album": {
       "profilePicture": "/img/models/muscular1.jpg",
       "avatar": "/img/models/muscular5.jpg",
@@ -870,12 +1224,36 @@
       "hips": "90cm",
       "feet": "37"
     },
-    
-    "servicesLocations": ["Hotéis", "Motéis", "A domicílio"],
-    "availableForTravel": true,
-    "hourlyRate": "R$ 280",
-    "paymentMethods": ["Dinheiro", "PIX", "Cartão"],
-    "workHours": "Segunda a sábado, 10h às 20h",
+
+    "services": {
+      "servicesLocations": ["Hotéis", "Motéis", "A domicílio"],
+      "availableForTravel": true,
+      "hourlyRate": "R$ 280",
+      "halfHourRate": "R$ 200",
+      "twoHourRate": "R$ 500",
+      "overnightRate": "R$ 1000",
+      "paymentMethods": ["Dinheiro", "PIX", "Cartão"],
+      "workHours": "Segunda a sábado, 10h às 20h"
+    },
+    "escortServices": {
+      "roleReversal": "sim",
+      "videoCall": "sim",
+      "69position": "sim",
+      "anal": "sim",
+      "analExtra": "R$ 100",
+      "cumInMouth": "sim",
+      "greekKiss": "sim",
+      "eroticMassage": "sim",
+      "handjob": "sim",
+      "striptease": "sim",
+      "oralWithoutCondom": "sim",
+      "oralWithoutCondomExtra": "R$ 50"
+    },
+    "videoCallRates": {
+      "15min": "R$ 50",
+      "30min": "R$ 100",
+      "1h": "R$ 200"
+    },
     "socialMedia": {
       "whatsapp": "5551992002598",
       "onlyfans": "link_para_onlyfans",
@@ -889,8 +1267,11 @@
   },
   {
     "id": 15,
-    "name": "Jade",
-    "description": "Aruna é uma especialista em despertar os sentidos e acalmar a alma. Sua massagem envolvente é como uma jornada sensorial, onde cada movimento é uma carícia que desperta o desejo e a tranquilidade ao mesmo tempo.",
+    "modelProfile": {
+      "name": "Jade",
+      "description": "Aruna é uma especialista em despertar os sentidos e acalmar a alma. Sua massagem envolvente é como uma jornada sensorial, onde cada movimento é uma carícia que desperta o desejo e a tranquilidade ao mesmo tempo.",
+      "gender": "Feminino"
+    },
     "album": {
       "profilePicture": "/img/models/indian1.jpg",
       "avatar": "/img/models/indian5.jpg",
@@ -934,12 +1315,36 @@
       "hips": "90cm",
       "feet": "36"
     },
-    
-    "servicesLocations": ["Hotéis", "Motéis", "A domicílio"],
-    "availableForTravel": false,
-    "hourlyRate": "R$ 300",
-    "paymentMethods": ["Dinheiro", "PIX", "Cartão"],
-    "workHours": "Segunda a sexta, 9h às 18h",
+
+    "services": {
+      "servicesLocations": ["Hotéis", "Motéis", "A domicílio"],
+      "availableForTravel": false,
+      "hourlyRate": "R$ 300",
+      "halfHourRate": "R$ 200",
+      "twoHourRate": "R$ 500",
+      "overnightRate": "R$ 1000",
+      "paymentMethods": ["Dinheiro", "PIX", "Cartão"],
+      "workHours": "Segunda a sexta, 9h às 18h"
+    },
+    "escortServices": {
+      "roleReversal": "sim",
+      "videoCall": "sim",
+      "69position": "sim",
+      "anal": "sim",
+      "analExtra": "R$ 100",
+      "cumInMouth": "sim",
+      "greekKiss": "sim",
+      "eroticMassage": "sim",
+      "handjob": "sim",
+      "striptease": "sim",
+      "oralWithoutCondom": "sim",
+      "oralWithoutCondomExtra": "R$ 50"
+    },
+    "videoCallRates": {
+      "15min": "R$ 50",
+      "30min": "R$ 100",
+      "1h": "R$ 200"
+    },
     "socialMedia": {
       "whatsapp": "5551992002599",
       "onlyfans": "link_para_onlyfans",
@@ -953,8 +1358,11 @@
   },
   {
     "id": 16,
-    "name": "Mia",
-    "description": "Anitta é uma terapeuta dedicada, cujo toque gentil e envolvente leva seus clientes a um estado de pura felicidade. Sua técnica refinada e atenção aos detalhes garantem uma experiência de massagem verdadeiramente luxuosa.",
+    "modelProfile": {
+      "name": "Mia",
+      "description": "Anitta é uma terapeuta dedicada, cujo toque gentil e envolvente leva seus clientes a um estado de pura felicidade. Sua técnica refinada e atenção aos detalhes garantem uma experiência de massagem verdadeiramente luxuosa.",
+      "gender": "Feminino"
+    },
     "album": {
       "profilePicture": "/img/models/brazillian1.jpg",
       "avatar": "/img/models/brazillian1.jpg",
@@ -997,12 +1405,36 @@
       "hips": "90cm",
       "feet": "37"
     },
-    
-    "servicesLocations": ["Hotéis", "Motéis", "A domicílio", "Virtual"],
-    "availableForTravel": true,
-    "hourlyRate": "R$ 320",
-    "paymentMethods": ["Dinheiro", "PIX", "Cartão"],
-    "workHours": "Segunda a domingo, 9h às 22h",
+
+    "services": {
+      "servicesLocations": ["Hotéis", "Motéis", "A domicílio", "Virtual"],
+      "availableForTravel": true,
+      "hourlyRate": "R$ 320",
+      "halfHourRate": "R$ 200",
+      "twoHourRate": "R$ 500",
+      "overnightRate": "R$ 1000",
+      "paymentMethods": ["Dinheiro", "PIX", "Cartão"],
+      "workHours": "Segunda a domingo, 9h às 22h"
+    },
+    "escortServices": {
+      "roleReversal": "sim",
+      "videoCall": "sim",
+      "69position": "sim",
+      "anal": "sim",
+      "analExtra": "R$ 100",
+      "cumInMouth": "sim",
+      "greekKiss": "sim",
+      "eroticMassage": "sim",
+      "handjob": "sim",
+      "striptease": "sim",
+      "oralWithoutCondom": "sim",
+      "oralWithoutCondomExtra": "R$ 50"
+    },
+    "videoCallRates": {
+      "15min": "R$ 50",
+      "30min": "R$ 100",
+      "1h": "R$ 200"
+    },
     "socialMedia": {
       "whatsapp": "5551992002595",
       "onlyfans": "link_para_onlyfans",
@@ -1016,8 +1448,11 @@
   },
   {
     "id": 17,
-    "name": "Consuelo",
-    "description": "Com uma combinação de graciosidade e paixão, Alejandra oferece uma experiência de massagem que é verdadeiramente celestial. Seus movimentos delicados e precisos transportam você para um mundo de relaxamento absoluto e prazer inigualável.",
+    "modelProfile": {
+      "name": "Consuelo",
+      "description": "Com uma combinação de graciosidade e paixão, Alejandra oferece uma experiência de massagem que é verdadeiramente celestial. Seus movimentos delicados e precisos transportam você para um mundo de relaxamento absoluto e prazer inigualável.",
+      "gender": "Feminino"
+    },
     "album": {
       "profilePicture": "/img/models/green1.jpg",
       "avatar": "/img/models/green-avatar.jpg",
@@ -1060,11 +1495,35 @@
       "hips": "90cm",
       "feet": "36"
     },
-    "servicesLocations": ["Hotéis", "Motéis", "A domicílio"],
-    "availableForTravel": false,
-    "hourlyRate": "R$ 280",
-    "paymentMethods": ["Dinheiro", "PIX"],
-    "workHours": "Segunda a sexta, 10h às 19h",
+    "services": {
+      "servicesLocations": ["Hotéis", "Motéis", "A domicílio"],
+      "availableForTravel": false,
+      "hourlyRate": "R$ 280",
+      "halfHourRate": "R$ 200",
+      "twoHourRate": "R$ 500",
+      "overnightRate": "R$ 1000",
+      "paymentMethods": ["Dinheiro", "PIX"],
+      "workHours": "Segunda a sexta, 10h às 19h"
+    },
+    "escortServices": {
+      "roleReversal": "sim",
+      "videoCall": "sim",
+      "69position": "sim",
+      "anal": "sim",
+      "analExtra": "R$ 100",
+      "cumInMouth": "sim",
+      "greekKiss": "sim",
+      "eroticMassage": "sim",
+      "handjob": "sim",
+      "striptease": "sim",
+      "oralWithoutCondom": "sim",
+      "oralWithoutCondomExtra": "R$ 50"
+    },
+    "videoCallRates": {
+      "15min": "R$ 50",
+      "30min": "R$ 100",
+      "1h": "R$ 200"
+    },
     "socialMedia": {
       "whatsapp": "5551992002595",
       "onlyfans": "link_para_onlyfans",
@@ -1078,8 +1537,11 @@
   },
   {
     "id": 18,
-    "name": "Sheron",
-    "description": "Arianna é uma mestra em transformar a tensão em tranquilidade e o estresse em êxtase. Sua abordagem calorosa e acolhedora é como um bálsamo para a alma, deixando seus clientes revigorados e renovados após cada sessão.",
+    "modelProfile": {
+      "name": "Sheron",
+      "description": "Arianna é uma mestra em transformar a tensão em tranquilidade e o estresse em êxtase. Sua abordagem calorosa e acolhedora é como um bálsamo para a alma, deixando seus clientes revigorados e renovados após cada sessão.",
+      "gender": "Feminino"
+    },
     "album": {
       "profilePicture": "/img/models/american1.jpg",
       "avatar": "/img/models/american-avatar.jpg",
@@ -1122,12 +1584,36 @@
       "hips": "90cm",
       "feet": "37"
     },
-    
-    "servicesLocations": ["Hotéis", "Motéis", "A domicílio", "Virtual"],
-    "availableForTravel": true,
-    "hourlyRate": "R$ 300",
-    "paymentMethods": ["Dinheiro", "PIX", "Cartão"],
-    "workHours": "Segunda a sábado, 9h às 21h",
+
+    "services": {
+      "servicesLocations": ["Hotéis", "Motéis", "A domicílio", "Virtual"],
+      "availableForTravel": true,
+      "hourlyRate": "R$ 300",
+      "halfHourRate": "R$ 200",
+      "twoHourRate": "R$ 500",
+      "overnightRate": "R$ 1000",
+      "paymentMethods": ["Dinheiro", "PIX", "Cartão"],
+      "workHours": "Segunda a sábado, 9h às 21h"
+    },
+    "escortServices": {
+      "roleReversal": "sim",
+      "videoCall": "sim",
+      "69position": "sim",
+      "anal": "sim",
+      "analExtra": "R$ 100",
+      "cumInMouth": "sim",
+      "greekKiss": "sim",
+      "eroticMassage": "sim",
+      "handjob": "sim",
+      "striptease": "sim",
+      "oralWithoutCondom": "sim",
+      "oralWithoutCondomExtra": "R$ 50"
+    },
+    "videoCallRates": {
+      "15min": "R$ 50",
+      "30min": "R$ 100",
+      "1h": "R$ 200"
+    },
     "socialMedia": {
       "whatsapp": "5551992002595",
       "onlyfans": "link_para_onlyfans",
@@ -1141,8 +1627,11 @@
   },
   {
     "id": 19,
-    "name": "Poliana",
-    "description": "Renata é uma massagista apaixonada, cuja dedicação à arte da massagem é evidente em cada movimento. Sua técnica exala sensualidade e requinte, criando uma experiência que é verdadeiramente indulgente e inesquecível.",
+    "modelProfile": {
+      "name": "Poliana",
+      "description": "Renata é uma massagista apaixonada, cuja dedicação à arte da massagem é evidente em cada movimento. Sua técnica exala sensualidade e requinte, criando uma experiência que é verdadeiramente indulgente e inesquecível.",
+      "gender": "Feminino"
+    },
     "album": {
       "profilePicture": "/img/models/chubby1.jpg",
       "avatar": "/img/models/chubby-avatar.jpg",
@@ -1185,11 +1674,35 @@
       "hips": "90cm",
       "feet": "36"
     },
-    "servicesLocations": ["Motéis", "A domicílio"],
-    "availableForTravel": true,
-    "hourlyRate": "R$ 270",
-    "paymentMethods": ["Dinheiro", "PIX"],
-    "workHours": "Segunda a sexta, 11h às 20h",
+    "services": {
+      "servicesLocations": ["Motéis", "A domicílio"],
+      "availableForTravel": true,
+      "hourlyRate": "R$ 270",
+      "halfHourRate": "R$ 200",
+      "twoHourRate": "R$ 500",
+      "overnightRate": "R$ 1000",
+      "paymentMethods": ["Dinheiro", "PIX"],
+      "workHours": "Segunda a sexta, 11h às 20h"
+    },
+    "escortServices": {
+      "roleReversal": "sim",
+      "videoCall": "sim",
+      "69position": "sim",
+      "anal": "sim",
+      "analExtra": "R$ 100",
+      "cumInMouth": "sim",
+      "greekKiss": "sim",
+      "eroticMassage": "sim",
+      "handjob": "sim",
+      "striptease": "sim",
+      "oralWithoutCondom": "sim",
+      "oralWithoutCondomExtra": "R$ 50"
+    },
+    "videoCallRates": {
+      "15min": "R$ 50",
+      "30min": "R$ 100",
+      "1h": "R$ 200"
+    },
     "socialMedia": {
       "whatsapp": "5551992002595",
       "onlyfans": "link_para_onlyfans",
@@ -1203,8 +1716,11 @@
   },
   {
     "id": 20,
-    "name": "Joane",
-    "description": "Com mãos que deslizam como seda sobre a pele, Nicole é uma mestra da arte da massagem. Sua abordagem delicada e habilidosa promete levar você a um estado de êxtase e relaxamento supremo, onde cada toque é uma experiência de luxo.",
+    "modelProfile": {
+      "name": "Joane",
+      "description": "Com mãos que deslizam como seda sobre a pele, Nicole é uma mestra da arte da massagem. Sua abordagem delicada e habilidosa promete levar você a um estado de êxtase e relaxamento supremo, onde cada toque é uma experiência de luxo.",
+      "gender": "Feminino"
+    },
     "album": {
       "profilePicture": "/img/models/ginger1.jpg",
       "avatar": "/img/models/ginger1.jpg",
@@ -1249,11 +1765,35 @@
       "hips": "90cm",
       "hasLocation": false
     },
-    "servicesLocations": ["Motéis", "A domicílio"],
-    "availableForTravel": true,
-    "hourlyRate": "R$ 270",
-    "paymentMethods": ["Dinheiro", "PIX"],
-    "workHours": "Segunda a sexta, 11h às 20h",
+    "services": {
+      "servicesLocations": ["Motéis", "A domicílio"],
+      "availableForTravel": true,
+      "hourlyRate": "R$ 270",
+      "halfHourRate": "R$ 200",
+      "twoHourRate": "R$ 500",
+      "overnightRate": "R$ 1000",
+      "paymentMethods": ["Dinheiro", "PIX"],
+      "workHours": "Segunda a sexta, 11h às 20h"
+    },
+    "escortServices": {
+      "roleReversal": "sim",
+      "videoCall": "sim",
+      "69position": "sim",
+      "anal": "sim",
+      "analExtra": "R$ 100",
+      "cumInMouth": "sim",
+      "greekKiss": "sim",
+      "eroticMassage": "sim",
+      "handjob": "sim",
+      "striptease": "sim",
+      "oralWithoutCondom": "sim",
+      "oralWithoutCondomExtra": "R$ 50"
+    },
+    "videoCallRates": {
+      "15min": "R$ 50",
+      "30min": "R$ 100",
+      "1h": "R$ 200"
+    },
     "socialMedia": {
       "whatsapp": "5551992002595",
       "onlyfans": "link_para_onlyfans",

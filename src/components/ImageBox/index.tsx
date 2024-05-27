@@ -71,11 +71,11 @@ const ImageBox = ({
   const handleShare = (method: string) => {
     const model = modelsData.find((m) => m.id === id);
     if (model) {
-      const modelProfileLink = `https://example.com/models/${model.name}`;
+      const modelProfileLink = `https://example.com/models/${model.modelProfile.name}`;
       if (method === "whatsapp") {
         window.open(
           `https://api.whatsapp.com/send?text=${encodeURIComponent(
-            `Confira o perfil de ${model.name}: ${modelProfileLink}`
+            `Confira o perfil de ${model.modelProfile.name}: ${modelProfileLink}`
           )}`
         );
       } else if (method === "copy") {

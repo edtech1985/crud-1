@@ -46,7 +46,7 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
   const { name: modelName } = useParams<{ name: string }>();
 
   const model = modelsData.find(
-    (model: { name: string }) => model.name.toLowerCase() === modelName
+    (model: { modelProfile: { name: string } }) => model.modelProfile.name.toLowerCase() === modelName
   );
 
   if (!model) {
@@ -191,7 +191,7 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
             <tbody>
               <tr>
                 <td>Nome:</td>
-                <td>{model.name}</td>
+                <td>{model.modelProfile.name}</td>
               </tr>
               <tr>
                 <td>Verificação de Vídeo:</td>
@@ -311,23 +311,23 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
               </tr>
               <tr>
                 <td>Atende em:</td>
-                <td>{model.servicesLocations.join(", ")}</td>
+                <td>{model.services.servicesLocations.join(", ")}</td>
               </tr>
               <tr>
                 <td>Disponível para viagens:</td>
-                <td>{model.availableForTravel ? "Sim" : "Não"}</td>
+                <td>{model.services.availableForTravel ? "Sim" : "Não"}</td>
               </tr>
               <tr>
                 <td>Cachê por 1h:</td>
-                <td>{model.hourlyRate}</td>
+                <td>{model.services.hourlyRate}</td>
               </tr>
               <tr>
                 <td>Formas de pagamento:</td>
-                <td>{model.paymentMethods.join(", ")}</td>
+                <td>{model.services.paymentMethods.join(", ")}</td>
               </tr>
               <tr>
                 <td>Horário de atendimento:</td>
-                <td>{model.workHours}</td>
+                <td>{model.services.workHours}</td>
               </tr>
             </tbody>
           </table>
@@ -393,10 +393,10 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
             <BackButton />
           </Box>
           <Typography variant="h4" component="h2" gutterBottom>
-            {model.name}
+            {model.modelProfile.name}
           </Typography>
           <Typography variant="body1" paragraph>
-            {model.description}
+            {model.modelProfile.description}
           </Typography>
           <ProfileSection />
           <ServicesSection />
@@ -424,8 +424,8 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
                 >
                   <ImageModelProfile
                     src={photo}
-                    alt={`model ${model.name}`}
-                    aria-label={`model ${model.name}`}
+                    alt={`model ${model.modelProfile.name}`}
+                    aria-label={`model ${model.modelProfile.name}`}
                     modelAvatar={model.album.avatar}
                   />
                 </Box>
@@ -445,7 +445,7 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
             {/* Foto principal */}
             <img
               src={model.photos[selectedPhotoIndex]}
-              alt={`model ${model.name}`}
+              alt={`model ${model.modelProfile.name}`}
             />
             {/* Botões de navegação */}
             <Box justifyContent="space-between" width="100%" height="50px">

@@ -511,7 +511,7 @@ export default function Models() {
               <ImageBox
                 src={model.album.profilePicture}
                 id={model.id}
-                alt={model.name}
+                alt={model.modelProfile.name}
                 modelAvatar={model.album.avatar}
                 onFavoriteToggle={() => handleFavoriteToggle(model.id)}
                 handleSnackbar={() => handleSnackbar(model.id)}
@@ -537,7 +537,7 @@ export default function Models() {
                     }}
                   >
                     <Typography variant="subtitle1" gutterBottom>
-                      {model.name}
+                      {model.modelProfile.name}
                     </Typography>
                     <Grid id="model-details" container spacing={0} zIndex={999}>
                       <Grid item xs={4}>
@@ -607,7 +607,7 @@ export default function Models() {
                       </Grid>
                     </Grid>
                     <Avatar
-                      alt={model.name}
+                      alt={model.modelProfile.name}
                       src={model.avatar}
                       sx={{
                         position: "absolute",
@@ -742,7 +742,7 @@ export default function Models() {
                   zIndex: 650,
                 }}
               >
-                {model.name}
+                {model.modelProfile.name}
               </Typography>
             </Box>
           </Grid>
