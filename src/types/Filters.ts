@@ -1,6 +1,5 @@
 export interface Filters {
-
-    modelType?:
+  modelType?:
     | "loiras"
     | "morenas"
     | "ruivas"
@@ -12,7 +11,7 @@ export interface Filters {
     | "";
   showFace?: "sim" | "não" | "indiferente";
 
-    alturaMin?: string;
+  alturaMin?: string;
   alturaMax?: string;
 
   hourlyRate?: string;
