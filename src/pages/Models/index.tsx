@@ -129,21 +129,20 @@ export default function Models() {
   const { estado, cidade } = useParams<{ estado: string; cidade: string }>(); // Obtenha o estado e a cidade dos parâmetros da URL
 
     // Filtrar as modelos com base no estado e na cidade
-  useEffect(() => {
-    const filteredModels = modelsData.filter((model) => {
-      if (model.hasLocation && model.album.profilePicture) {
-        return (
-          model.localInfo.state.toLowerCase() ===
-            (estado ?? "").toLowerCase() &&
-          model.localInfo.city.toLowerCase() === (cidade ?? "").toLowerCase()
-        );
-      } else {
-        return false;
-      }
-    });
+ useEffect(() => {
+   const filteredModels = modelsData.filter((model) => {
+     if (model.hasLocation && model.album.profilePicture) {
+       return (
+         model.localInfo.state.toLowerCase() === (estado ?? "").toLowerCase() &&
+         model.localInfo.city.toLowerCase() === (cidade ?? "").toLowerCase()
+       );
+     } else {
+       return false;
+     }
+   }) as Model[];
 
-    setModels(filteredModels);
-  }, [estado, cidade]); // Atualize o filtro sempre que o estado ou a cidade mudarem
+   setModels(filteredModels);
+ }, [estado, cidade]); // Atualize o filtro sempre que o estado ou a cidade mudarem
 
   // === === === BEGIN MOUSE ENTER AND LEAVE === === === //
   const handleMouseEnter = (model: Model) => {
