@@ -16,7 +16,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Menu, MenuItem } from "@mui/material";
 
-import logo from "../../assets/logo512.png"; // Importe a imagem do logo
+import logo from "../../assets/logo512.png";
 
 const drawerWidth = 240;
 const navItems = [
@@ -187,7 +187,7 @@ export default function Header() {
                         <MenuItem
                           key={subItem.label}
                           component={Link}
-                          to={subItem.path}
+                          to={`/acompanhantes/${encodeURIComponent("Porto Alegre")}`} // Construa a URL com a cidade desejada
                           onClick={handleMenuClose}
                         >
                           {subItem.label}

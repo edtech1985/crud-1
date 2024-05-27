@@ -6,6 +6,9 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
+import logo from "../../assets/logo512.png";
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -21,17 +24,47 @@ export default function Footer() {
         flexWrap: "wrap",
       }}
     >
-      {/* Redes Sociais */}
-      <Box>
-        <IconButton href="#" sx={{ color: "#ffd700" }}>
-          <FacebookIcon />
-        </IconButton>
-        <IconButton href="#" sx={{ color: "#ffd700" }}>
-          <InstagramIcon />
-        </IconButton>
-        <IconButton href="#" sx={{ color: "#ffd700" }}>
-          <WhatsAppIcon />
-        </IconButton>
+      {/* Logo e nome da empresa */}
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <Link
+          to="/"
+          style={{
+            textDecoration: "none",
+            color: "inherit",
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <img
+            src={logo}
+            alt="Logo"
+            style={{ height: "50px", marginRight: "10px" }}
+          />
+        </Link>
+
+        {/* Redes Sociais */}
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            marginLeft: "20px",
+          }}
+        >
+          <IconButton href="#" sx={{ color: "#ffd700" }}>
+            <FacebookIcon />
+          </IconButton>
+          <IconButton href="#" sx={{ color: "#ffd700" }}>
+            <InstagramIcon />
+          </IconButton>
+          <IconButton href="#" sx={{ color: "#ffd700" }}>
+            <WhatsAppIcon />
+          </IconButton>
+        </Box>
       </Box>
 
       {/* Copyright */}

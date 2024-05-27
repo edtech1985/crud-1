@@ -1,0 +1,458 @@
+{
+  "estados": [
+    {
+      "id": 1,
+      "nome": "Acre",
+      "uf": "AC",
+      "cidades": [
+        {
+          "id": 1,
+          "nome": "Rio Branco",
+          "codigo": "ac-rio-branco"
+        },
+        {
+          "id": 2,
+          "nome": "Cruzeiro do Sul",
+          "codigo": "ac-cruzeiro-do-sul"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "Alagoas",
+      "uf": "AL",
+      "cidades": [
+        {
+          "id": 3,
+          "nome": "Maceió",
+          "codigo": "al-maceio"
+        },
+        {
+          "id": 4,
+          "nome": "Arapiraca",
+          "codigo": "al-arapiraca"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nome": "Amapá",
+      "uf": "AP",
+      "cidades": [
+        {
+          "id": 5,
+          "nome": "Macapá",
+          "codigo": "ap-macapa"
+        },
+        {
+          "id": 6,
+          "nome": "Santana",
+          "codigo": "ap-santana"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "nome": "Amazonas",
+      "uf": "AM",
+      "cidades": [
+        {
+          "id": 7,
+          "nome": "Manaus",
+          "codigo": "am-manaus"
+        },
+        {
+          "id": 8,
+          "nome": "Parintins",
+          "codigo": "am-parintins"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "nome": "Bahia",
+      "uf": "BA",
+      "cidades": [
+        {
+          "id": 9,
+          "nome": "Salvador",
+          "codigo": "ba-salvador"
+        },
+        {
+          "id": 10,
+          "nome": "Feira de Santana",
+          "codigo": "ba-feira-de-santana"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "nome": "Ceará",
+      "uf": "CE",
+      "cidades": [
+        {
+          "id": 11,
+          "nome": "Fortaleza",
+          "codigo": "ce-fortaleza"
+        },
+        {
+          "id": 12,
+          "nome": "Caucaia",
+          "codigo": "ce-caucaia"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "nome": "Distrito Federal",
+      "uf": "DF",
+      "cidades": [
+        {
+          "id": 13,
+          "nome": "Brasília",
+          "codigo": "df-brasilia"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "nome": "Espírito Santo",
+      "uf": "ES",
+      "cidades": [
+        {
+          "id": 14,
+          "nome": "Vitória",
+          "codigo": "es-vitoria"
+        },
+        {
+          "id": 15,
+          "nome": "Vila Velha",
+          "codigo": "es-vila-velha"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "nome": "Goiás",
+      "uf": "GO",
+      "cidades": [
+        {
+          "id": 16,
+          "nome": "Goiânia",
+          "codigo": "go-goiania"
+        },
+        {
+          "id": 17,
+          "nome": "Aparecida de Goiânia",
+          "codigo": "go-aparecida-de-goiania"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "nome": "Maranhão",
+      "uf": "MA",
+      "cidades": [
+        {
+          "id": 18,
+          "nome": "São Luís",
+          "codigo": "ma-sao-luis"
+        },
+        {
+          "id": 19,
+          "nome": "Imperatriz",
+          "codigo": "ma-imperatriz"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "nome": "Mato Grosso",
+      "uf": "MT",
+      "cidades": [
+        {
+          "id": 20,
+          "nome": "Cuiabá",
+          "codigo": "mt-cuiaba"
+        },
+        {
+          "id": 21,
+          "nome": "Várzea Grande",
+          "codigo": "mt-varzea-grande"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "nome": "Mato Grosso do Sul",
+      "uf": "MS",
+      "cidades": [
+        {
+          "id": 22,
+          "nome": "Campo Grande",
+          "codigo": "ms-campo-grande"
+        },
+        {
+          "id": 23,
+          "nome": "Dourados",
+          "codigo": "ms-dourados"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "nome": "Minas Gerais",
+      "uf": "MG",
+      "cidades": [
+        {
+          "id": 24,
+          "nome": "Belo Horizonte",
+          "codigo": "mg-belo-horizonte"
+        },
+        {
+          "id": 25,
+          "nome": "Uberlândia",
+          "codigo": "mg-uberlandia"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "nome": "Pará",
+      "uf": "PA",
+      "cidades": [
+        {
+          "id": 26,
+          "nome": "Belém",
+          "codigo": "pa-belem"
+        },
+        {
+          "id": 27,
+          "nome": "Ananindeua",
+          "codigo": "pa-ananindeua"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "nome": "Paraíba",
+      "uf": "PB",
+      "cidades": [
+        {
+          "id": 28,
+          "nome": "João Pessoa",
+          "codigo": "pb-joao-pessoa"
+        },
+        {
+          "id": 29,
+          "nome": "Campina Grande",
+          "codigo": "pb-campina-grande"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "nome": "Paraná",
+      "uf": "PR",
+      "cidades": [
+        {
+          "id": 30,
+          "nome": "Curitiba",
+          "codigo": "pr-curitiba"
+        },
+        {
+          "id": 31,
+          "nome": "Londrina",
+          "codigo": "pr-londrina"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "nome": "Pernambuco",
+      "uf": "PE",
+      "cidades": [
+        {
+          "id": 32,
+          "nome": "Recife",
+          "codigo": "pe-recife"
+        },
+        {
+          "id": 33,
+          "nome": "Jaboatão dos Guararapes",
+          "codigo": "pe-jaboatao-dos-guararapes"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "nome": "Piauí",
+      "uf": "PI",
+      "cidades": [
+        {
+          "id": 34,
+          "nome": "Teresina",
+          "codigo": "pi-teresina"
+        },
+        {
+          "id": 35,
+          "nome": "Parnaíba",
+          "codigo": "pi-parnaiba"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "nome": "Rio de Janeiro",
+      "uf": "RJ",
+      "cidades": [
+        {
+          "id": 36,
+          "nome": "Rio de Janeiro",
+          "codigo": "rj-rio-de-janeiro"
+        },
+        {
+          "id": 37,
+          "nome": "Niterói",
+          "codigo": "rj-niteroi"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "nome": "Rio Grande do Norte",
+      "uf": "RN",
+      "cidades": [
+        {
+          "id": 38,
+          "nome": "Natal",
+          "codigo": "rn-natal"
+        },
+        {
+          "id": 39,
+          "nome": "Mossoró",
+          "codigo": "rn-mossoro"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "nome": "Rio Grande do Sul",
+      "uf": "RS",
+      "cidades": [
+        {
+          "id": 40,
+          "nome": "Porto Alegre",
+          "codigo": "rs-porto-alegre"
+        },
+        {
+          "id": 41,
+          "nome": "Caxias do Sul",
+          "codigo": "rs-caxias-do-sul"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "nome": "Rondônia",
+      "uf": "RO",
+      "cidades": [
+        {
+          "id": 42,
+          "nome": "Porto Velho",
+          "codigo": "ro-porto-velho"
+        },
+        {
+          "id": 43,
+          "nome": "Ji-Paraná",
+          "codigo": "ro-ji-parana"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "nome": "Roraima",
+      "uf": "RR",
+      "cidades": [
+        {
+          "id": 44,
+          "nome": "Boa Vista",
+          "codigo": "rr-boa-vista"
+        },
+        {
+          "id": 45,
+          "nome": "Rorainópolis",
+          "codigo": "rr-rorainopolis"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "nome": "Santa Catarina",
+      "uf": "SC",
+      "cidades": [
+        {
+          "id": 46,
+          "nome": "Florianópolis",
+          "codigo": "sc-florianopolis"
+        },
+        {
+          "id": 47,
+          "nome": "Joinville",
+          "codigo": "sc-joinville"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "nome": "São Paulo",
+      "uf": "SP",
+      "cidades": [
+        {
+          "id": 48,
+          "nome": "São Paulo",
+          "codigo": "sp-sao-paulo"
+        },
+        {
+          "id": 49,
+          "nome": "Campinas",
+          "codigo": "sp-campinas"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "nome": "Sergipe",
+      "uf": "SE",
+      "cidades": [
+        {
+          "id": 50,
+          "nome": "Aracaju",
+          "codigo": "se-aracaju"
+        },
+        {
+          "id": 51,
+          "nome": "Nossa Senhora do Socorro",
+          "codigo": "se-nossa-senhora-do-socorro"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "nome": "Tocantins",
+      "uf": "TO",
+      "cidades": [
+        {
+          "id": 52,
+          "nome": "Palmas",
+          "codigo": "to-palmas"
+        },
+        {
+          "id": 53,
+          "nome": "Araguaína",
+          "codigo": "to-araguaina"
+        }
+      ]
+    }
+  ]
+}
