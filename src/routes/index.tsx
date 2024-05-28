@@ -15,12 +15,14 @@ import ModelProfile from "../pages/Models/ModelProfile";
 import Advertise from "../pages/Advertise";
 import Favorites from "../pages/Favorites";
 import Terms from "../pages/Terms";
+import ScrollToTop from "../components/ScrollToTop";
 
 export default function AppRouter() {
   return (
     <BrowserRouter>
       <AuthProvider isSignedIn={true}>
         <Header />
+        <div id="back-to-top-anchor" />
         <Stack my={10}>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -47,6 +49,7 @@ export default function AppRouter() {
             />
           </Routes>
         </Stack>
+        <ScrollToTop />
         <Footer />
       </AuthProvider>
     </BrowserRouter>

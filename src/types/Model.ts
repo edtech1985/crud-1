@@ -1,5 +1,10 @@
 import { ReactNode } from "react";
 
+export interface ModelProfile {
+  name: string;
+  description: ReactNode;
+}
+
 export interface ModelDetails {
   age: number;
   height: string;
@@ -39,13 +44,12 @@ export interface Album {
 
 export interface Model {
   id: number;
-  name: string;
-  hasVideoVerification: any;
-  description: ReactNode;
-  modelType: string;
-  showFace: string;
+  modelProfile: ModelProfile;
   album: Album;
   modelDetails: ModelDetails;
   localInfo: LocalInfo;
   socialMedia: SocialMedia;
+  hasVideoVerification: boolean;
+  modelType: string;
+  showFace: string;
 }
