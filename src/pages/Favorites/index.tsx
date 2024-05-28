@@ -67,7 +67,7 @@ export default function Favorites() {
                 display="flex"
                 flexDirection="column"
                 alignItems="center"
-                onMouseEnter={() => handleMouseEnter(model)}
+                onMouseEnter={() => handleMouseEnter(model as Model)}
                 onMouseLeave={handleMouseLeave}
                 sx={{ marginBottom: 2 }}
               >
@@ -81,10 +81,10 @@ export default function Favorites() {
                 />
 
                 <ImageBox
-                  src={model.profilePicture}
+                  src={model.album.profilePicture}
                   id={model.id}
                   alt={model.name}
-                  modelAvatar={model.avatar}
+                  modelAvatar={model.album.avatar}
                   onFavoriteToggle={() => handleFavoriteToggle(model.id)}
                   handleSnackbar={() => setSnackbarOpen(true)}
                 />
