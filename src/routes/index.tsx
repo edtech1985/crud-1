@@ -16,6 +16,7 @@ import Advertise from "../pages/Advertise";
 import Favorites from "../pages/Favorites";
 import Terms from "../pages/Terms";
 import ScrollToTop from "../components/ScrollToTop";
+import Cities from "../pages/Cities";
 
 export default function AppRouter() {
   return (
@@ -32,7 +33,7 @@ export default function AppRouter() {
               path="/acompanhantes/:name"
               element={<ModelProfile name="" />}
             />
-            <Route path="/acompanhantes/:estado/:cidade" element={<Models />} />
+            <Route path="/cidades/:cityURL" element={<Cities />} />
             <Route path="/contato" element={<Contact />} />
             <Route path="/anuncie" element={<Advertise />} />
             <Route path="/login" element={<Login />} />

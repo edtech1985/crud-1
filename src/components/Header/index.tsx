@@ -25,11 +25,26 @@ const navItems = [
   {
     label: "Cidades",
     submenu: [
-      { label: "Porto Alegre-RS", path: "/acompanhantes-porto-alegre-rs" },
-      { label: "Florianópolis-SC", path: "/acompanhantes-florianopolis-sc" },
-      { label: "São Paulo-SP", path: "/acompanhantes-sao-paulo-sp" },
-      { label: "Belo Horizonte-MG", path: "/acompanhantes-belo-horizonte-mg" },
-      { label: "Rio de Janeiro-RJ", path: "/acompanhantes-rio-de-janeiro-rj" },
+      {
+        label: "Porto Alegre-RS",
+        path: "/cidades/acompanhantes-porto-alegre-rs",
+      },
+      {
+        label: "Florianópolis-SC",
+        path: "/cidades/acompanhantes-florianopolis-sc",
+      },
+      {
+        label: "São Paulo-SP",
+        path: "/cidades/acompanhantes-sao-paulo-sp",
+      },
+      {
+        label: "Belo Horizonte-MG",
+        path: "/cidades/acompanhantes-belo-horizonte-mg",
+      },
+      {
+        label: "Rio de Janeiro-RJ",
+        path: "/cidades/acompanhantes-rio-de-janeiro-rj",
+      },
     ],
   },
   { label: "Contato", path: "/contato" },

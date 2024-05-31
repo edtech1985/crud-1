@@ -21,6 +21,7 @@ export interface ModelDetails {
 export interface LocalInfo {
   city: string;
   state: string;
+  cityURL: string;
   neighborhood?: string;
   address?: string;
   zipCode?: string;
@@ -47,6 +48,7 @@ export interface Model {
   modelProfile: ModelProfile;
   album: Album;
   modelDetails: ModelDetails;
+  hasLocation: boolean;
   localInfo: LocalInfo;
   socialMedia: SocialMedia;
   hasVideoVerification: boolean;
