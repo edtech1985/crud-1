@@ -15,10 +15,8 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Menu, MenuItem } from "@mui/material";
-
 import logo from "../../assets/logo512.png";
 
-const drawerWidth = 240;
 const navItems = [
   { label: "Home", path: "/" },
   { label: "Acompanhantes", path: "/acompanhantes" },
@@ -51,6 +49,11 @@ const navItems = [
   { label: "Anuncie", path: "/anuncie" },
   { label: "Favoritos", path: "/favoritos" },
 ];
+
+const MenuItemStyles = {
+  bgcolor: "black",
+  color: "primary.light",
+};
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -97,6 +100,13 @@ export default function Header() {
                   component={Link}
                   to={subItem.path}
                   onClick={handleMenuClose}
+                  sx={{
+                    ...MenuItemStyles,
+                    "&:hover": {
+                      bgcolor: "primary.light",
+                      color: "black",
+                    },
+                  }}
                 >
                   {subItem.label}
                 </MenuItem>
@@ -117,7 +127,10 @@ export default function Header() {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{ ...MenuItemStyles, textAlign: "center", height: "100vh"}}
+    >
       <Box
         sx={{
           display: "flex",
@@ -128,13 +141,10 @@ export default function Header() {
         <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
           <img
             src={logo}
-            alt="Logo"
+            alt="Logo Luxury Escorts silhueta de mulher em dourado"
             style={{ width: "80%", marginBottom: "20px" }}
           />
         </Link>
-        <Typography variant="h6" noWrap>
-          South Escorts
-        </Typography>
       </Box>
       <Divider />
       <List>{renderNavItems()}</List>
@@ -144,7 +154,7 @@ export default function Header() {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar component="nav" sx={{ bgcolor: "#000" }}>
+      <AppBar component="nav" sx={{ bgcolor: "#000000", color: "gold" }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -204,6 +214,13 @@ export default function Header() {
                           component={Link}
                           to={subItem.path} // URL da cidade selecionada
                           onClick={handleMenuClose}
+                          sx={{
+                            ...MenuItemStyles,
+                            "&:hover": {
+                              bgcolor: "primary.light",
+                              color: "black",
+                            },
+                          }}
                         >
                           {subItem.label}
                         </MenuItem>
@@ -236,7 +253,7 @@ export default function Header() {
             display: { xs: "block", sm: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
-              width: drawerWidth,
+              width: "full",
             },
           }}
         >
