@@ -16,6 +16,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Menu, MenuItem } from "@mui/material";
 import logo from "../../assets/logo512.png";
+import CloseIcon from "@mui/icons-material/Close";
 
 const navItems = [
   { label: "Home", path: "/" },
@@ -114,6 +115,18 @@ export default function Header() {
               anchorEl={submenuAnchorEl}
               open={Boolean(submenuAnchorEl)}
               onClose={handleMenuClose}
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100vh",
+                width: "100vw",
+                bgcolor: "black",
+                position: "absolute",
+                top: 0,
+                left: 0,
+              }}
             >
               {item.submenu.map((subItem) => (
                 <MenuItem
@@ -153,7 +166,12 @@ export default function Header() {
   const drawer = (
     <Box
       onClick={handleDrawerToggle}
-      sx={{ ...MenuItemStyles, textAlign: "center", height: "100vh" }}
+      sx={{
+        ...MenuItemStyles,
+        textAlign: "center",
+        height: "100vh",
+        paddingTop: "20px",
+      }}
     >
       <Box
         sx={{
@@ -169,6 +187,13 @@ export default function Header() {
             style={{ width: "80%", marginBottom: "20px" }}
           />
         </Link>
+        <IconButton
+          onClick={handleDrawerToggle}
+          aria-label="fechar menu"
+          sx={{ color: "white", position: "absolute", top: 15, left: 15 }}
+        >
+          <CloseIcon />
+        </IconButton>
       </Box>
       <Divider />
       <List>{renderNavItems()}</List>
@@ -274,7 +299,7 @@ export default function Header() {
                   <Button
                     component={Link}
                     to={item.path}
-                    sx={{...MenuStyles, color: "primary.light" }}
+                    sx={{ ...MenuStyles, color: "primary.light" }}
                   >
                     {item.label}
                   </Button>

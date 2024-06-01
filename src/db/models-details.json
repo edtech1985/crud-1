@@ -853,7 +853,6 @@
       "state": "RS",
       "city": "Porto Alegre",
       "cityURL": "acompanhantes-porto-alegre-rs",
-
       "zipCode": "90010-230",
       "neighborhood": "Menino Deus",
       "zone": "Zona Sul",
@@ -874,6 +873,7 @@
       "bust": "90cm",
       "waist": "60cm",
       "hips": "90cm",
+      "feet": "36",
       "hasLocation": false
     },
     "services": {

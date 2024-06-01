@@ -13,6 +13,7 @@ import {
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import modelsData from "../../db/models-details.json";
+import { Padding } from "@mui/icons-material";
 
 const ImageBox = ({
   src,
@@ -95,7 +96,7 @@ const ImageBox = ({
   return (
     <Box
       position="relative"
-      width="100%"
+      width={{xs: "90%", sm: "100%"}}
       height="100%"
       overflow="hidden"
       zIndex={600}
@@ -178,7 +179,6 @@ const ImageBox = ({
           <ShareIcon />
         </Tooltip>
       </Fab>
-
       <Popover
         id={shareId}
         open={open}
