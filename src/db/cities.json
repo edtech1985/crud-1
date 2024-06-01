@@ -8,12 +8,14 @@
         {
           "id": 1,
           "nome": "Rio Branco",
-          "codigo": "ac-rio-branco"
+          "codigo": "ac-rio-branco",
+          "url": "acompanhantes-rio-branco-ac"
         },
         {
           "id": 2,
           "nome": "Cruzeiro do Sul",
-          "codigo": "ac-cruzeiro-do-sul"
+          "codigo": "ac-cruzeiro-do-sul",
+          "url": "acompanhantes-cruzeiro-do-sul-ac"
         }
       ]
     },
@@ -25,12 +27,14 @@
         {
           "id": 3,
           "nome": "Maceió",
-          "codigo": "al-maceio"
+          "codigo": "al-maceio",
+          "url": "acompanhantes-maceio-al"
         },
         {
           "id": 4,
           "nome": "Arapiraca",
-          "codigo": "al-arapiraca"
+          "codigo": "al-arapiraca",
+          "url": "acompanhantes-arapiraca-al"
         }
       ]
     },
@@ -42,12 +46,14 @@
         {
           "id": 5,
           "nome": "Macapá",
-          "codigo": "ap-macapa"
+          "codigo": "ap-macapa",
+          "url": "acompanhantes-macapa-ap"
         },
         {
           "id": 6,
           "nome": "Santana",
-          "codigo": "ap-santana"
+          "codigo": "ap-santana",
+          "url": "acompanhantes-santana-ap"
         }
       ]
     },
@@ -59,12 +65,14 @@
         {
           "id": 7,
           "nome": "Manaus",
-          "codigo": "am-manaus"
+          "codigo": "am-manaus",
+          "url": "acompanhantes-manaus-am"
         },
         {
           "id": 8,
           "nome": "Parintins",
-          "codigo": "am-parintins"
+          "codigo": "am-parintins",
+          "url": "acompanhantes-parintins-am"
         }
       ]
     },
@@ -76,12 +84,14 @@
         {
           "id": 9,
           "nome": "Salvador",
-          "codigo": "ba-salvador"
+          "codigo": "ba-salvador",
+          "url": "acompanhantes-salvador-ba"
         },
         {
           "id": 10,
           "nome": "Feira de Santana",
-          "codigo": "ba-feira-de-santana"
+          "codigo": "ba-feira-de-santana",
+          "url": "acompanhantes-feira-de-santana-ba"
         }
       ]
     },
@@ -93,12 +103,14 @@
         {
           "id": 11,
           "nome": "Fortaleza",
-          "codigo": "ce-fortaleza"
+          "codigo": "ce-fortaleza",
+          "url": "acompanhantes-fortaleza-ce"
         },
         {
           "id": 12,
           "nome": "Caucaia",
-          "codigo": "ce-caucaia"
+          "codigo": "ce-caucaia",
+          "url": "acompanhantes-caucaia-ce"
         }
       ]
     },
@@ -110,7 +122,8 @@
         {
           "id": 13,
           "nome": "Brasília",
-          "codigo": "df-brasilia"
+          "codigo": "df-brasilia",
+          "url": "acompanhantes-brasilia-df"
         }
       ]
     },
@@ -122,12 +135,14 @@
         {
           "id": 14,
           "nome": "Vitória",
-          "codigo": "es-vitoria"
+          "codigo": "es-vitoria",
+          "url": "acompanhantes-vitoria-es"
         },
         {
           "id": 15,
           "nome": "Vila Velha",
-          "codigo": "es-vila-velha"
+          "codigo": "es-vila-velha",
+          "url": "acompanhantes-vila-velha-es"
         }
       ]
     },
@@ -139,12 +154,14 @@
         {
           "id": 16,
           "nome": "Goiânia",
-          "codigo": "go-goiania"
+          "codigo": "go-goiania",
+          "url": "acompanhantes-goiania-go"
         },
         {
           "id": 17,
           "nome": "Aparecida de Goiânia",
-          "codigo": "go-aparecida-de-goiania"
+          "codigo": "go-aparecida-de-goiania",
+          "url": "acompanhantes-aparecida-de-goiania-go"
         }
       ]
     },
@@ -156,12 +173,14 @@
         {
           "id": 18,
           "nome": "São Luís",
-          "codigo": "ma-sao-luis"
+          "codigo": "ma-sao-luis",
+          "url": "acompanhantes-sao-luis-ma"
         },
         {
           "id": 19,
           "nome": "Imperatriz",
-          "codigo": "ma-imperatriz"
+          "codigo": "ma-imperatriz",
+          "url": "acompanhantes-imperatriz-ma"
         }
       ]
     },
@@ -173,12 +192,14 @@
         {
           "id": 20,
           "nome": "Cuiabá",
-          "codigo": "mt-cuiaba"
+          "codigo": "mt-cuiaba",
+          "url": "acompanhantes-cuiaba-mt"
         },
         {
           "id": 21,
           "nome": "Várzea Grande",
-          "codigo": "mt-varzea-grande"
+          "codigo": "mt-varzea-grande",
+          "url": "acompanhantes-varzea-grande-mt"
         }
       ]
     },
@@ -190,12 +211,14 @@
         {
           "id": 22,
           "nome": "Campo Grande",
-          "codigo": "ms-campo-grande"
+          "codigo": "ms-campo-grande",
+          "url": "acompanhantes-campo-grande-ms"
         },
         {
           "id": 23,
           "nome": "Dourados",
-          "codigo": "ms-dourados"
+          "codigo": "ms-dourados",
+          "url": "acompanhantes-dourados-ms"
         }
       ]
     },
@@ -207,12 +230,14 @@
         {
           "id": 24,
           "nome": "Belo Horizonte",
-          "codigo": "mg-belo-horizonte"
+          "codigo": "mg-belo-horizonte",
+          "url": "acompanhantes-belo-horizonte-mg"
         },
         {
           "id": 25,
           "nome": "Uberlândia",
-          "codigo": "mg-uberlandia"
+          "codigo": "mg-uberlandia",
+          "url": "acompanhantes-uberlandia-mg"
         }
       ]
     },
@@ -224,12 +249,14 @@
         {
           "id": 26,
           "nome": "Belém",
-          "codigo": "pa-belem"
+          "codigo": "pa-belem",
+          "url": "acompanhantes-belem-pa"
         },
         {
           "id": 27,
           "nome": "Ananindeua",
-          "codigo": "pa-ananindeua"
+          "codigo": "pa-ananindeua",
+          "url": "acompanhantes-ananindeua-pa"
         }
       ]
     },
@@ -241,12 +268,14 @@
         {
           "id": 28,
           "nome": "João Pessoa",
-          "codigo": "pb-joao-pessoa"
+          "codigo": "pb-joao-pessoa",
+          "url": "acompanhantes-joao-pessoa-pb"
         },
         {
           "id": 29,
           "nome": "Campina Grande",
-          "codigo": "pb-campina-grande"
+          "codigo": "pb-campina-grande",
+          "url": "acompanhantes-campina-grande-pb"
         }
       ]
     },
@@ -258,12 +287,14 @@
         {
           "id": 30,
           "nome": "Curitiba",
-          "codigo": "pr-curitiba"
+          "codigo": "pr-curitiba",
+          "url": "acompanhantes-curitiba-pr"
         },
         {
           "id": 31,
           "nome": "Londrina",
-          "codigo": "pr-londrina"
+          "codigo": "pr-londrina",
+          "url": "acompanhantes-londrina-pr"
         }
       ]
     },
@@ -275,12 +306,14 @@
         {
           "id": 32,
           "nome": "Recife",
-          "codigo": "pe-recife"
+          "codigo": "pe-recife",
+          "url": "acompanhantes-recife-pe"
         },
         {
           "id": 33,
           "nome": "Jaboatão dos Guararapes",
-          "codigo": "pe-jaboatao-dos-guararapes"
+          "codigo": "pe-jaboatao-dos-guararapes",
+          "url": "acompanhantes-jaboatao-dos-guararapes-pe"
         }
       ]
     },
@@ -292,12 +325,14 @@
         {
           "id": 34,
           "nome": "Teresina",
-          "codigo": "pi-teresina"
+          "codigo": "pi-teresina",
+          "url": "acompanhantes-teresina-pi"
         },
         {
           "id": 35,
           "nome": "Parnaíba",
-          "codigo": "pi-parnaiba"
+          "codigo": "pi-parnaiba",
+          "url": "acompanhantes-parnaiba-pi"
         }
       ]
     },
@@ -309,12 +344,14 @@
         {
           "id": 36,
           "nome": "Rio de Janeiro",
-          "codigo": "rj-rio-de-janeiro"
+          "codigo": "rj-rio-de-janeiro",
+          "url": "acompanhantes-rio-de-janeiro-rj"
         },
         {
           "id": 37,
           "nome": "Niterói",
-          "codigo": "rj-niteroi"
+          "codigo": "rj-niteroi",
+          "url": "acompanhantes-niteroi-rj"
         }
       ]
     },
@@ -326,12 +363,14 @@
         {
           "id": 38,
           "nome": "Natal",
-          "codigo": "rn-natal"
+          "codigo": "rn-natal",
+          "url": "acompanhantes-natal-rn"
         },
         {
           "id": 39,
           "nome": "Mossoró",
-          "codigo": "rn-mossoro"
+          "codigo": "rn-mossoro",
+          "url": "acompanhantes-mossoro-rn"
         }
       ]
     },
@@ -343,12 +382,14 @@
         {
           "id": 40,
           "nome": "Porto Alegre",
-          "codigo": "rs-porto-alegre"
+          "codigo": "rs-porto-alegre",
+          "url": "acompanhantes-porto-alegre-rs"
         },
         {
           "id": 41,
           "nome": "Caxias do Sul",
-          "codigo": "rs-caxias-do-sul"
+          "codigo": "rs-caxias-do-sul",
+          "url": "acompanhantes-caxias-do-sul-rs"
         }
       ]
     },
@@ -360,12 +401,14 @@
         {
           "id": 42,
           "nome": "Porto Velho",
-          "codigo": "ro-porto-velho"
+          "codigo": "ro-porto-velho",
+          "url": "acompanhantes-porto-velho-ro"
         },
         {
           "id": 43,
           "nome": "Ji-Paraná",
-          "codigo": "ro-ji-parana"
+          "codigo": "ro-ji-parana",
+          "url": "acompanhantes-ji-parana-ro"
         }
       ]
     },
@@ -377,12 +420,14 @@
         {
           "id": 44,
           "nome": "Boa Vista",
-          "codigo": "rr-boa-vista"
+          "codigo": "rr-boa-vista",
+          "url": "acompanhantes-boa-vista-rr"
         },
         {
           "id": 45,
           "nome": "Rorainópolis",
-          "codigo": "rr-rorainopolis"
+          "codigo": "rr-rorainopolis",
+          "url": "acompanhantes-rorainopolis-rr"
         }
       ]
     },
@@ -394,12 +439,14 @@
         {
           "id": 46,
           "nome": "Florianópolis",
-          "codigo": "sc-florianopolis"
+          "codigo": "sc-florianopolis",
+          "url": "acompanhantes-florianopolis-sc"
         },
         {
           "id": 47,
           "nome": "Joinville",
-          "codigo": "sc-joinville"
+          "codigo": "sc-joinville",
+          "url": "acompanhantes-joinville-sc"
         }
       ]
     },
@@ -411,12 +458,14 @@
         {
           "id": 48,
           "nome": "São Paulo",
-          "codigo": "sp-sao-paulo"
+          "codigo": "sp-sao-paulo",
+          "url": "acompanhantes-sao-paulo-sp"
         },
         {
           "id": 49,
           "nome": "Campinas",
-          "codigo": "sp-campinas"
+          "codigo": "sp-campinas",
+          "url": "acompanhantes-campinas-sp"
         }
       ]
     },
@@ -428,12 +477,14 @@
         {
           "id": 50,
           "nome": "Aracaju",
-          "codigo": "se-aracaju"
+          "codigo": "se-aracaju",
+          "url": "acompanhantes-aracaju-se"
         },
         {
           "id": 51,
           "nome": "Nossa Senhora do Socorro",
-          "codigo": "se-nossa-senhora-do-socorro"
+          "codigo": "se-nossa-senhora-do-socorro",
+          "url": "acompanhantes-nossa-senhora-do-socorro-se"
         }
       ]
     },
@@ -445,12 +496,14 @@
         {
           "id": 52,
           "nome": "Palmas",
-          "codigo": "to-palmas"
+          "codigo": "to-palmas",
+          "url": "acompanhantes-palmas-to"
         },
         {
           "id": 53,
           "nome": "Araguaína",
-          "codigo": "to-araguaina"
+          "codigo": "to-araguaina",
+          "url": "acompanhantes-araguaina-to"
         }
       ]
     }

@@ -15,27 +15,66 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Menu, MenuItem } from "@mui/material";
-
 import logo from "../../assets/logo512.png";
+import CloseIcon from "@mui/icons-material/Close";
 
-const drawerWidth = 240;
 const navItems = [
   { label: "Home", path: "/" },
   { label: "Acompanhantes", path: "/acompanhantes" },
   {
     label: "Cidades",
     submenu: [
-      { label: "Porto Alegre-RS", path: "/acompanhantes-porto-alegre-rs" },
-      { label: "Florianópolis-SC", path: "/acompanhantes-florianopolis-sc" },
-      { label: "São Paulo-SP", path: "/acompanhantes-sao-paulo-sp" },
-      { label: "Belo Horizonte-MG", path: "/acompanhantes-belo-horizonte-mg" },
-      { label: "Rio de Janeiro-RJ", path: "/acompanhantes-rio-de-janeiro-rj" },
+      {
+        label: "Porto Alegre-RS",
+        path: "/cidades/acompanhantes-porto-alegre-rs",
+      },
+      {
+        label: "Florianópolis-SC",
+        path: "/cidades/acompanhantes-florianopolis-sc",
+      },
+      {
+        label: "São Paulo-SP",
+        path: "/cidades/acompanhantes-sao-paulo-sp",
+      },
+      {
+        label: "Belo Horizonte-MG",
+        path: "/cidades/acompanhantes-belo-horizonte-mg",
+      },
+      {
+        label: "Rio de Janeiro-RJ",
+        path: "/cidades/acompanhantes-rio-de-janeiro-rj",
+      },
     ],
   },
   { label: "Contato", path: "/contato" },
   { label: "Anuncie", path: "/anuncie" },
   { label: "Favoritos", path: "/favoritos" },
 ];
+
+const MenuItemStyles = {
+  bgcolor: "black",
+  color: "primary.light",
+};
+
+const MenuStyles = {
+  color: "primary.light",
+  position: "relative",
+  overflow: "hidden",
+  "&::after": {
+    content: '""',
+    position: "absolute",
+    width: "0%",
+    height: "2px", // altura da linha
+    bottom: "-1px", // espaço abaixo da palavra
+    left: "50%",
+    backgroundColor: "currentColor", // cor da linha
+    transition: "width 0.3s ease, left 0.3s ease",
+  },
+  "&:hover::after": {
+    width: "100%",
+    left: "0%",
+  },
+};
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -53,6 +92,7 @@ export default function Header() {
 
   const handleSubmenuClick = (event: React.MouseEvent<HTMLElement>) => {
     setSubmenuAnchorEl(event.currentTarget);
+    setMobileOpen((prevState) => !prevState);
   };
 
   const handleMenuClose = () => {
@@ -75,6 +115,18 @@ export default function Header() {
               anchorEl={submenuAnchorEl}
               open={Boolean(submenuAnchorEl)}
               onClose={handleMenuClose}
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100vh",
+                width: "100vw",
+                bgcolor: "black",
+                position: "absolute",
+                top: 0,
+                left: 0,
+              }}
             >
               {item.submenu.map((subItem) => (
                 <MenuItem
@@ -82,6 +134,16 @@ export default function Header() {
                   component={Link}
                   to={subItem.path}
                   onClick={handleMenuClose}
+                  sx={{
+                    ...MenuItemStyles,
+                    "&:hover": {
+                      bgcolor: "primary.light",
+                      color: "black",
+                    },
+                    width: "100vw",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
                 >
                   {subItem.label}
                 </MenuItem>
@@ -102,7 +164,15 @@ export default function Header() {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{
+        ...MenuItemStyles,
+        textAlign: "center",
+        height: "100vh",
+        paddingTop: "20px",
+      }}
+    >
       <Box
         sx={{
           display: "flex",
@@ -113,13 +183,17 @@ export default function Header() {
         <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
           <img
             src={logo}
-            alt="Logo"
+            alt="Logo Luxury Escorts silhueta de mulher em dourado"
             style={{ width: "80%", marginBottom: "20px" }}
           />
         </Link>
-        <Typography variant="h6" noWrap>
-          South Escorts
-        </Typography>
+        <IconButton
+          onClick={handleDrawerToggle}
+          aria-label="fechar menu"
+          sx={{ color: "white", position: "absolute", top: 15, left: 15 }}
+        >
+          <CloseIcon />
+        </IconButton>
       </Box>
       <Divider />
       <List>{renderNavItems()}</List>
@@ -129,7 +203,7 @@ export default function Header() {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar component="nav" sx={{ bgcolor: "#000" }}>
+      <AppBar component="nav" sx={{ bgcolor: "#000000", color: "gold" }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -173,7 +247,25 @@ export default function Header() {
                       aria-controls="city-menu"
                       aria-haspopup="true"
                       onClick={handleMenuClick}
-                      sx={{ color: "primary.light" }}
+                      sx={{
+                        color: "primary.light",
+                        position: "relative",
+                        overflow: "hidden",
+                        "&::after": {
+                          content: '""',
+                          position: "absolute",
+                          width: "0%",
+                          height: "2px", // altura da linha
+                          bottom: "-1px", // espaço abaixo da palavra
+                          left: "50%",
+                          backgroundColor: "currentColor", // cor da linha
+                          transition: "width 0.3s ease, left 0.3s ease",
+                        },
+                        "&:hover::after": {
+                          width: "100%",
+                          left: "0%",
+                        },
+                      }}
                     >
                       {item.label}
                     </Button>
@@ -189,6 +281,14 @@ export default function Header() {
                           component={Link}
                           to={subItem.path} // URL da cidade selecionada
                           onClick={handleMenuClose}
+                          sx={{
+                            ...MenuItemStyles,
+                            ...MenuStyles,
+                            "&:hover": {
+                              bgcolor: "primary.light",
+                              color: "black",
+                            },
+                          }}
                         >
                           {subItem.label}
                         </MenuItem>
@@ -199,7 +299,7 @@ export default function Header() {
                   <Button
                     component={Link}
                     to={item.path}
-                    sx={{ color: "primary.light" }}
+                    sx={{ ...MenuStyles, color: "primary.light" }}
                   >
                     {item.label}
                   </Button>
@@ -221,7 +321,7 @@ export default function Header() {
             display: { xs: "block", sm: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
-              width: drawerWidth,
+              width: "full",
             },
           }}
         >
