@@ -34,6 +34,7 @@ import { NewReleases, Verified } from "@mui/icons-material";
 import Loading from "../../components/Loading";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { useParams } from "react-router-dom";
+import IconBreadcrumbs from "../../components/Breadcrumbs";
 
 interface Filters {
   city: string;
@@ -59,6 +60,13 @@ const MenuItemStyles = {
   color: "gold",
 };
 
+function formatCityName(cityURL: string) {
+  let stateName = cityURL.slice(-2).toUpperCase();
+  let baseUrl = cityURL.slice(0, -3).replace(/-/g, " ");
+  let cityName = baseUrl.slice(14).toUpperCase();
+  return { stateName, cityName, baseUrl };
+}
+
 const Cities: React.FC = () => {
   const [favorites, setFavorites] = useState<number[]>([]);
   const [selectedModel, setSelectedModel] = useState<Model | null>(null);
@@ -75,6 +83,8 @@ const Cities: React.FC = () => {
     modelType: "indiferente",
     showFace: "indiferente",
   });
+
+  const { baseUrl, cityName, stateName } = formatCityName(filters.cityURL);
 
   useEffect(() => {
     setFilters((prevFilters) => ({
@@ -214,20 +224,15 @@ const Cities: React.FC = () => {
   ).length;
   // === === === END FILTERING === === === //
 
-  
-
   return (
     <Box textAlign="center">
       {loading && <Loading />}
-      <div id="back-to-top-anchor" />
+      <IconBreadcrumbs cityURL={filters.cityURL} />
       <Box id="page-description" mb={2}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Nossas Modelos Cities
-        </Typography>
 
         {filters.cityURL && (
-          <Typography variant="body1">
-            {totalModelsInCity} modelos disponíveis em {filters.city}
+          <Typography variant="body1" >
+            {totalModelsInCity} acompanhantes disponíveis em {cityName}, {stateName}.
           </Typography>
         )}
         {(filters.modelType !== "indiferente" ||
@@ -360,7 +365,6 @@ const Cities: React.FC = () => {
           </Grid>
         </Grid>
       )}
-
       <Grid container justifyContent="center" spacing={1}>
         {filteredModels.length === 0 ? (
           <Typography variant="body1" paragraph>
