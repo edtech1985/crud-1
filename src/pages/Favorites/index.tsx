@@ -3,13 +3,7 @@ import { Box, Typography, Grid, Snackbar } from "@mui/material";
 import modelsData from "../../db/models-details.json";
 import ImageBox from "../../components/ImageBox";
 import Loading from "../../components/Loading";
-
-interface Model {
-  id: number;
-  name: string;
-  profilePicture: string;
-  avatar: string;
-}
+import { Model } from "../../types/Model";
 
 export default function Favorites() {
   const [favorites, setFavorites] = useState<number[]>([]);
@@ -83,13 +77,13 @@ export default function Favorites() {
                 <ImageBox
                   src={model.album.profilePicture}
                   id={model.id}
-                  alt={model.name}
+                  alt={model.modelProfile.name}
                   modelAvatar={model.album.avatar}
                   onFavoriteToggle={() => handleFavoriteToggle(model.id)}
                   handleSnackbar={() => setSnackbarOpen(true)}
                 />
-                {selectedModel === model && (
-                  <div>{/* Adicione os detalhes do modelo aqui */}</div>
+                {selectedModel !== null && selectedModel === model && (
+                  <div>{/* Add model details here */}</div>
                 )}
                 <Typography
                   variant="subtitle2"
@@ -104,7 +98,7 @@ export default function Favorites() {
                     textShadow: "-3px 5px 3px black",
                   }}
                 >
-                  {model.name}
+                  {model.modelProfile.name}
                 </Typography>
               </Box>
             </Grid>

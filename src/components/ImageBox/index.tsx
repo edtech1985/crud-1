@@ -13,6 +13,7 @@ import {
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import modelsData from "../../db/models-details.json";
+import { Padding } from "@mui/icons-material";
 
 const ImageBox = ({
   src,
@@ -71,11 +72,11 @@ const ImageBox = ({
   const handleShare = (method: string) => {
     const model = modelsData.find((m) => m.id === id);
     if (model) {
-      const modelProfileLink = `https://example.com/models/${model.name}`;
+      const modelProfileLink = `https://example.com/models/${model.modelProfile.name}`;
       if (method === "whatsapp") {
         window.open(
           `https://api.whatsapp.com/send?text=${encodeURIComponent(
-            `Confira o perfil de ${model.name}: ${modelProfileLink}`
+            `Confira o perfil de ${model.modelProfile.name}: ${modelProfileLink}`
           )}`
         );
       } else if (method === "copy") {
@@ -95,7 +96,7 @@ const ImageBox = ({
   return (
     <Box
       position="relative"
-      width="100%"
+      width={{xs: "90%", sm: "100%"}}
       height="100%"
       overflow="hidden"
       zIndex={600}
@@ -178,7 +179,6 @@ const ImageBox = ({
           <ShareIcon />
         </Tooltip>
       </Fab>
-
       <Popover
         id={shareId}
         open={open}

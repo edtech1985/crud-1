@@ -1,5 +1,10 @@
 import { ReactNode } from "react";
 
+export interface ModelProfile {
+  name: string;
+  description: ReactNode;
+}
+
 export interface ModelDetails {
   age: number;
   height: string;
@@ -16,6 +21,7 @@ export interface ModelDetails {
 export interface LocalInfo {
   city: string;
   state: string;
+  cityURL: string;
   neighborhood?: string;
   address?: string;
   zipCode?: string;
@@ -39,13 +45,13 @@ export interface Album {
 
 export interface Model {
   id: number;
-  name: string;
-  hasVideoVerification: any;
-  description: ReactNode;
-  modelType: string;
-  showFace: string;
+  modelProfile: ModelProfile;
   album: Album;
   modelDetails: ModelDetails;
+  hasLocation: boolean;
   localInfo: LocalInfo;
   socialMedia: SocialMedia;
+  hasVideoVerification: boolean;
+  modelType: string;
+  showFace: string;
 }
