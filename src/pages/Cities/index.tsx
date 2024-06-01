@@ -76,18 +76,14 @@ const Cities: React.FC = () => {
     showFace: "indiferente",
   });
 
-  // Adiciona um console log para verificar os parâmetros da URL
   useEffect(() => {
-    console.log("Cidade:", urlCity);
     setFilters((prevFilters) => ({
       ...prevFilters,
       cityURL: urlCity || "",
     }));
   }, [urlCity]);
 
-  // Filtrar as modelos com base no estado e na cidade
   useEffect(() => {
-    // Filtra os modelos com base no cityURL
     const filteredModels = modelsData.filter((model) => {
       return (
         model.localInfo.cityURL.toLowerCase() === filters.cityURL.toLowerCase()
@@ -95,7 +91,7 @@ const Cities: React.FC = () => {
     });
 
     setModels(filteredModels as Model[]);
-  }, [filters.cityURL]); // Atualize o filtro sempre que o estado ou a cidade mudarem
+  }, [filters.cityURL]);
 
   // === === === BEGIN MOUSE ENTER AND LEAVE === === === //
   const handleMouseEnter = (model: Model) => {
@@ -164,7 +160,6 @@ const Cities: React.FC = () => {
       [filterName]: value as Filters[typeof filterName],
     }));
   };
-  // === === === END FILTERING === === === //
 
   const handlemodelTypeChange = (
     e: SelectChangeEvent<
@@ -218,6 +213,8 @@ const Cities: React.FC = () => {
     (model) => model.localInfo.cityURL === filters.cityURL
   ).length;
   // === === === END FILTERING === === === //
+
+  
 
   return (
     <Box textAlign="center">

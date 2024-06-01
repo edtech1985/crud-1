@@ -11,3 +11,13 @@ golden: {
       900: "#60541E",
       main: "#FFFFA0", // Define main gold color for easier reference
     },
+
+    logoColor: {
+    #FEC051,
+    #F4B543,
+    #DCA037,
+    #C08A28,
+    #B2863B
+
+    
+    }

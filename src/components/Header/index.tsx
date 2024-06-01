@@ -55,6 +55,26 @@ const MenuItemStyles = {
   color: "primary.light",
 };
 
+const MenuStyles = {
+  color: "primary.light",
+  position: "relative",
+  overflow: "hidden",
+  "&::after": {
+    content: '""',
+    position: "absolute",
+    width: "0%",
+    height: "2px", // altura da linha
+    bottom: "-1px", // espaço abaixo da palavra
+    left: "50%",
+    backgroundColor: "currentColor", // cor da linha
+    transition: "width 0.3s ease, left 0.3s ease",
+  },
+  "&:hover::after": {
+    width: "100%",
+    left: "0%",
+  },
+};
+
 export default function Header() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -71,6 +91,7 @@ export default function Header() {
 
   const handleSubmenuClick = (event: React.MouseEvent<HTMLElement>) => {
     setSubmenuAnchorEl(event.currentTarget);
+    setMobileOpen((prevState) => !prevState);
   };
 
   const handleMenuClose = () => {
@@ -106,6 +127,9 @@ export default function Header() {
                       bgcolor: "primary.light",
                       color: "black",
                     },
+                    width: "100vw",
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
                 >
                   {subItem.label}
@@ -129,7 +153,7 @@ export default function Header() {
   const drawer = (
     <Box
       onClick={handleDrawerToggle}
-      sx={{ ...MenuItemStyles, textAlign: "center", height: "100vh"}}
+      sx={{ ...MenuItemStyles, textAlign: "center", height: "100vh" }}
     >
       <Box
         sx={{
@@ -198,7 +222,25 @@ export default function Header() {
                       aria-controls="city-menu"
                       aria-haspopup="true"
                       onClick={handleMenuClick}
-                      sx={{ color: "primary.light" }}
+                      sx={{
+                        color: "primary.light",
+                        position: "relative",
+                        overflow: "hidden",
+                        "&::after": {
+                          content: '""',
+                          position: "absolute",
+                          width: "0%",
+                          height: "2px", // altura da linha
+                          bottom: "-1px", // espaço abaixo da palavra
+                          left: "50%",
+                          backgroundColor: "currentColor", // cor da linha
+                          transition: "width 0.3s ease, left 0.3s ease",
+                        },
+                        "&:hover::after": {
+                          width: "100%",
+                          left: "0%",
+                        },
+                      }}
                     >
                       {item.label}
                     </Button>
@@ -216,6 +258,7 @@ export default function Header() {
                           onClick={handleMenuClose}
                           sx={{
                             ...MenuItemStyles,
+                            ...MenuStyles,
                             "&:hover": {
                               bgcolor: "primary.light",
                               color: "black",
@@ -231,7 +274,7 @@ export default function Header() {
                   <Button
                     component={Link}
                     to={item.path}
-                    sx={{ color: "primary.light" }}
+                    sx={{...MenuStyles, color: "primary.light" }}
                   >
                     {item.label}
                   </Button>
