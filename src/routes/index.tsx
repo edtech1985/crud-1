@@ -17,6 +17,7 @@ import Favorites from "../pages/Favorites";
 import Terms from "../pages/Terms";
 import ScrollToTop from "../components/ScrollToTop";
 import Cities from "../pages/Cities";
+import Massage from "../pages/Massage";
 
 export default function AppRouter() {
   return (
@@ -34,6 +35,7 @@ export default function AppRouter() {
               element={<ModelProfile name="" />}
             />
             <Route path="/cidades/:cityURL" element={<Cities />} />
+            <Route path="/massagens" element={<Massage />} />
             <Route path="/contato" element={<Contact />} />
             <Route path="/anuncie" element={<Advertise />} />
             <Route path="/login" element={<Login />} />
