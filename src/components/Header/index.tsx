@@ -100,6 +100,8 @@ export default function Header() {
     setSubmenuAnchorEl(null);
   };
 
+  
+
   const renderNavItems = () => {
     return navItems.map((item) => (
       <ListItem key={item.label} disablePadding>
@@ -154,7 +156,8 @@ export default function Header() {
           <ListItemButton
             component={Link}
             to={item.path}
-            sx={{ textAlign: "center" }}
+            selected={window.location.pathname === item.path}
+              sx={{ textAlign: "center", "&:selected": { color: "red" } }}
           >
             <ListItemText primary={item.label} />
           </ListItemButton>

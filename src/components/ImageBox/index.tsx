@@ -13,7 +13,6 @@ import {
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import modelsData from "../../db/models-details.json";
-import { Padding } from "@mui/icons-material";
 
 const ImageBox = ({
   src,
