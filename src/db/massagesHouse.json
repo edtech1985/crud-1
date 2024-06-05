@@ -1,0 +1,842 @@
+[
+  {
+    "id": "1",
+    "profile": {
+      "name": "Massagem VIP",
+      "description": "Massagem relaxante",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjKVITKTeYOz3C1l39njBWuyocCB85GUdkLJUMfTbJkHQKgY-DPTJatkOt1xsYJzH9dWA&usqp=CAU"
+    },
+    "album": [
+      {
+        "image": "https://royalface.com.br/wp-content/uploads/2023/06/como-ocorre-a-massagem-relaxante.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.dermaclub.com.br/on/demandware.static/-/Sites-dermaclub-br-Library/pt_BR/dwa439c391/massagem-relaxante.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.freshyspa.com.br/wp-content/uploads/2019/03/pai.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.tokiospa.com.br/images/informacoes/massagem-sensual-no-morumbi.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://pretocafe.com.br/wp-content/uploads/2024/04/massagem-sensual-3.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2021/06/24/178731397-massagemtantrica.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.cursosvirtuais.net/cursos/thumb/20a4fc8029034ee29ec8b0670655f253.png",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://cdn.jornaldebrasilia.com.br/wp-content/uploads/2023/08/08230129/massagistas-irreconheciveis-massageando-as-costas-do-homem-no-spa-de-saude-scaled.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://ederepente50.wordpress.com/wp-content/uploads/2016/06/massagemtantrica1400x600.jpg?w=604&h=270&crop=1",
+        "description": "Massagem relaxante"
+      }
+    ],
+    "location": {
+      "zipCode": "12345-678",
+      "city": "São Paulo",
+      "state": "SP",
+      "street": "Rua dos Bobos",
+      "number": "0",
+      "complement": "Sala 1",
+      "neighborhood": "Vila dos Bobos"
+    },
+    "contact": {
+      "phone": "11 99999-9999",
+      "email": "massagemvip@gmail.com",
+      "website": "www.massagemvip.com.br",
+      "whatsapp": "11 99999-9999",
+      "facebook": "massagemvip",
+      "instagram": "massagemvip",
+      "twitter": "massagemvip"
+    },
+    "services": [
+      {
+        "name": "Massagem relaxante",
+        "description": "Massagem relaxante",
+        "price": "R$ 100,00",
+        "duration": "1 hora"
+      },
+      {
+        "name": "Massagem sensual",
+        "description": "Massagem sensual",
+        "price": "R$ 150,00",
+        "duration": "1 hora"
+      },
+      {
+        "name": "Massagem desportiva",
+        "description": "Massagem desportiva",
+        "price": "R$ 200,00",
+        "duration": "1 hora"
+      },
+      {
+        "name": "Massagem tântrica",
+        "description": "Massagem tântrica",
+        "price": "R$ 250,00",
+        "duration": "1 hora"
+      }
+    ],
+    "schedule": {
+      "monday": "08:00 - 18:00",
+      "tuesday": "08:00 - 18:00",
+      "wednesday": "08:00 - 18:00",
+      "thursday": "08:00 - 18:00",
+      "friday": "08:00 - 18:00",
+      "saturday": "08:00 - 12:00",
+      "sunday": "Fechado"
+    },
+    "payment": {
+      "creditCard": true,
+      "debitCard": true,
+      "cash": true,
+      "pix": true
+    }
+  },
+  {
+    "id": "2",
+    "profile": {
+      "name": "Massagem Zen",
+      "description": "Massagem relaxante",
+      "logo": "https://scontent.fpoa4-1.fna.fbcdn.net/v/t39.30808-6/359363247_758136189647593_8974552905470326923_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=bLx_avjDsbAQ7kNvgHHrA1a&_nc_ht=scontent.fpoa4-1.fna&oh=00_AYCFBGnfHZ09oz3aws2-iMtDKQZ6c9DuS68J99fJsbfyzg&oe=66662EFD"
+    },
+    "album": [
+      {
+        "image": "https://royalface.com.br/wp-content/uploads/2023/06/como-ocorre-a-massagem-relaxante.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.dermaclub.com.br/on/demandware.static/-/Sites-dermaclub-br-Library/pt_BR/dwa439c391/massagem-relaxante.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.freshyspa.com.br/wp-content/uploads/2019/03/pai.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.tokiospa.com.br/images/informacoes/massagem-sensual-no-morumbi.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://pretocafe.com.br/wp-content/uploads/2024/04/massagem-sensual-3.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2021/06/24/178731397-massagemtantrica.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.cursosvirtuais.net/cursos/thumb/20a4fc8029034ee29ec8b0670655f253.png",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://cdn.jornaldebrasilia.com.br/wp-content/uploads/2023/08/08230129/massagistas-irreconheciveis-massageando-as-costas-do-homem-no-spa-de-saude-scaled.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://ederepente50.wordpress.com/wp-content/uploads/2016/06/massagemtantrica1400x600.jpg?w=604&h=270&crop=1",
+        "description": "Massagem relaxante"
+      }
+    ],
+    "location": {
+      "zipCode": "12345-678",
+      "city": "São Paulo",
+      "state": "SP",
+      "street": "Rua dos Bobos",
+      "number": "0",
+      "complement": "Sala 1",
+      "neighborhood": "Vila dos Bobos"
+    },
+    "contact": {
+      "phone": "11 99999-9999",
+      "email": "zenmassage@gmail.com",
+      "website": "www.zenmassage.com.br",
+      "whatsapp": "11 99999-9999",
+      "facebook": "zenmassage",
+      "instagram": "zenmassage",
+      "twitter": "zenmassage"
+    },
+    "services": [
+      {
+        "name": "Massagem relaxante",
+        "description": "Massagem relaxante",
+        "price": "R$ 100,00",
+        "duration": "1 hora"
+      },
+      {
+        "name": "Massagem sensual",
+        "description": "Massagem sensual",
+        "price": "R$ 150,00",
+        "duration": "1 hora"
+      },
+      {
+        "name": "Massagem desportiva",
+        "description": "Massagem desportiva",
+        "price": "R$ 200,00",
+        "duration": "1 hora"
+      },
+      {
+        "name": "Massagem tântrica",
+        "description": "Massagem tântrica",
+        "price": "R$ 250,00",
+        "duration": "1 hora"
+      }
+    ],
+    "schedule": {
+      "monday": "08:00 - 18:00",
+      "tuesday": "08:00 - 18:00",
+      "wednesday": "08:00 - 18:00",
+      "thursday": "08:00 - 18:00",
+      "friday": "08:00 - 18:00",
+      "saturday": "08:00 - 12:00",
+      "sunday": "Fechado"
+    },
+    "payment": {
+      "creditCard": true,
+      "debitCard": true,
+      "cash": true,
+      "pix": true
+    }
+  },
+  {
+    "id": "3",
+    "profile": {
+      "name": "Massagem Relax",
+      "description": "Massagem relaxante",
+      "logo": "https://scontent.fpoa4-1.fna.fbcdn.net/v/t39.30808-6/305590293_564389095481648_8898969258650113623_n.png?stp=dst-png_p480x480&_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Ac45qi7pe2AQ7kNvgEc1P9H&_nc_ht=scontent.fpoa4-1.fna&oh=00_AYAUbouPhdFYOJso5N2JLCfeg9MJIIFhO_weqcC0fpwMzQ&oe=6666375B"
+    },
+    "album": [
+      {
+        "image": "https://royalface.com.br/wp-content/uploads/2023/06/como-ocorre-a-massagem-relaxante.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.dermaclub.com.br/on/demandware.static/-/Sites-dermaclub-br-Library/pt_BR/dwa439c391/massagem-relaxante.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.freshyspa.com.br/wp-content/uploads/2019/03/pai.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.tokiospa.com.br/images/informacoes/massagem-sensual-no-morumbi.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://pretocafe.com.br/wp-content/uploads/2024/04/massagem-sensual-3.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2021/06/24/178731397-massagemtantrica.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.cursosvirtuais.net/cursos/thumb/20a4fc8029034ee29ec8b0670655f253.png",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://cdn.jornaldebrasilia.com.br/wp-content/uploads/2023/08/08230129/massagistas-irreconheciveis-massageando-as-costas-do-homem-no-spa-de-saude-scaled.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://ederepente50.wordpress.com/wp-content/uploads/2016/06/massagemtantrica1400x600.jpg?w=604&h=270&crop=1",
+        "description": "Massagem relaxante"
+      }
+    ],
+    "location": {
+      "zipCode": "12345-678",
+      "city": "Florianópolis",
+      "state": "SC",
+      "street": "Rua dos Bobos",
+      "number": "0",
+      "complement": "Sala 1",
+      "neighborhood": "Vila dos Bobos"
+    },
+    "contact": {
+      "phone": "11 99999-9999",
+      "email": "relax@gmail.com",
+      "website": "www.relax.com.br",
+      "whatsapp": "11 99999-9999",
+      "facebook": "relax",
+      "instagram": "relax",
+      "twitter": "relax"
+    },
+    "services": [
+      {
+        "name": "Massagem relaxante",
+        "description": "Massagem relaxante",
+        "price": "R$ 100,00",
+        "duration": "1 hora"
+      },
+      {
+        "name": "Massagem sensual",
+        "description": "Massagem sensual",
+        "price": "R$ 150,00",
+        "duration": "1 hora"
+      },
+      {
+        "name": "Massagem desportiva",
+        "description": "Massagem desportiva",
+        "price": "R$ 200,00",
+        "duration": "1 hora"
+      },
+      {
+        "name": "Massagem tântrica",
+        "description": "Massagem tântrica",
+        "price": "R$ 250,00",
+        "duration": "1 hora"
+      }
+    ],
+    "schedule": {
+      "monday": "08:00 - 18:00",
+      "tuesday": "08:00 - 18:00",
+      "wednesday": "08:00 - 18:00",
+      "thursday": "08:00 - 18:00",
+      "friday": "08:00 - 18:00",
+      "saturday": "08:00 - 12:00",
+      "sunday": "Fechado"
+    },
+    "payment": {
+      "creditCard": true,
+      "debitCard": true,
+      "cash": true,
+      "pix": true
+    }
+  },
+  {
+    "id": "4",
+    "profile": {
+      "name": "Sensitive Spa",
+      "description": "Massagem relaxante",
+      "logo": "https://crm.sunrise-resorts.com/download/preview_image?path=uploads/facilities/285/Senses-Spa-Logo-1.jpg"
+    },
+    "album": [
+      {
+        "image": "https://royalface.com.br/wp-content/uploads/2023/06/como-ocorre-a-massagem-relaxante.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.dermaclub.com.br/on/demandware.static/-/Sites-dermaclub-br-Library/pt_BR/dwa439c391/massagem-relaxante.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.freshyspa.com.br/wp-content/uploads/2019/03/pai.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.tokiospa.com.br/images/informacoes/massagem-sensual-no-morumbi.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://pretocafe.com.br/wp-content/uploads/2024/04/massagem-sensual-3.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2021/06/24/178731397-massagemtantrica.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.cursosvirtuais.net/cursos/thumb/20a4fc8029034ee29ec8b0670655f253.png",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://cdn.jornaldebrasilia.com.br/wp-content/uploads/2023/08/08230129/massagistas-irreconheciveis-massageando-as-costas-do-homem-no-spa-de-saude-scaled.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://ederepente50.wordpress.com/wp-content/uploads/2016/06/massagemtantrica1400x600.jpg?w=604&h=270&crop=1",
+        "description": "Massagem relaxante"
+      }
+    ],
+    "location": {
+      "zipCode": "12345-678",
+      "city": "Porto Alegre",
+      "state": "RS",
+      "street": "Rua dos Bobos",
+      "number": "0",
+      "complement": "Sala 1",
+      "neighborhood": "Vila dos Bobos"
+    },
+    "contact": {
+      "phone": "11 99999-9999",
+      "email": "massagemvip@gmail.com",
+      "website": "www.massagemvip.com.br",
+      "whatsapp": "11 99999-9999",
+      "facebook": "massagemvip",
+      "instagram": "massagemvip",
+      "twitter": "massagemvip"
+    },
+    "services": [
+      {
+        "name": "Massagem relaxante",
+        "description": "Massagem relaxante",
+        "price": "R$ 100,00",
+        "duration": "1 hora"
+      },
+      {
+        "name": "Massagem sensual",
+        "description": "Massagem sensual",
+        "price": "R$ 150,00",
+        "duration": "1 hora"
+      },
+      {
+        "name": "Massagem desportiva",
+        "description": "Massagem desportiva",
+        "price": "R$ 200,00",
+        "duration": "1 hora"
+      },
+      {
+        "name": "Massagem tântrica",
+        "description": "Massagem tântrica",
+        "price": "R$ 250,00",
+        "duration": "1 hora"
+      }
+    ],
+    "schedule": {
+      "monday": "08:00 - 18:00",
+      "tuesday": "08:00 - 18:00",
+      "wednesday": "08:00 - 18:00",
+      "thursday": "08:00 - 18:00",
+      "friday": "08:00 - 18:00",
+      "saturday": "08:00 - 12:00",
+      "sunday": "Fechado"
+    },
+    "payment": {
+      "creditCard": true,
+      "debitCard": true,
+      "cash": true,
+      "pix": true
+    }
+  },
+  {
+    "id": "5",
+    "profile": {
+      "name": "Massagem VIP",
+      "description": "Massagem relaxante",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjKVITKTeYOz3C1l39njBWuyocCB85GUdkLJUMfTbJkHQKgY-DPTJatkOt1xsYJzH9dWA&usqp=CAU"
+    },
+    "album": [
+      {
+        "image": "https://royalface.com.br/wp-content/uploads/2023/06/como-ocorre-a-massagem-relaxante.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.dermaclub.com.br/on/demandware.static/-/Sites-dermaclub-br-Library/pt_BR/dwa439c391/massagem-relaxante.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.freshyspa.com.br/wp-content/uploads/2019/03/pai.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.tokiospa.com.br/images/informacoes/massagem-sensual-no-morumbi.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://pretocafe.com.br/wp-content/uploads/2024/04/massagem-sensual-3.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2021/06/24/178731397-massagemtantrica.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.cursosvirtuais.net/cursos/thumb/20a4fc8029034ee29ec8b0670655f253.png",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://cdn.jornaldebrasilia.com.br/wp-content/uploads/2023/08/08230129/massagistas-irreconheciveis-massageando-as-costas-do-homem-no-spa-de-saude-scaled.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://ederepente50.wordpress.com/wp-content/uploads/2016/06/massagemtantrica1400x600.jpg?w=604&h=270&crop=1",
+        "description": "Massagem relaxante"
+      }
+    ],
+    "location": {
+      "zipCode": "12345-678",
+      "city": "Porto Alegre",
+      "state": "RS",
+      "street": "Rua dos Bobos",
+      "number": "0",
+      "complement": "Sala 1",
+      "neighborhood": "Centro"
+    },
+    "contact": {
+      "phone": "11 99999-9999",
+      "email": "massagemvip@gmail.com",
+      "website": "www.massagemvip.com.br",
+      "whatsapp": "11 99999-9999",
+      "facebook": "massagemvip",
+      "instagram": "massagemvip",
+      "twitter": "massagemvip"
+    },
+    "services": [
+      {
+        "name": "Massagem relaxante",
+        "description": "Massagem relaxante",
+        "price": "R$ 100,00",
+        "duration": "1 hora"
+      },
+      {
+        "name": "Massagem sensual",
+        "description": "Massagem sensual",
+        "price": "R$ 150,00",
+        "duration": "1 hora"
+      },
+      {
+        "name": "Massagem desportiva",
+        "description": "Massagem desportiva",
+        "price": "R$ 200,00",
+        "duration": "1 hora"
+      },
+      {
+        "name": "Massagem tântrica",
+        "description": "Massagem tântrica",
+        "price": "R$ 250,00",
+        "duration": "1 hora"
+      }
+    ],
+    "schedule": {
+      "monday": "08:00 - 18:00",
+      "tuesday": "08:00 - 18:00",
+      "wednesday": "08:00 - 18:00",
+      "thursday": "08:00 - 18:00",
+      "friday": "08:00 - 18:00",
+      "saturday": "08:00 - 12:00",
+      "sunday": "Fechado"
+    },
+    "payment": {
+      "creditCard": true,
+      "debitCard": true,
+      "cash": true,
+      "pix": true
+    }
+  },
+  {
+    "id": "6",
+    "profile": {
+      "name": "Massagem Zen",
+      "description": "Massagem relaxante",
+      "logo": "https://scontent.fpoa4-1.fna.fbcdn.net/v/t39.30808-6/359363247_758136189647593_8974552905470326923_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=bLx_avjDsbAQ7kNvgHHrA1a&_nc_ht=scontent.fpoa4-1.fna&oh=00_AYCFBGnfHZ09oz3aws2-iMtDKQZ6c9DuS68J99fJsbfyzg&oe=66662EFD"
+    },
+    "album": [
+      {
+        "image": "https://royalface.com.br/wp-content/uploads/2023/06/como-ocorre-a-massagem-relaxante.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.dermaclub.com.br/on/demandware.static/-/Sites-dermaclub-br-Library/pt_BR/dwa439c391/massagem-relaxante.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.freshyspa.com.br/wp-content/uploads/2019/03/pai.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.tokiospa.com.br/images/informacoes/massagem-sensual-no-morumbi.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://pretocafe.com.br/wp-content/uploads/2024/04/massagem-sensual-3.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2021/06/24/178731397-massagemtantrica.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.cursosvirtuais.net/cursos/thumb/20a4fc8029034ee29ec8b0670655f253.png",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://cdn.jornaldebrasilia.com.br/wp-content/uploads/2023/08/08230129/massagistas-irreconheciveis-massageando-as-costas-do-homem-no-spa-de-saude-scaled.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://ederepente50.wordpress.com/wp-content/uploads/2016/06/massagemtantrica1400x600.jpg?w=604&h=270&crop=1",
+        "description": "Massagem relaxante"
+      }
+    ],
+    "location": {
+      "zipCode": "12345-678",
+      "city": "Curitiba",
+      "state": "PR",
+      "street": "Rua dos Bobos",
+      "number": "0",
+      "complement": "Sala 1",
+      "neighborhood": "Vila Maria"
+    },
+    "contact": {
+      "phone": "11 99999-9999",
+      "email": "zenmassage@gmail.com",
+      "website": "www.zenmassage.com.br",
+      "whatsapp": "11 99999-9999",
+      "facebook": "zenmassage",
+      "instagram": "zenmassage",
+      "twitter": "zenmassage"
+    },
+    "services": [
+      {
+        "name": "Massagem relaxante",
+        "description": "Massagem relaxante",
+        "price": "R$ 100,00",
+        "duration": "1 hora"
+      },
+      {
+        "name": "Massagem sensual",
+        "description": "Massagem sensual",
+        "price": "R$ 150,00",
+        "duration": "1 hora"
+      },
+      {
+        "name": "Massagem desportiva",
+        "description": "Massagem desportiva",
+        "price": "R$ 200,00",
+        "duration": "1 hora"
+      },
+      {
+        "name": "Massagem tântrica",
+        "description": "Massagem tântrica",
+        "price": "R$ 250,00",
+        "duration": "1 hora"
+      }
+    ],
+    "schedule": {
+      "monday": "08:00 - 18:00",
+      "tuesday": "08:00 - 18:00",
+      "wednesday": "08:00 - 18:00",
+      "thursday": "08:00 - 18:00",
+      "friday": "08:00 - 18:00",
+      "saturday": "08:00 - 12:00",
+      "sunday": "Fechado"
+    },
+    "payment": {
+      "creditCard": true,
+      "debitCard": true,
+      "cash": true,
+      "pix": true
+    }
+  },
+  {
+    "id": "7",
+    "profile": {
+      "name": "Massagem das Gurias",
+      "description": "Massagem relaxante",
+      "logo": "https://scontent.fpoa4-1.fna.fbcdn.net/v/t39.30808-6/305590293_564389095481648_8898969258650113623_n.png?stp=dst-png_p480x480&_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Ac45qi7pe2AQ7kNvgEc1P9H&_nc_ht=scontent.fpoa4-1.fna&oh=00_AYAUbouPhdFYOJso5N2JLCfeg9MJIIFhO_weqcC0fpwMzQ&oe=6666375B"
+    },
+    "album": [
+      {
+        "image": "https://royalface.com.br/wp-content/uploads/2023/06/como-ocorre-a-massagem-relaxante.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.dermaclub.com.br/on/demandware.static/-/Sites-dermaclub-br-Library/pt_BR/dwa439c391/massagem-relaxante.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.freshyspa.com.br/wp-content/uploads/2019/03/pai.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.tokiospa.com.br/images/informacoes/massagem-sensual-no-morumbi.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://pretocafe.com.br/wp-content/uploads/2024/04/massagem-sensual-3.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2021/06/24/178731397-massagemtantrica.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.cursosvirtuais.net/cursos/thumb/20a4fc8029034ee29ec8b0670655f253.png",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://cdn.jornaldebrasilia.com.br/wp-content/uploads/2023/08/08230129/massagistas-irreconheciveis-massageando-as-costas-do-homem-no-spa-de-saude-scaled.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://ederepente50.wordpress.com/wp-content/uploads/2016/06/massagemtantrica1400x600.jpg?w=604&h=270&crop=1",
+        "description": "Massagem relaxante"
+      }
+    ],
+    "location": {
+      "zipCode": "12345-678",
+      "city": "Porto Alegre",
+      "state": "RS",
+      "street": "Rua dos Bobos",
+      "number": "0",
+      "complement": "Sala 1",
+      "neighborhood": "Floresta"
+    },
+    "contact": {
+      "phone": "11 99999-9999",
+      "email": "relax@gmail.com",
+      "website": "www.relax.com.br",
+      "whatsapp": "11 99999-9999",
+      "facebook": "relax",
+      "instagram": "relax",
+      "twitter": "relax"
+    },
+    "services": [
+      {
+        "name": "Massagem relaxante",
+        "description": "Massagem relaxante",
+        "price": "R$ 100,00",
+        "duration": "1 hora"
+      },
+      {
+        "name": "Massagem sensual",
+        "description": "Massagem sensual",
+        "price": "R$ 150,00",
+        "duration": "1 hora"
+      },
+      {
+        "name": "Massagem desportiva",
+        "description": "Massagem desportiva",
+        "price": "R$ 200,00",
+        "duration": "1 hora"
+      },
+      {
+        "name": "Massagem tântrica",
+        "description": "Massagem tântrica",
+        "price": "R$ 250,00",
+        "duration": "1 hora"
+      }
+    ],
+    "schedule": {
+      "monday": "08:00 - 18:00",
+      "tuesday": "08:00 - 18:00",
+      "wednesday": "08:00 - 18:00",
+      "thursday": "08:00 - 18:00",
+      "friday": "08:00 - 18:00",
+      "saturday": "08:00 - 12:00",
+      "sunday": "Fechado"
+    },
+    "payment": {
+      "creditCard": true,
+      "debitCard": true,
+      "cash": true,
+      "pix": true
+    }
+  },
+  {
+    "id": "8",
+    "profile": {
+      "name": "Relax Spa",
+      "description": "Massagem relaxante",
+      "logo": "https://crm.sunrise-resorts.com/download/preview_image?path=uploads/facilities/285/Senses-Spa-Logo-1.jpg"
+    },
+    "album": [
+      {
+        "image": "https://royalface.com.br/wp-content/uploads/2023/06/como-ocorre-a-massagem-relaxante.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.dermaclub.com.br/on/demandware.static/-/Sites-dermaclub-br-Library/pt_BR/dwa439c391/massagem-relaxante.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.freshyspa.com.br/wp-content/uploads/2019/03/pai.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.tokiospa.com.br/images/informacoes/massagem-sensual-no-morumbi.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://pretocafe.com.br/wp-content/uploads/2024/04/massagem-sensual-3.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2021/06/24/178731397-massagemtantrica.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://www.cursosvirtuais.net/cursos/thumb/20a4fc8029034ee29ec8b0670655f253.png",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://cdn.jornaldebrasilia.com.br/wp-content/uploads/2023/08/08230129/massagistas-irreconheciveis-massageando-as-costas-do-homem-no-spa-de-saude-scaled.jpg",
+        "description": "Massagem relaxante"
+      },
+      {
+        "image": "https://ederepente50.wordpress.com/wp-content/uploads/2016/06/massagemtantrica1400x600.jpg?w=604&h=270&crop=1",
+        "description": "Massagem relaxante"
+      }
+    ],
+    "location": {
+      "zipCode": "12345-678",
+      "city": "Florianópolis",
+      "state": "SC",
+      "street": "Rua dos Bobos",
+      "number": "0",
+      "complement": "Sala 1",
+      "neighborhood": "Centro"
+    },
+    "contact": {
+      "phone": "11 99999-9999",
+      "email": "massagemvip@gmail.com",
+      "website": "www.massagemvip.com.br",
+      "whatsapp": "11 99999-9999",
+      "facebook": "massagemvip",
+      "instagram": "massagemvip",
+      "twitter": "massagemvip"
+    },
+    "services": [
+      {
+        "name": "Massagem relaxante",
+        "description": "Massagem relaxante",
+        "price": "R$ 100,00",
+        "duration": "1 hora"
+      },
+      {
+        "name": "Massagem sensual",
+        "description": "Massagem sensual",
+        "price": "R$ 150,00",
+        "duration": "1 hora"
+      },
+      {
+        "name": "Massagem desportiva",
+        "description": "Massagem desportiva",
+        "price": "R$ 200,00",
+        "duration": "1 hora"
+      },
+      {
+        "name": "Massagem tântrica",
+        "description": "Massagem tântrica",
+        "price": "R$ 250,00",
+        "duration": "1 hora"
+      }
+    ],
+    "schedule": {
+      "monday": "08:00 - 18:00",
+      "tuesday": "08:00 - 18:00",
+      "wednesday": "08:00 - 18:00",
+      "thursday": "08:00 - 18:00",
+      "friday": "08:00 - 18:00",
+      "saturday": "08:00 - 12:00",
+      "sunday": "Fechado"
+    },
+    "payment": {
+      "creditCard": true,
+      "debitCard": true,
+      "cash": true,
+      "pix": true
+    }
+  }
+]

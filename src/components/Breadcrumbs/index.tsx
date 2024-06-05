@@ -12,14 +12,6 @@ function handleClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
   event.preventDefault();
 }
 
-// function formatCityName(cityName: string) {
-//     return cityName
-//         .replace(/(^|)(\w)/g, function (match, _, char) {
-//             return char;
-//         })
-//         .replace(/-/g, " "); // Adiciona espaços entre as palavras
-// }
-
 function formatCityName(cityName: string) {
   let estado = cityName.slice(-2); // Captura as duas últimas letras da string
   let baseUrl = cityName.slice(0, -3).replace(/-/g, " "); // Remove os últimos três caracteres e substitui "-" por espaço
