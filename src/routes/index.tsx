@@ -17,6 +17,9 @@ import Favorites from "../pages/Favorites";
 import Terms from "../pages/Terms";
 import ScrollToTop from "../components/ScrollToTop";
 import Cities from "../pages/Cities";
+import Massage from "../pages/Massage";
+import MassageHouseProfile from "../pages/MassageHouseProfile";
+import MassageHouses from "../db/massagesHouse.json";
 
 export default function AppRouter() {
   return (
@@ -34,6 +37,11 @@ export default function AppRouter() {
               element={<ModelProfile name="" />}
             />
             <Route path="/cidades/:cityURL" element={<Cities />} />
+            <Route path="/casas-de-massagem" element={<Massage />} />
+            <Route
+              path="/casas-de-massagem/:state/:city/:id/:profileName"
+              element={<MassageHouseProfile massageHouses={MassageHouses} />}
+            />
             <Route path="/contato" element={<Contact />} />
             <Route path="/anuncie" element={<Advertise />} />
             <Route path="/login" element={<Login />} />

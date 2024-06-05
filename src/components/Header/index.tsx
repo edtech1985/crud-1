@@ -44,11 +44,16 @@ const navItems = [
         label: "Rio de Janeiro-RJ",
         path: "/cidades/acompanhantes-rio-de-janeiro-rj",
       },
+      {
+        label: "Curitiba-PR",
+        path: "/cidades/acompanhantes-curitiba-pr",
+      },
     ],
   },
+  { label: "Massagens", path: "/casas-de-massagem" },
+  { label: "Favoritos", path: "/favoritos" },
   { label: "Contato", path: "/contato" },
   { label: "Anuncie", path: "/anuncie" },
-  { label: "Favoritos", path: "/favoritos" },
 ];
 
 const MenuItemStyles = {
@@ -154,7 +159,8 @@ export default function Header() {
           <ListItemButton
             component={Link}
             to={item.path}
-            sx={{ textAlign: "center" }}
+            selected={window.location.pathname === item.path}
+            sx={{ textAlign: "center", "&:selected": { color: "red" } }}
           >
             <ListItemText primary={item.label} />
           </ListItemButton>

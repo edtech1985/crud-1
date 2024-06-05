@@ -4,12 +4,17 @@ import modelsData from "../../db/models-details.json";
 import ImageBox from "../../components/ImageBox";
 import Loading from "../../components/Loading";
 import { Model } from "../../types/Model";
+import NewBreadcrumbs from "../../components/NewBreadcrumbs";
+
+const firstPage = "Home";
+const pathToFirstPage = "/";
+const pageTitle = "Favoritos";
 
 export default function Favorites() {
   const [favorites, setFavorites] = useState<number[]>([]);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [selectedModel, setSelectedModel] = useState<Model | null>(null);
-  const [loading, setLoading] = useState(true); // Novo estado de carregamento
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const storedFavorites = JSON.parse(
@@ -17,7 +22,7 @@ export default function Favorites() {
     );
     setFavorites(storedFavorites);
 
-  // Simula o carregamento por 2 segundos
+  // Simula o carregamento dos dados
   const timer = setTimeout(() => {
     setLoading(false);
   }, 1500);
@@ -45,9 +50,10 @@ export default function Favorites() {
   return (
     <Box textAlign="center">
       {loading && <Loading />}
+      <NewBreadcrumbs firstPage={firstPage} pathToFirstPage={pathToFirstPage} currentPage={pageTitle} />
       <Box mb={2}>
         <Typography variant="h4" component="h1" gutterBottom>
-          Modelos Favoritos
+          {pageTitle}
         </Typography>
       </Box>
       <Grid container justifyContent="center" spacing={1}>
