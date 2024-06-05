@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Card,
   CardActionArea,
@@ -6,7 +5,7 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
-import useStyles from "../../theme/useStyles";
+import { Link } from "react-router-dom";
 
 const cardStyle = {
   position: "relative",
@@ -34,25 +33,46 @@ const contentStyle = {
 };
 
 const MassageCard = ({ house }: { house: any }) => {
+   const profileNameSlug = house.profile.name
+     .replace(/\s+/g, "-")
+     .toLowerCase();
+  
+  const citySlug = house.location.city
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, "-")
+    .toLowerCase();
+  
+  const stateSlug = house.location.state
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, "-")
+    .toLowerCase();
 
   return (
     <Card sx={cardStyle}>
-      <CardActionArea>
-        <CardMedia
-          sx={mediaStyle}
-          component="img"
-          image={house.imageUrl}
-          alt={house.name}
-        />
-        <CardContent sx={contentStyle}>
-          <Typography gutterBottom variant="h5">
-            {house.name}
-          </Typography>
-          <Typography variant="body2">
-            {house.city}, {house.neighborhood}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
+      <Link
+        to={`/casas-de-massagem/${stateSlug}/${citySlug}/${house.id}/${profileNameSlug}`}
+        style={{ textDecoration: "none" }}
+      >
+        <CardActionArea>
+          <CardMedia
+            sx={mediaStyle}
+            component="img"
+            image={house.profile.logo}
+            alt={`Imagem da Casa de Massagens: ${house.profile.name}`}
+            aria-label={`Imagem da Casa de Massagens: ${house.profile.name}`}
+          />
+          <CardContent sx={contentStyle}>
+            <Typography gutterBottom variant="h5">
+              {house.profile.name}
+            </Typography>
+            <Typography variant="body2">
+              {house.location.city}, {house.location.neighborhood}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Link>
     </Card>
   );
 };

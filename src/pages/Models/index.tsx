@@ -34,6 +34,7 @@ import { NewReleases, Verified } from "@mui/icons-material";
 import Loading from "../../components/Loading";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { useParams } from "react-router-dom";
+import NewBreadcrumbs from "../../components/NewBreadcrumbs";
 
 interface Filters {
   city:
@@ -69,6 +70,10 @@ const MenuItemStyles = {
   bgcolor: "black",
   color: "gold",
 };
+
+const firstPage = "Home";
+const pathToFirstPage = "/";
+const pageTitle = "Acompanhantes";
 
 export default function Models() {
   const [favorites, setFavorites] = useState<number[]>([]);
@@ -243,10 +248,10 @@ export default function Models() {
   return (
     <Box textAlign="center">
       {loading && <Loading />}
-      <div id="back-to-top-anchor" />
+      <NewBreadcrumbs firstPage={firstPage} pathToFirstPage={pathToFirstPage} currentPage={pageTitle} />
       <Box id="page-description" mb={2}>
         <Typography variant="h4" component="h1" gutterBottom>
-          Nossas Modelos
+          {pageTitle}
         </Typography>
 
         {filters.city && (
