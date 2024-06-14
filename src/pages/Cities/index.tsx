@@ -34,7 +34,7 @@ import { NewReleases, Verified } from "@mui/icons-material";
 import Loading from "../../components/Loading";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { useParams } from "react-router-dom";
-import IconBreadcrumbs from "../../components/Breadcrumbs";
+import { IconBreadcrumbs } from "../../components/Breadcrumbs";
 
 interface Filters {
   city: string;
@@ -229,10 +229,10 @@ const Cities: React.FC = () => {
       {loading && <Loading />}
       <IconBreadcrumbs cityURL={filters.cityURL} />
       <Box id="page-description" mb={2}>
-
         {filters.cityURL && (
-          <Typography variant="body1" >
-            {totalModelsInCity} acompanhantes disponíveis em {cityName}, {stateName}.
+          <Typography variant="body1">
+            {totalModelsInCity} acompanhantes disponíveis em {cityName},{" "}
+            {stateName}.
           </Typography>
         )}
         {(filters.modelType !== "indiferente" ||

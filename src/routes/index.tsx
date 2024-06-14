@@ -20,47 +20,50 @@ import Cities from "../pages/Cities";
 import Massage from "../pages/Massage";
 import MassageHouseProfile from "../pages/MassageHouseProfile";
 import MassageHouses from "../db/massagesHouse.json";
+import { CityProvider } from "../context/CityContext";
+
 
 export default function AppRouter() {
   return (
-    <BrowserRouter>
-      <AuthProvider isSignedIn={true}>
-        <Header />
-        <div id="back-to-top-anchor" />
-        <Stack my={10}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/acompanhantes" element={<Models />} />
-            <Route
-              path="/acompanhantes/:name"
-              element={<ModelProfile name="" />}
-            />
-            <Route path="/cidades/:cityURL" element={<Cities />} />
-            <Route path="/casas-de-massagem" element={<Massage />} />
-            <Route
-              path="/casas-de-massagem/:state/:city/:id/:profileName"
-              element={<MassageHouseProfile massageHouses={MassageHouses} />}
-            />
-            <Route path="/contato" element={<Contact />} />
-            <Route path="/anuncie" element={<Advertise />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/favoritos" element={<Favorites />} />
-            <Route path="/terms" element={<Terms />} />
-            <Route
-              path="/admin"
-              element={
-                <ProtectedRoute>
-                  <Admin />
-                </ProtectedRoute>
-              }
-            />
-          </Routes>
-        </Stack>
-        <ScrollToTop />
-        <Footer />
-      </AuthProvider>
-    </BrowserRouter>
+    <CityProvider>
+      <BrowserRouter>
+        <AuthProvider isSignedIn={true}>
+          <Header />
+          <div id="back-to-top-anchor" />
+          <Stack my={10}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/acompanhantes" element={<Models />} />
+              <Route
+                path="/acompanhantes/:name"
+                element={<ModelProfile name="" />}
+              />
+              <Route path="/cidades/:cityURL" element={<Cities />} />
+              <Route path="/casas-de-massagem" element={<Massage />} />
+              <Route
+                path="/casas-de-massagem/:state/:city/:id/:profileName"
+                element={<MassageHouseProfile massageHouses={MassageHouses} />}
+              />
+              <Route path="/contato" element={<Contact />} />
+              <Route path="/anuncie" element={<Advertise />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/favoritos" element={<Favorites />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route
+                path="/admin"
+                element={
+                  <ProtectedRoute>
+                    <Admin />
+                  </ProtectedRoute>
+                }
+              />
+            </Routes>
+          </Stack>
+          <ScrollToTop />
+          <Footer />
+        </AuthProvider>
+      </BrowserRouter>
+    </CityProvider>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import {
   Box,
@@ -34,6 +34,7 @@ import {
   UnverifiedTooltip,
   VerifiedTooltip,
 } from "../../../components/Tooltips";
+import Loading from "../../../components/Loading";
 
 interface ModelProfileProps {
   name: string;
@@ -44,10 +45,19 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
   const [open, setOpen] = useState(false);
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(0);
   const { name: modelName } = useParams<{ name: string }>();
-
+  const [loading, setLoading] = useState(true);
   const model = modelsData.find(
-    (model: { modelProfile: { name: string } }) => model.modelProfile.name.toLowerCase() === modelName
+    (model: { modelProfile: { name: string } }) =>
+      model.modelProfile.name.toLowerCase() === modelName
   );
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []); // Executa apenas uma vez após o carregamento inicial
 
   if (!model) {
     return (
@@ -173,6 +183,7 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
 
     return (
       <Box id="model-profile" mb={4}>
+        {loading && <Loading />}
         <Box
           display="flex"
           alignItems="center"

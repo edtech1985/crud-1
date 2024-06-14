@@ -36,7 +36,7 @@ const MassageHouseProfile = ({ massageHouses }: { massageHouses: any[] }) => {
   if (!massageHouse) {
     return (
       <Container>
-        <Typography variant="h4" align="center" gutterBottom>
+        <Typography variant="servicesSubtitle" align="center" gutterBottom>
           Carregando...
         </Typography>
       </Container>
@@ -47,8 +47,8 @@ const MassageHouseProfile = ({ massageHouses }: { massageHouses: any[] }) => {
     <Container>
       {loading && <Loading />}
       <NewBreadcrumbs
-        firstPage={'Casas de Massagem'}
-        pathToFirstPage={'/casas-de-massagem'}
+        firstPage={"Casas de Massagem"}
+        pathToFirstPage={"/casas-de-massagem"}
         lastState={massageHouse.location.state}
         lastCity={massageHouse.location.city}
         currentPage={massageHouse.profile.name}
@@ -98,7 +98,7 @@ const MassageHouseProfile = ({ massageHouses }: { massageHouses: any[] }) => {
 
       <Grid id="services" container spacing={2} sx={{ marginTop: 4 }}>
         <Grid item xs={12} md={4}>
-          <Typography variant="h4" gutterBottom>
+          <Typography variant="servicesSubtitle" gutterBottom>
             Serviços
           </Typography>
           {massageHouse.services.map((service: any, index: number) => (
@@ -112,7 +112,7 @@ const MassageHouseProfile = ({ massageHouses }: { massageHouses: any[] }) => {
         </Grid>
 
         <Grid id="payment-method" item xs={12} md={4}>
-          <Typography variant="h4" gutterBottom>
+          <Typography variant="servicesSubtitle" gutterBottom>
             Formas de <br /> Pagamento
           </Typography>
           {massageHouse.payment.creditCard && (
@@ -166,7 +166,7 @@ const MassageHouseProfile = ({ massageHouses }: { massageHouses: any[] }) => {
         </Grid>
 
         <Grid id="location" item xs={12} md={4}>
-          <Typography variant="h4" gutterBottom>
+          <Typography variant="servicesSubtitle" gutterBottom>
             Localização
           </Typography>
           <Typography>
@@ -180,7 +180,7 @@ const MassageHouseProfile = ({ massageHouses }: { massageHouses: any[] }) => {
           <Typography>Cidade: {massageHouse.location.city}</Typography>
           <Typography>Estado: {massageHouse.location.state}</Typography>
 
-          <Typography variant="h4" gutterBottom style={{ marginTop: 16 }}>
+          <Typography variant="servicesSubtitle" gutterBottom style={{ marginTop: 16 }}>
             Contato
           </Typography>
           <Typography>Telefone: {massageHouse.contact.phone}</Typography>
