@@ -371,26 +371,45 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
         </Box>
         {/* Conteúdo expansível */}
         {expanded && (
-          <Stack direction="column" alignItems="center" spacing={1}>
-            <Avatar sx={{ bgcolor: "transparent", color: "green" }}>
-              <WhatsApp />
-            </Avatar>
-            <Avatar src="/img/only.png" sx={{ width: 36, height: 36 }} />
-            <Avatar src="/img/privacy.png" sx={{ width: 28, height: 28 }} />
-            <Avatar sx={{ bgcolor: "transparent", color: "#c93a52" }}>
-              <Instagram />
-            </Avatar>
-            <Avatar sx={{ bgcolor: "transparent", color: "#fff" }}>
-              <X />
-            </Avatar>
-            <Avatar sx={{ bgcolor: "transparent", color: "blue" }}>
-              <Facebook />
-            </Avatar>
-            <Avatar src="/img/tiktok.png" sx={{ width: 34, height: 34 }} />
-            <Avatar sx={{ bgcolor: "transparent", color: "#0b84ca" }}>
-              <Telegram />
-            </Avatar>
-          </Stack>
+          <Grid container spacing={1} justifyContent="center">
+            {/* Primeira linha */}
+            <Grid item xs={3}>
+              <Avatar sx={{ bgcolor: "transparent", color: "green" }}>
+                <WhatsApp />
+              </Avatar>
+            </Grid>
+            <Grid item xs={3}>
+              <Avatar src="/img/only.png" sx={{ width: 36, height: 36 }} />
+            </Grid>
+            <Grid item xs={3}>
+              <Avatar src="/img/privacy.png" sx={{ width: 28, height: 28 }} />
+            </Grid>
+            <Grid item xs={3}>
+              <Avatar sx={{ bgcolor: "transparent", color: "#c93a52" }}>
+                <Instagram />
+              </Avatar>
+            </Grid>
+
+            {/* Segunda linha */}
+            <Grid item xs={3}>
+              <Avatar sx={{ bgcolor: "transparent", color: "#fff" }}>
+                <X />
+              </Avatar>
+            </Grid>
+            <Grid item xs={3}>
+              <Avatar sx={{ bgcolor: "transparent", color: "blue" }}>
+                <Facebook />
+              </Avatar>
+            </Grid>
+            <Grid item xs={3}>
+              <Avatar src="/img/tiktok.png" sx={{ width: 34, height: 34 }} />
+            </Grid>
+            <Grid item xs={3}>
+              <Avatar sx={{ bgcolor: "transparent", color: "#0b84ca" }}>
+                <Telegram />
+              </Avatar>
+            </Grid>
+          </Grid>
         )}
       </Box>
     );
