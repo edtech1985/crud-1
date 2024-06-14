@@ -18,7 +18,7 @@ function formatCityName(cityName: string) {
   return { baseUrl, estado };
 }
 
-export default function IconBreadcrumbs({ cityURL }: { cityURL: string }) {
+export function IconBreadcrumbs({ cityURL }: { cityURL: string }) {
   const { baseUrl, estado } = formatCityName(cityURL);
 
   return (

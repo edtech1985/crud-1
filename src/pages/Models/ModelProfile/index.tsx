@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import {
   Box,
@@ -34,6 +34,7 @@ import {
   UnverifiedTooltip,
   VerifiedTooltip,
 } from "../../../components/Tooltips";
+import Loading from "../../../components/Loading";
 
 interface ModelProfileProps {
   name: string;
@@ -44,10 +45,19 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
   const [open, setOpen] = useState(false);
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(0);
   const { name: modelName } = useParams<{ name: string }>();
-
+  const [loading, setLoading] = useState(true);
   const model = modelsData.find(
-    (model: { modelProfile: { name: string } }) => model.modelProfile.name.toLowerCase() === modelName
+    (model: { modelProfile: { name: string } }) =>
+      model.modelProfile.name.toLowerCase() === modelName
   );
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []); // Executa apenas uma vez após o carregamento inicial
 
   if (!model) {
     return (
@@ -173,6 +183,7 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
 
     return (
       <Box id="model-profile" mb={4}>
+        {loading && <Loading />}
         <Box
           display="flex"
           alignItems="center"
@@ -360,26 +371,45 @@ const ModelProfile: React.FC<ModelProfileProps> = () => {
         </Box>
         {/* Conteúdo expansível */}
         {expanded && (
-          <Stack direction="column" alignItems="center" spacing={1}>
-            <Avatar sx={{ bgcolor: "transparent", color: "green" }}>
-              <WhatsApp />
-            </Avatar>
-            <Avatar src="/img/only.png" sx={{ width: 36, height: 36 }} />
-            <Avatar src="/img/privacy.png" sx={{ width: 28, height: 28 }} />
-            <Avatar sx={{ bgcolor: "transparent", color: "#c93a52" }}>
-              <Instagram />
-            </Avatar>
-            <Avatar sx={{ bgcolor: "transparent", color: "#fff" }}>
-              <X />
-            </Avatar>
-            <Avatar sx={{ bgcolor: "transparent", color: "blue" }}>
-              <Facebook />
-            </Avatar>
-            <Avatar src="/img/tiktok.png" sx={{ width: 34, height: 34 }} />
-            <Avatar sx={{ bgcolor: "transparent", color: "#0b84ca" }}>
-              <Telegram />
-            </Avatar>
-          </Stack>
+          <Grid container spacing={1} justifyContent="center">
+            {/* Primeira linha */}
+            <Grid item xs={3}>
+              <Avatar sx={{ bgcolor: "transparent", color: "green" }}>
+                <WhatsApp />
+              </Avatar>
+            </Grid>
+            <Grid item xs={3}>
+              <Avatar src="/img/only.png" sx={{ width: 36, height: 36 }} />
+            </Grid>
+            <Grid item xs={3}>
+              <Avatar src="/img/privacy.png" sx={{ width: 28, height: 28 }} />
+            </Grid>
+            <Grid item xs={3}>
+              <Avatar sx={{ bgcolor: "transparent", color: "#c93a52" }}>
+                <Instagram />
+              </Avatar>
+            </Grid>
+
+            {/* Segunda linha */}
+            <Grid item xs={3}>
+              <Avatar sx={{ bgcolor: "transparent", color: "#fff" }}>
+                <X />
+              </Avatar>
+            </Grid>
+            <Grid item xs={3}>
+              <Avatar sx={{ bgcolor: "transparent", color: "blue" }}>
+                <Facebook />
+              </Avatar>
+            </Grid>
+            <Grid item xs={3}>
+              <Avatar src="/img/tiktok.png" sx={{ width: 34, height: 34 }} />
+            </Grid>
+            <Grid item xs={3}>
+              <Avatar sx={{ bgcolor: "transparent", color: "#0b84ca" }}>
+                <Telegram />
+              </Avatar>
+            </Grid>
+          </Grid>
         )}
       </Box>
     );

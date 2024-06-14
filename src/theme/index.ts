@@ -4,12 +4,14 @@ declare module "@mui/material/styles" {
   interface TypographyVariants {
     edtech: React.CSSProperties;
     logo: React.CSSProperties;
+    servivesSubtitle: React.CSSProperties;
   }
 
   // allow configuration using `createTheme`
   interface TypographyVariantsOptions {
     edtech?: React.CSSProperties;
     logo?: React.CSSProperties;
+    servicesSubtitle?: React.CSSProperties;
   }
 }
 
@@ -18,6 +20,7 @@ declare module "@mui/material/Typography" {
   interface TypographyPropsVariantOverrides {
     edtech: true;
     logo: true;
+    servicesSubtitle: true;
   }
 }
 
@@ -107,6 +110,11 @@ theme = createTheme(theme, {
     subtitle2: {
       fontFamily: "Lora",
       color: "#C7B33B",
+      fontSize: 24,
+    },
+    servicesSubtitle: {
+      fontFamily: "Lora",
+      color: "#60541E",
       fontSize: 24,
     },
     edtech: {
