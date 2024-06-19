@@ -44,6 +44,7 @@ export interface Album {
 }
 
 export interface Model {
+  avatar: string | undefined;
   id: number;
   modelProfile: ModelProfile;
   album: Album;

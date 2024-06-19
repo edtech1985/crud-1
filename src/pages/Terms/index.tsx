@@ -12,8 +12,13 @@ const Terms: React.FC = () => {
 
   return (
     <Container>
-      <Typography variant="h4" component="h1" gutterBottom>
-        TERMOS DE USO E SERVIÇOS
+      <Typography
+        variant="h4"
+        component="h1"
+        gutterBottom
+        sx={{ color: "#FFFFA0", textTransform: "uppercase" }}
+      >
+        Termos de Uso e Serviços
       </Typography>
       <Typography variant="h4" component="h2">
         Você é anunciante ou contratante?
@@ -22,9 +27,30 @@ const Terms: React.FC = () => {
         value={selectedTab}
         onChange={handleTabChange}
         aria-label="Termos de Uso e Serviços"
+        sx={{
+          ".MuiTabs-indicator": {
+            backgroundColor: "#FFFFA0",
+          },
+        }}
       >
-        <Tab label="Anunciante" />
-        <Tab label="Cliente" />
+        <Tab
+          label="Anunciante"
+          sx={{
+            color: "#FFD770",
+            "&.Mui-selected": {
+              color: "#FFFFA0",
+            },
+          }}
+        />
+        <Tab
+          label="Cliente"
+          sx={{
+            color: "#FFD770",
+            "&.Mui-selected": {
+              color: "#FFFFA0",
+            },
+          }}
+        />
       </Tabs>
       <Box mt={3}>
         {selectedTab === 0 && <AdvertiserTerms />}

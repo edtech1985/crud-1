@@ -21,6 +21,7 @@ import Massage from "../pages/Massage";
 import MassageHouseProfile from "../pages/MassageHouseProfile";
 import MassageHouses from "../db/massagesHouse.json";
 import { CityProvider } from "../context/CityContext";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
 
 
 export default function AppRouter() {
@@ -49,7 +50,8 @@ export default function AppRouter() {
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/favoritos" element={<Favorites />} />
-              <Route path="/terms" element={<Terms />} />
+              <Route path="/termos-de-uso" element={<Terms />} />
+              <Route path="/politica-de-privacidade" element={<PrivacyPolicy />} />
               <Route
                 path="/admin"
                 element={

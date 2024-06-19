@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Modal, Button, Box, Link, Typography } from "@mui/material";
-import { Lock } from "@mui/icons-material";
+import { ExitToApp, Lock } from "@mui/icons-material";
 
 const AgeConfirmationModal = () => {
   const [open, setOpen] = useState(false);
@@ -23,11 +23,7 @@ const AgeConfirmationModal = () => {
   };
 
   return (
-    <Modal
-      open={open}
-      onClose={handleClose}
-      
-    >
+    <Modal open={open} onClose={handleClose}>
       <Box
         textAlign="center"
         sx={{
@@ -35,12 +31,15 @@ const AgeConfirmationModal = () => {
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          backgroundColor: "white",
+          backgroundColor: "black",
           padding: "30px",
           borderRadius: "10px",
           boxShadow: 24,
           maxWidth: "90vw",
           TypographyAlign: "center",
+          borderWidth: "3px",
+          borderStyle: "solid",
+          borderColor: "primary.main",
         }}
       >
         <Typography variant="h4" gutterBottom>
@@ -60,18 +59,54 @@ const AgeConfirmationModal = () => {
             color="success"
             startIcon={<Lock />}
             onClick={handleConfirm}
-            sx={{ mr: 2 }}
+            sx={{
+              mr: 2,
+              borderColor: "inherit",
+              borderStyle: "solid",
+              borderWidth: "2px",
+              "&:hover": {
+                borderColor: "green",
+                borderStyle: "solid",
+                borderWidth: "2px",
+                color: "green",
+                bgcolor: "black",
+              },
+            }}
           >
             Sim, sou maior
           </Button>
-          <Button variant="contained" onClick={handleClose}>
+          <Button
+            startIcon={<ExitToApp />}
+            onClick={handleClose}
+            sx={{
+              bgcolor: "red",
+              color: "white",
+              borderColor: "red",
+              borderStyle: "solid",
+              borderWidth: "2px",
+              "&:hover": {
+                borderColor: "red",
+                borderStyle: "solid",
+                borderWidth: "2px",
+                color: "red",
+              },
+            }}
+          >
             Sair
           </Button>
         </Box>
         <Box mt={2}>
-          <Link href="#">Política de Privacidade</Link>
+          <Link
+            href="/politica-de-privacidade"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Política de Privacidade
+          </Link>
           {" | "}
-          <Link href="#">Termos de Uso</Link>
+          <Link href="/termos-de-uso" target="_blank" rel="noopener noreferrer">
+            Termos de Uso
+          </Link>
         </Box>
       </Box>
     </Modal>

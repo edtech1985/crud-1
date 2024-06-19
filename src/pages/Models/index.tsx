@@ -70,11 +70,11 @@ export default function Models() {
     modelType: "indiferente",
     showFace: "indiferente",
   });
-  const [loading, setLoading] = useState(true); // Novo estado de carregamento
+  const [loading, setLoading] = useState(true); 
   const [models, setModels] = useState<Model[]>([]);
-  const { estado, cidade } = useParams<{ estado: string; cidade: string }>(); // Obtenha o estado e a cidade dos parâmetros da URL
+  const { estado, cidade } = useParams<{ estado: string; cidade: string }>(); 
   const [shuffledModels, setShuffledModels] = useState<Model[]>([]);
-  const [shouldShuffle, setShouldShuffle] = useState(true); // Estado para controlar o embaralhamento único
+  const [shouldShuffle, setShouldShuffle] = useState(true);
 
   // Filtrar modelos com base na cidade
   useEffect(() => {

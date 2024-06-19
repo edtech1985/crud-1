@@ -5,7 +5,6 @@ import {
   Box,
   Grid,
   Typography,
-  MenuItem,
   Select,
   Button,
   Breadcrumbs,
@@ -16,6 +15,33 @@ import About from "../About";
 import { CityContext } from "../../context/CityContext";
 import { SelectChangeEvent } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { StyledMenuItem } from "../../components/StyledMenuItem";
+
+const MenuItemStyles = {
+  color: "primary.light",
+  bgcolor: "black",
+};
+
+const MenuStyles = {
+  color: "primary.light",
+  bgcolor: "black",
+  position: "relative",
+  overflow: "hidden",
+  "&::after": {
+    content: '""',
+    position: "absolute",
+    width: "0%",
+    height: "2px",
+    bottom: "-1px",
+    left: "50%",
+    backgroundColor: "currentColor",
+    transition: "width 0.3s ease, left 0.3s ease",
+  },
+  "&:hover::after": {
+    width: "100%",
+    left: "0%",
+  },
+};
 
 export default function Home() {
   const [loading, setLoading] = React.useState(true);
@@ -35,7 +61,7 @@ export default function Home() {
     // Simula o carregamento por 2 segundos
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1500);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -110,18 +136,115 @@ export default function Home() {
           </Box>
         </Grid>
       </Grid>
-      <Box textAlign="center" mt={2}>
-        <Typography variant="h6">Selecione sua cidade:</Typography>
-        <Select value={city} onChange={handleCityChange} displayEmpty>
-          <MenuItem value="">
-            <em>Nenhuma</em>
-          </MenuItem>
-          <MenuItem value="Porto Alegre">Porto Alegre</MenuItem>
-          <MenuItem value="Florianópolis">Florianópolis</MenuItem>
-          <MenuItem value="Curitiba">Curitiba</MenuItem>
-          <MenuItem value="São Paulo">São Paulo</MenuItem>
-          <MenuItem value="Rio de Janeiro">Rio de Janeiro</MenuItem>
-          <MenuItem value="Belo Horizonte">Belo Horizonte</MenuItem>
+      <Box id="filter-box" textAlign="center" mt={2}>
+        <Typography variant="h5">Selecione sua cidade:</Typography>
+        <Select
+          labelId="city-select-label"
+          id="city-select"
+          value={city}
+          label="Cidade"
+          onChange={handleCityChange}
+          displayEmpty
+        >
+          <StyledMenuItem
+            sx={{
+              ...MenuItemStyles,
+              "&:hover": {
+                bgcolor: "primary.light",
+                color: "black",
+              },
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+            value=""
+            disabled
+          >
+            <em>Selecione uma cidade</em>
+          </StyledMenuItem>
+          <StyledMenuItem
+            sx={{
+              ...MenuItemStyles,
+              "&:hover": {
+                bgcolor: "primary.light",
+                color: "black",
+              },
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+            value="Porto Alegre"
+          >
+            Porto Alegre
+          </StyledMenuItem>
+          <StyledMenuItem
+            sx={{
+              ...MenuItemStyles,
+              "&:hover": {
+                bgcolor: "primary.light",
+                color: "black",
+              },
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+            value="Florianópolis"
+          >
+            Florianópolis
+          </StyledMenuItem>
+          <StyledMenuItem
+            sx={{
+              ...MenuItemStyles,
+              "&:hover": {
+                bgcolor: "primary.light",
+                color: "black",
+              },
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+            value="Curitiba"
+          >
+            Curitiba
+          </StyledMenuItem>
+          <StyledMenuItem
+            sx={{
+              ...MenuItemStyles,
+              "&:hover": {
+                bgcolor: "primary.light",
+                color: "black",
+              },
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+            value="São Paulo"
+          >
+            São Paulo
+          </StyledMenuItem>
+          <StyledMenuItem
+            sx={{
+              ...MenuItemStyles,
+              "&:hover": {
+                bgcolor: "primary.light",
+                color: "black",
+              },
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+            value="Rio de Janeiro"
+          >
+            Rio de Janeiro
+          </StyledMenuItem>
+          <StyledMenuItem
+            sx={{
+              ...MenuItemStyles,
+              "&:hover": {
+                bgcolor: "primary.light",
+                color: "black",
+              },
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+            value="Belo Horizonte"
+          >
+            Belo Horizonte
+          </StyledMenuItem>
         </Select>
         <Button variant="contained" onClick={handleSearchClick}>
           Pesquisar
